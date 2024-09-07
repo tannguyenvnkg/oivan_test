@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:logger/logger.dart';
+import 'package:oivan_test/constant/dimension.dart';
 import '../features/user_management/applications/user_management_bloc.dart';
 import '../features/user_management/sources/i_user_management_sources.dart';
 
@@ -21,4 +22,6 @@ void setupGetIt() {
   getIt.registerLazySingleton<IUserManagementRepositories>(
       () => UserManagementRepositories());
   getIt.registerSingleton<UserManagementBloc>(UserManagementBloc());
+
+  getIt.registerFactory(() => AppDimensions());
 }

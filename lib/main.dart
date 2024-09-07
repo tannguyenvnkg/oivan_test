@@ -24,14 +24,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appColor = getIt.get<AppColor>();
     return MaterialApp.router(
       routerConfig: getIt.get<AppRouter>().config(),
       title: 'Oivan Test',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme:
-            ColorScheme.fromSeed(seedColor: getIt.get<AppColor>().primaryColor),
-        primaryColor: getIt.get<AppColor>().primaryColor,
+        colorScheme: ColorScheme.fromSeed(seedColor: appColor.primaryColor),
+        primaryColor: appColor.primaryColor,
         useMaterial3: true,
       ),
     );

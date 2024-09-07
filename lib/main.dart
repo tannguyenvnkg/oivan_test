@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oivan_test/configurations/get_it.dart';
 import 'package:oivan_test/constant/color.dart';
-import 'package:oivan_test/screens/splash_screen.dart';
 
 import 'configurations/app_router.dart';
 

@@ -1,6 +1,9 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
-import 'package:oivan_test/main.dart';
+import '../configurations/app_router.dart';
+import '../configurations/get_it.dart';
+
+import '../configurations/app_router.gr.dart';
 import '../gen/assets.gen.dart';
 
 @RoutePage()
@@ -22,11 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void _navigateToHome() {
     Future.delayed(const Duration(seconds: 2), () {
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) =>
-                  const MyHomePage(title: 'Flutter Demo Home Page')));
+      getIt<AppRouter>().push(const UserManagementListRoute());
     });
   }
 

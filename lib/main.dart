@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:oivan_test/configurations/get_it.dart';
-import 'package:oivan_test/constant/color.dart';
+import 'configurations/get_it.dart';
+import 'constant/color.dart';
+import 'features/user_management/applications/user_management_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'configurations/app_router.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   setupGetIt();
-  runApp(const MyApp());
+  runApp(MultiBlocProvider(
+    providers: [
+      BlocProvider(
+        create: (context) => getIt<UserManagementBloc>(),
+      ),
+    ],
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {

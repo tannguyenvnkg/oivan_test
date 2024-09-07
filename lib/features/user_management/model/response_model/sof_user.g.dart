@@ -11,7 +11,7 @@ _$SOFUserImpl _$$SOFUserImplFromJson(Map<String, dynamic> json) =>
       userId: (json['user_id'] as num?)?.toInt(),
       displayName: json['display_name'] as String?,
       avatar: json['profile_image'] as String?,
-      reputation: json['reputation'] as String?,
+      reputation: (json['reputation'] as num?)?.toInt(),
       location: json['location'] as String?,
       age: (json['age'] as num?)?.toInt(),
     );
@@ -28,12 +28,13 @@ Map<String, dynamic> _$$SOFUserImplToJson(_$SOFUserImpl instance) =>
 
 _$SOFUserListImpl _$$SOFUserListImplFromJson(Map<String, dynamic> json) =>
     _$SOFUserListImpl(
-      items: (json['items'] as List<dynamic>)
-          .map((e) => SOFUser.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      hasMore: json['hasMore'] as bool,
-      quotaMax: (json['quotaMax'] as num).toInt(),
-      quotaRemaining: (json['quotaRemaining'] as num).toInt(),
+      items: (json['items'] as List<dynamic>?)
+              ?.map((e) => SOFUser.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      hasMore: json['hasMore'] as bool? ?? false,
+      quotaMax: (json['quotaMax'] as num?)?.toInt() ?? 0,
+      quotaRemaining: (json['quotaRemaining'] as num?)?.toInt() ?? 0,
     );
 
 Map<String, dynamic> _$$SOFUserListImplToJson(_$SOFUserListImpl instance) =>

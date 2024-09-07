@@ -1,3 +1,6 @@
+import 'package:injectable/injectable.dart';
+
+@singleton
 class AppDimensions {
   // using for padding, size
   final double zero = 0.0;

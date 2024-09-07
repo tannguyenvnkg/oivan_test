@@ -11,6 +11,7 @@ _$UserListRequestImpl _$$UserListRequestImplFromJson(
     _$UserListRequestImpl(
       page: (json['page'] as num?)?.toInt(),
       pageSize: (json['pageSize'] as num?)?.toInt(),
+      site: json['site'] as String?,
     );
 
 Map<String, dynamic> _$$UserListRequestImplToJson(
@@ -18,4 +19,5 @@ Map<String, dynamic> _$$UserListRequestImplToJson(
     <String, dynamic>{
       'page': instance.page,
       'pageSize': instance.pageSize,
+      'site': instance.site,
     };

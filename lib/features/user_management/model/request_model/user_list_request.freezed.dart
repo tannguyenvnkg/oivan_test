@@ -22,6 +22,7 @@ UserListRequest _$UserListRequestFromJson(Map<String, dynamic> json) {
 mixin _$UserListRequest {
   int? get page => throw _privateConstructorUsedError;
   int? get pageSize => throw _privateConstructorUsedError;
+  String? get site => throw _privateConstructorUsedError;
 
   /// Serializes this UserListRequest to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,7 +40,7 @@ abstract class $UserListRequestCopyWith<$Res> {
           UserListRequest value, $Res Function(UserListRequest) then) =
       _$UserListRequestCopyWithImpl<$Res, UserListRequest>;
   @useResult
-  $Res call({int? page, int? pageSize});
+  $Res call({int? page, int? pageSize, String? site});
 }
 
 /// @nodoc
@@ -59,6 +60,7 @@ class _$UserListRequestCopyWithImpl<$Res, $Val extends UserListRequest>
   $Res call({
     Object? page = freezed,
     Object? pageSize = freezed,
+    Object? site = freezed,
   }) {
     return _then(_value.copyWith(
       page: freezed == page
@@ -69,6 +71,10 @@ class _$UserListRequestCopyWithImpl<$Res, $Val extends UserListRequest>
           ? _value.pageSize
           : pageSize // ignore: cast_nullable_to_non_nullable
               as int?,
+      site: freezed == site
+          ? _value.site
+          : site // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -81,7 +87,7 @@ abstract class _$$UserListRequestImplCopyWith<$Res>
       __$$UserListRequestImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? page, int? pageSize});
+  $Res call({int? page, int? pageSize, String? site});
 }
 
 /// @nodoc
@@ -99,6 +105,7 @@ class __$$UserListRequestImplCopyWithImpl<$Res>
   $Res call({
     Object? page = freezed,
     Object? pageSize = freezed,
+    Object? site = freezed,
   }) {
     return _then(_$UserListRequestImpl(
       page: freezed == page
@@ -109,6 +116,10 @@ class __$$UserListRequestImplCopyWithImpl<$Res>
           ? _value.pageSize
           : pageSize // ignore: cast_nullable_to_non_nullable
               as int?,
+      site: freezed == site
+          ? _value.site
+          : site // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -118,7 +129,8 @@ class __$$UserListRequestImplCopyWithImpl<$Res>
 class _$UserListRequestImpl
     with DiagnosticableTreeMixin
     implements _UserListRequest {
-  const _$UserListRequestImpl({required this.page, required this.pageSize});
+  const _$UserListRequestImpl(
+      {required this.page, required this.pageSize, required this.site});
 
   factory _$UserListRequestImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserListRequestImplFromJson(json);
@@ -127,10 +139,12 @@ class _$UserListRequestImpl
   final int? page;
   @override
   final int? pageSize;
+  @override
+  final String? site;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserListRequest(page: $page, pageSize: $pageSize)';
+    return 'UserListRequest(page: $page, pageSize: $pageSize, site: $site)';
   }
 
   @override
@@ -139,7 +153,8 @@ class _$UserListRequestImpl
     properties
       ..add(DiagnosticsProperty('type', 'UserListRequest'))
       ..add(DiagnosticsProperty('page', page))
-      ..add(DiagnosticsProperty('pageSize', pageSize));
+      ..add(DiagnosticsProperty('pageSize', pageSize))
+      ..add(DiagnosticsProperty('site', site));
   }
 
   @override
@@ -149,12 +164,13 @@ class _$UserListRequestImpl
             other is _$UserListRequestImpl &&
             (identical(other.page, page) || other.page == page) &&
             (identical(other.pageSize, pageSize) ||
-                other.pageSize == pageSize));
+                other.pageSize == pageSize) &&
+            (identical(other.site, site) || other.site == site));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, page, pageSize);
+  int get hashCode => Object.hash(runtimeType, page, pageSize, site);
 
   /// Create a copy of UserListRequest
   /// with the given fields replaced by the non-null parameter values.
@@ -176,7 +192,8 @@ class _$UserListRequestImpl
 abstract class _UserListRequest implements UserListRequest {
   const factory _UserListRequest(
       {required final int? page,
-      required final int? pageSize}) = _$UserListRequestImpl;
+      required final int? pageSize,
+      required final String? site}) = _$UserListRequestImpl;
 
   factory _UserListRequest.fromJson(Map<String, dynamic> json) =
       _$UserListRequestImpl.fromJson;
@@ -185,6 +202,8 @@ abstract class _UserListRequest implements UserListRequest {
   int? get page;
   @override
   int? get pageSize;
+  @override
+  String? get site;
 
   /// Create a copy of UserListRequest
   /// with the given fields replaced by the non-null parameter values.

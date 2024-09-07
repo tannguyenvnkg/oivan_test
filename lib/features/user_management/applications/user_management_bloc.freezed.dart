@@ -15,6 +15,238 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
+mixin _$UserManagementEvent {
+  UserListRequest get request => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UserListRequest request) getUserList,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(UserListRequest request)? getUserList,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UserListRequest request)? getUserList,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_getUserList value) getUserList,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_getUserList value)? getUserList,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_getUserList value)? getUserList,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  /// Create a copy of UserManagementEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $UserManagementEventCopyWith<UserManagementEvent> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UserManagementEventCopyWith<$Res> {
+  factory $UserManagementEventCopyWith(
+          UserManagementEvent value, $Res Function(UserManagementEvent) then) =
+      _$UserManagementEventCopyWithImpl<$Res, UserManagementEvent>;
+  @useResult
+  $Res call({UserListRequest request});
+
+  $UserListRequestCopyWith<$Res> get request;
+}
+
+/// @nodoc
+class _$UserManagementEventCopyWithImpl<$Res, $Val extends UserManagementEvent>
+    implements $UserManagementEventCopyWith<$Res> {
+  _$UserManagementEventCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of UserManagementEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? request = null,
+  }) {
+    return _then(_value.copyWith(
+      request: null == request
+          ? _value.request
+          : request // ignore: cast_nullable_to_non_nullable
+              as UserListRequest,
+    ) as $Val);
+  }
+
+  /// Create a copy of UserManagementEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserListRequestCopyWith<$Res> get request {
+    return $UserListRequestCopyWith<$Res>(_value.request, (value) {
+      return _then(_value.copyWith(request: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$getUserListImplCopyWith<$Res>
+    implements $UserManagementEventCopyWith<$Res> {
+  factory _$$getUserListImplCopyWith(
+          _$getUserListImpl value, $Res Function(_$getUserListImpl) then) =
+      __$$getUserListImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({UserListRequest request});
+
+  @override
+  $UserListRequestCopyWith<$Res> get request;
+}
+
+/// @nodoc
+class __$$getUserListImplCopyWithImpl<$Res>
+    extends _$UserManagementEventCopyWithImpl<$Res, _$getUserListImpl>
+    implements _$$getUserListImplCopyWith<$Res> {
+  __$$getUserListImplCopyWithImpl(
+      _$getUserListImpl _value, $Res Function(_$getUserListImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UserManagementEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? request = null,
+  }) {
+    return _then(_$getUserListImpl(
+      request: null == request
+          ? _value.request
+          : request // ignore: cast_nullable_to_non_nullable
+              as UserListRequest,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$getUserListImpl implements _getUserList {
+  const _$getUserListImpl({required this.request});
+
+  @override
+  final UserListRequest request;
+
+  @override
+  String toString() {
+    return 'UserManagementEvent.getUserList(request: $request)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$getUserListImpl &&
+            (identical(other.request, request) || other.request == request));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, request);
+
+  /// Create a copy of UserManagementEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$getUserListImplCopyWith<_$getUserListImpl> get copyWith =>
+      __$$getUserListImplCopyWithImpl<_$getUserListImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UserListRequest request) getUserList,
+  }) {
+    return getUserList(request);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(UserListRequest request)? getUserList,
+  }) {
+    return getUserList?.call(request);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UserListRequest request)? getUserList,
+    required TResult orElse(),
+  }) {
+    if (getUserList != null) {
+      return getUserList(request);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_getUserList value) getUserList,
+  }) {
+    return getUserList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_getUserList value)? getUserList,
+  }) {
+    return getUserList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_getUserList value)? getUserList,
+    required TResult orElse(),
+  }) {
+    if (getUserList != null) {
+      return getUserList(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _getUserList implements UserManagementEvent {
+  const factory _getUserList({required final UserListRequest request}) =
+      _$getUserListImpl;
+
+  @override
+  UserListRequest get request;
+
+  /// Create a copy of UserManagementEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$getUserListImplCopyWith<_$getUserListImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$UserManagementState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -643,237 +875,5 @@ abstract class _loadUserListFailed implements UserManagementState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$loadUserListFailedImplCopyWith<_$loadUserListFailedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-mixin _$UserManagementEvent {
-  UserListRequest get request => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(UserListRequest request) getUserList,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(UserListRequest request)? getUserList,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UserListRequest request)? getUserList,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_getUserList value) getUserList,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_getUserList value)? getUserList,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_getUserList value)? getUserList,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-
-  /// Create a copy of UserManagementEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $UserManagementEventCopyWith<UserManagementEvent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $UserManagementEventCopyWith<$Res> {
-  factory $UserManagementEventCopyWith(
-          UserManagementEvent value, $Res Function(UserManagementEvent) then) =
-      _$UserManagementEventCopyWithImpl<$Res, UserManagementEvent>;
-  @useResult
-  $Res call({UserListRequest request});
-
-  $UserListRequestCopyWith<$Res> get request;
-}
-
-/// @nodoc
-class _$UserManagementEventCopyWithImpl<$Res, $Val extends UserManagementEvent>
-    implements $UserManagementEventCopyWith<$Res> {
-  _$UserManagementEventCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of UserManagementEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? request = null,
-  }) {
-    return _then(_value.copyWith(
-      request: null == request
-          ? _value.request
-          : request // ignore: cast_nullable_to_non_nullable
-              as UserListRequest,
-    ) as $Val);
-  }
-
-  /// Create a copy of UserManagementEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserListRequestCopyWith<$Res> get request {
-    return $UserListRequestCopyWith<$Res>(_value.request, (value) {
-      return _then(_value.copyWith(request: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$getUserListImplCopyWith<$Res>
-    implements $UserManagementEventCopyWith<$Res> {
-  factory _$$getUserListImplCopyWith(
-          _$getUserListImpl value, $Res Function(_$getUserListImpl) then) =
-      __$$getUserListImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({UserListRequest request});
-
-  @override
-  $UserListRequestCopyWith<$Res> get request;
-}
-
-/// @nodoc
-class __$$getUserListImplCopyWithImpl<$Res>
-    extends _$UserManagementEventCopyWithImpl<$Res, _$getUserListImpl>
-    implements _$$getUserListImplCopyWith<$Res> {
-  __$$getUserListImplCopyWithImpl(
-      _$getUserListImpl _value, $Res Function(_$getUserListImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of UserManagementEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? request = null,
-  }) {
-    return _then(_$getUserListImpl(
-      request: null == request
-          ? _value.request
-          : request // ignore: cast_nullable_to_non_nullable
-              as UserListRequest,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$getUserListImpl implements _getUserList {
-  const _$getUserListImpl({required this.request});
-
-  @override
-  final UserListRequest request;
-
-  @override
-  String toString() {
-    return 'UserManagementEvent.getUserList(request: $request)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$getUserListImpl &&
-            (identical(other.request, request) || other.request == request));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, request);
-
-  /// Create a copy of UserManagementEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$getUserListImplCopyWith<_$getUserListImpl> get copyWith =>
-      __$$getUserListImplCopyWithImpl<_$getUserListImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(UserListRequest request) getUserList,
-  }) {
-    return getUserList(request);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(UserListRequest request)? getUserList,
-  }) {
-    return getUserList?.call(request);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(UserListRequest request)? getUserList,
-    required TResult orElse(),
-  }) {
-    if (getUserList != null) {
-      return getUserList(request);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_getUserList value) getUserList,
-  }) {
-    return getUserList(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_getUserList value)? getUserList,
-  }) {
-    return getUserList?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_getUserList value)? getUserList,
-    required TResult orElse(),
-  }) {
-    if (getUserList != null) {
-      return getUserList(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _getUserList implements UserManagementEvent {
-  const factory _getUserList({required final UserListRequest request}) =
-      _$getUserListImpl;
-
-  @override
-  UserListRequest get request;
-
-  /// Create a copy of UserManagementEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$getUserListImplCopyWith<_$getUserListImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

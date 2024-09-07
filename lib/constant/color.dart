@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 
+@singleton
 class AppColor {
   Color primaryColor = const Color(0xFFfe5020);
   Color textColor = const Color(0xFFFFFFFF);

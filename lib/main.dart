@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'configurations/get_it.dart';
-import 'constant/color.dart';
-import 'features/user_management/applications/user_management_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'configurations/app_router.dart';
+import 'configurations/injection.dart';
+import 'constant/color.dart';
+import 'features/user_management/applications/user_management_bloc.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  setupGetIt();
+  configureDependencies();
   runApp(MultiBlocProvider(
     providers: [
       BlocProvider(

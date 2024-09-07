@@ -3,9 +3,11 @@ import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 import 'package:logger/logger.dart';
 
-import '../configurations/get_it.dart';
+import '../configurations/injection.dart';
+import 'api_error.dart';
 import 'network_manager.dart';
 
 enum Method { get, post }
@@ -23,6 +25,7 @@ extension EMethod on Method {
   }
 }
 
+@injectable
 class ClientRequest {
   Future<Either<dynamic, dynamic>> request({
     String? baseUrl,
@@ -32,37 +35,44 @@ class ClientRequest {
     Map<String, dynamic> parameters = const {},
     Method method = Method.post,
   }) async {
-    final dio = getIt.get<Dio>()
-      ..options.baseUrl = baseUrl ?? NetworkManager.shared.baseUrl
-      ..options.headers = headers ?? NetworkManager.shared.headers;
+    try {
+      final baseUrl0 = baseUrl ?? NetworkManager.shared.baseUrl;
+      final headers0 = headers ?? NetworkManager.shared.headers;
+      final dio = getIt.get<Dio>()
+        ..options.baseUrl = baseUrl ?? NetworkManager.shared.baseUrl
+        ..options.headers = headers ?? NetworkManager.shared.headers;
 
-    /// Log request \\\
-    getIt.get<Logger>().i('''
+      /// Log request \\\
+      getIt.get<Logger>().i('''
       Make Request
-      baseUrl: $baseUrl
+      baseUrl: $baseUrl0
       path: $path
-      header: ${jsonEncode(headers)}
+      header: ${jsonEncode(headers0)}
       data: ${jsonEncode(data)}
       parameter: ${jsonEncode(parameters)}
       method: ${method.value}
       ''');
 
-    ///================================\\\
+      ///================================\\\
 
-    Either<Response<dynamic>, dynamic> either;
-    switch (method) {
-      case Method.get:
-        either = await call(() => dio.get(path, queryParameters: parameters),
-            path: path);
-        break;
-      case Method.post:
-        either = await call(
-            () => dio.post(path, data: data, queryParameters: parameters),
-            path: path);
-        break;
+      Either<Response<dynamic>, dynamic> either;
+      switch (method) {
+        case Method.get:
+          either = await call(() => dio.get(path, queryParameters: parameters),
+              path: path);
+          break;
+        case Method.post:
+          either = await call(
+              () => dio.post(path, data: data, queryParameters: parameters),
+              path: path);
+          break;
+      }
+      return either.fold(
+          (response) => const Left(unit), (response) => Right(response));
+    } on Exception catch (e) {
+      getIt.get<Logger>().e('Error: $e');
+      return left(ApiError(message: e.toString(), code: 999));
     }
-    return either.fold(
-        (response) => const Left(unit), (response) => Right(response));
   }
 
   Future<Either<Response<dynamic>, dynamic>> call(

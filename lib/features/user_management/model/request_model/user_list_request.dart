@@ -9,6 +9,7 @@ class UserListRequest with _$UserListRequest {
   const factory UserListRequest({
     required int? page,
     required int? pageSize,
+    required String? site,
   }) = _UserListRequest;
   factory UserListRequest.fromJson(Map<String, dynamic> json) =>
       _$UserListRequestFromJson(json);

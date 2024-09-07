@@ -27,7 +27,7 @@ mixin _$SOFUser {
   @JsonKey(name: 'profile_image')
   String? get avatar => throw _privateConstructorUsedError;
   @JsonKey(name: 'reputation')
-  String? get reputation => throw _privateConstructorUsedError;
+  int? get reputation => throw _privateConstructorUsedError;
   @JsonKey(name: 'location')
   String? get location => throw _privateConstructorUsedError;
   @JsonKey(name: 'age')
@@ -51,7 +51,7 @@ abstract class $SOFUserCopyWith<$Res> {
       {@JsonKey(name: 'user_id') int? userId,
       @JsonKey(name: 'display_name') String? displayName,
       @JsonKey(name: 'profile_image') String? avatar,
-      @JsonKey(name: 'reputation') String? reputation,
+      @JsonKey(name: 'reputation') int? reputation,
       @JsonKey(name: 'location') String? location,
       @JsonKey(name: 'age') int? age});
 }
@@ -94,7 +94,7 @@ class _$SOFUserCopyWithImpl<$Res, $Val extends SOFUser>
       reputation: freezed == reputation
           ? _value.reputation
           : reputation // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
@@ -118,7 +118,7 @@ abstract class _$$SOFUserImplCopyWith<$Res> implements $SOFUserCopyWith<$Res> {
       {@JsonKey(name: 'user_id') int? userId,
       @JsonKey(name: 'display_name') String? displayName,
       @JsonKey(name: 'profile_image') String? avatar,
-      @JsonKey(name: 'reputation') String? reputation,
+      @JsonKey(name: 'reputation') int? reputation,
       @JsonKey(name: 'location') String? location,
       @JsonKey(name: 'age') int? age});
 }
@@ -159,7 +159,7 @@ class __$$SOFUserImplCopyWithImpl<$Res>
       reputation: freezed == reputation
           ? _value.reputation
           : reputation // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as int?,
       location: freezed == location
           ? _value.location
           : location // ignore: cast_nullable_to_non_nullable
@@ -197,7 +197,7 @@ class _$SOFUserImpl with DiagnosticableTreeMixin implements _SOFUser {
   final String? avatar;
   @override
   @JsonKey(name: 'reputation')
-  final String? reputation;
+  final int? reputation;
   @override
   @JsonKey(name: 'location')
   final String? location;
@@ -265,7 +265,7 @@ abstract class _SOFUser implements SOFUser {
       {@JsonKey(name: 'user_id') required final int? userId,
       @JsonKey(name: 'display_name') required final String? displayName,
       @JsonKey(name: 'profile_image') required final String? avatar,
-      @JsonKey(name: 'reputation') required final String? reputation,
+      @JsonKey(name: 'reputation') required final int? reputation,
       @JsonKey(name: 'location') required final String? location,
       @JsonKey(name: 'age') required final int? age}) = _$SOFUserImpl;
 
@@ -282,7 +282,7 @@ abstract class _SOFUser implements SOFUser {
   String? get avatar;
   @override
   @JsonKey(name: 'reputation')
-  String? get reputation;
+  int? get reputation;
   @override
   @JsonKey(name: 'location')
   String? get location;
@@ -425,10 +425,10 @@ class __$$SOFUserListImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$SOFUserListImpl with DiagnosticableTreeMixin implements _SOFUserList {
   const _$SOFUserListImpl(
-      {required final List<SOFUser> items,
-      required this.hasMore,
-      required this.quotaMax,
-      required this.quotaRemaining})
+      {final List<SOFUser> items = const [],
+      this.hasMore = false,
+      this.quotaMax = 0,
+      this.quotaRemaining = 0})
       : _items = items;
 
   factory _$SOFUserListImpl.fromJson(Map<String, dynamic> json) =>
@@ -436,6 +436,7 @@ class _$SOFUserListImpl with DiagnosticableTreeMixin implements _SOFUserList {
 
   final List<SOFUser> _items;
   @override
+  @JsonKey()
   List<SOFUser> get items {
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
@@ -443,10 +444,13 @@ class _$SOFUserListImpl with DiagnosticableTreeMixin implements _SOFUserList {
   }
 
   @override
+  @JsonKey()
   final bool hasMore;
   @override
+  @JsonKey()
   final int quotaMax;
   @override
+  @JsonKey()
   final int quotaRemaining;
 
   @override
@@ -505,10 +509,10 @@ class _$SOFUserListImpl with DiagnosticableTreeMixin implements _SOFUserList {
 
 abstract class _SOFUserList implements SOFUserList {
   const factory _SOFUserList(
-      {required final List<SOFUser> items,
-      required final bool hasMore,
-      required final int quotaMax,
-      required final int quotaRemaining}) = _$SOFUserListImpl;
+      {final List<SOFUser> items,
+      final bool hasMore,
+      final int quotaMax,
+      final int quotaRemaining}) = _$SOFUserListImpl;
 
   factory _SOFUserList.fromJson(Map<String, dynamic> json) =
       _$SOFUserListImpl.fromJson;

@@ -1,15 +1,17 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
+
+import '../../../configurations/injection.dart';
 import '../model/request_model/user_list_request.dart';
 import '../model/response_model/sof_user.dart';
-
-import '../../../configurations/get_it.dart';
 import '../repositories/i_user_management_repositories.dart';
 
-part 'user_management_state.dart';
-part 'user_management_event.dart';
 part 'user_management_bloc.freezed.dart';
+part 'user_management_event.dart';
+part 'user_management_state.dart';
 
+@LazySingleton()
 class UserManagementBloc
     extends Bloc<UserManagementEvent, UserManagementState> {
   final repository = getIt<IUserManagementRepositories>();

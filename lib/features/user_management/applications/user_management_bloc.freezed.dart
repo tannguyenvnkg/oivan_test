@@ -252,7 +252,10 @@ mixin _$UserManagementState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<SOFUser> users) loadUserListSuccessful,
+    required TResult Function() loadMoreInProgress,
+    required TResult Function(
+            List<SOFUser> users, bool hasMoreData, bool isLoadMore)
+        loadUserListSuccessful,
     required TResult Function(String? error) loadUserListFailed,
   }) =>
       throw _privateConstructorUsedError;
@@ -260,7 +263,9 @@ mixin _$UserManagementState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
-    TResult? Function(List<SOFUser> users)? loadUserListSuccessful,
+    TResult? Function()? loadMoreInProgress,
+    TResult? Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
     TResult? Function(String? error)? loadUserListFailed,
   }) =>
       throw _privateConstructorUsedError;
@@ -268,7 +273,9 @@ mixin _$UserManagementState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<SOFUser> users)? loadUserListSuccessful,
+    TResult Function()? loadMoreInProgress,
+    TResult Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
     TResult Function(String? error)? loadUserListFailed,
     required TResult orElse(),
   }) =>
@@ -277,6 +284,7 @@ mixin _$UserManagementState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadMoreInProgress value) loadMoreInProgress,
     required TResult Function(_loadUserListSuccessful value)
         loadUserListSuccessful,
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
@@ -286,6 +294,7 @@ mixin _$UserManagementState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
   }) =>
@@ -294,6 +303,7 @@ mixin _$UserManagementState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
     required TResult orElse(),
@@ -365,7 +375,10 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<SOFUser> users) loadUserListSuccessful,
+    required TResult Function() loadMoreInProgress,
+    required TResult Function(
+            List<SOFUser> users, bool hasMoreData, bool isLoadMore)
+        loadUserListSuccessful,
     required TResult Function(String? error) loadUserListFailed,
   }) {
     return initial();
@@ -376,7 +389,9 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
-    TResult? Function(List<SOFUser> users)? loadUserListSuccessful,
+    TResult? Function()? loadMoreInProgress,
+    TResult? Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
     TResult? Function(String? error)? loadUserListFailed,
   }) {
     return initial?.call();
@@ -387,7 +402,9 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<SOFUser> users)? loadUserListSuccessful,
+    TResult Function()? loadMoreInProgress,
+    TResult Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
     TResult Function(String? error)? loadUserListFailed,
     required TResult orElse(),
   }) {
@@ -402,6 +419,7 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadMoreInProgress value) loadMoreInProgress,
     required TResult Function(_loadUserListSuccessful value)
         loadUserListSuccessful,
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
@@ -414,6 +432,7 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
   }) {
@@ -425,6 +444,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
     required TResult orElse(),
@@ -483,7 +503,10 @@ class _$LoadInProgressImpl implements _LoadInProgress {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<SOFUser> users) loadUserListSuccessful,
+    required TResult Function() loadMoreInProgress,
+    required TResult Function(
+            List<SOFUser> users, bool hasMoreData, bool isLoadMore)
+        loadUserListSuccessful,
     required TResult Function(String? error) loadUserListFailed,
   }) {
     return loadInProgress();
@@ -494,7 +517,9 @@ class _$LoadInProgressImpl implements _LoadInProgress {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
-    TResult? Function(List<SOFUser> users)? loadUserListSuccessful,
+    TResult? Function()? loadMoreInProgress,
+    TResult? Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
     TResult? Function(String? error)? loadUserListFailed,
   }) {
     return loadInProgress?.call();
@@ -505,7 +530,9 @@ class _$LoadInProgressImpl implements _LoadInProgress {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<SOFUser> users)? loadUserListSuccessful,
+    TResult Function()? loadMoreInProgress,
+    TResult Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
     TResult Function(String? error)? loadUserListFailed,
     required TResult orElse(),
   }) {
@@ -520,6 +547,7 @@ class _$LoadInProgressImpl implements _LoadInProgress {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadMoreInProgress value) loadMoreInProgress,
     required TResult Function(_loadUserListSuccessful value)
         loadUserListSuccessful,
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
@@ -532,6 +560,7 @@ class _$LoadInProgressImpl implements _LoadInProgress {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
   }) {
@@ -543,6 +572,7 @@ class _$LoadInProgressImpl implements _LoadInProgress {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
     required TResult orElse(),
@@ -559,13 +589,141 @@ abstract class _LoadInProgress implements UserManagementState {
 }
 
 /// @nodoc
+abstract class _$$LoadMoreInProgressImplCopyWith<$Res> {
+  factory _$$LoadMoreInProgressImplCopyWith(_$LoadMoreInProgressImpl value,
+          $Res Function(_$LoadMoreInProgressImpl) then) =
+      __$$LoadMoreInProgressImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadMoreInProgressImplCopyWithImpl<$Res>
+    extends _$UserManagementStateCopyWithImpl<$Res, _$LoadMoreInProgressImpl>
+    implements _$$LoadMoreInProgressImplCopyWith<$Res> {
+  __$$LoadMoreInProgressImplCopyWithImpl(_$LoadMoreInProgressImpl _value,
+      $Res Function(_$LoadMoreInProgressImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UserManagementState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoadMoreInProgressImpl implements _LoadMoreInProgress {
+  const _$LoadMoreInProgressImpl();
+
+  @override
+  String toString() {
+    return 'UserManagementState.loadMoreInProgress()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadMoreInProgressImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function() loadMoreInProgress,
+    required TResult Function(
+            List<SOFUser> users, bool hasMoreData, bool isLoadMore)
+        loadUserListSuccessful,
+    required TResult Function(String? error) loadUserListFailed,
+  }) {
+    return loadMoreInProgress();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function()? loadMoreInProgress,
+    TResult? Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
+    TResult? Function(String? error)? loadUserListFailed,
+  }) {
+    return loadMoreInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function()? loadMoreInProgress,
+    TResult Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
+    TResult Function(String? error)? loadUserListFailed,
+    required TResult orElse(),
+  }) {
+    if (loadMoreInProgress != null) {
+      return loadMoreInProgress();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadMoreInProgress value) loadMoreInProgress,
+    required TResult Function(_loadUserListSuccessful value)
+        loadUserListSuccessful,
+    required TResult Function(_loadUserListFailed value) loadUserListFailed,
+  }) {
+    return loadMoreInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadMoreInProgress value)? loadMoreInProgress,
+    TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
+    TResult? Function(_loadUserListFailed value)? loadUserListFailed,
+  }) {
+    return loadMoreInProgress?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadMoreInProgress value)? loadMoreInProgress,
+    TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
+    TResult Function(_loadUserListFailed value)? loadUserListFailed,
+    required TResult orElse(),
+  }) {
+    if (loadMoreInProgress != null) {
+      return loadMoreInProgress(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadMoreInProgress implements UserManagementState {
+  const factory _LoadMoreInProgress() = _$LoadMoreInProgressImpl;
+}
+
+/// @nodoc
 abstract class _$$loadUserListSuccessfulImplCopyWith<$Res> {
   factory _$$loadUserListSuccessfulImplCopyWith(
           _$loadUserListSuccessfulImpl value,
           $Res Function(_$loadUserListSuccessfulImpl) then) =
       __$$loadUserListSuccessfulImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<SOFUser> users});
+  $Res call({List<SOFUser> users, bool hasMoreData, bool isLoadMore});
 }
 
 /// @nodoc
@@ -584,12 +742,22 @@ class __$$loadUserListSuccessfulImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? users = null,
+    Object? hasMoreData = null,
+    Object? isLoadMore = null,
   }) {
     return _then(_$loadUserListSuccessfulImpl(
       users: null == users
           ? _value._users
           : users // ignore: cast_nullable_to_non_nullable
               as List<SOFUser>,
+      hasMoreData: null == hasMoreData
+          ? _value.hasMoreData
+          : hasMoreData // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoadMore: null == isLoadMore
+          ? _value.isLoadMore
+          : isLoadMore // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -597,7 +765,10 @@ class __$$loadUserListSuccessfulImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
-  const _$loadUserListSuccessfulImpl({required final List<SOFUser> users})
+  const _$loadUserListSuccessfulImpl(
+      {required final List<SOFUser> users,
+      required this.hasMoreData,
+      required this.isLoadMore})
       : _users = users;
 
   final List<SOFUser> _users;
@@ -609,8 +780,13 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
   }
 
   @override
+  final bool hasMoreData;
+  @override
+  final bool isLoadMore;
+
+  @override
   String toString() {
-    return 'UserManagementState.loadUserListSuccessful(users: $users)';
+    return 'UserManagementState.loadUserListSuccessful(users: $users, hasMoreData: $hasMoreData, isLoadMore: $isLoadMore)';
   }
 
   @override
@@ -618,12 +794,16 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$loadUserListSuccessfulImpl &&
-            const DeepCollectionEquality().equals(other._users, _users));
+            const DeepCollectionEquality().equals(other._users, _users) &&
+            (identical(other.hasMoreData, hasMoreData) ||
+                other.hasMoreData == hasMoreData) &&
+            (identical(other.isLoadMore, isLoadMore) ||
+                other.isLoadMore == isLoadMore));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_users));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_users), hasMoreData, isLoadMore);
 
   /// Create a copy of UserManagementState
   /// with the given fields replaced by the non-null parameter values.
@@ -639,10 +819,13 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<SOFUser> users) loadUserListSuccessful,
+    required TResult Function() loadMoreInProgress,
+    required TResult Function(
+            List<SOFUser> users, bool hasMoreData, bool isLoadMore)
+        loadUserListSuccessful,
     required TResult Function(String? error) loadUserListFailed,
   }) {
-    return loadUserListSuccessful(users);
+    return loadUserListSuccessful(users, hasMoreData, isLoadMore);
   }
 
   @override
@@ -650,10 +833,12 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
-    TResult? Function(List<SOFUser> users)? loadUserListSuccessful,
+    TResult? Function()? loadMoreInProgress,
+    TResult? Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
     TResult? Function(String? error)? loadUserListFailed,
   }) {
-    return loadUserListSuccessful?.call(users);
+    return loadUserListSuccessful?.call(users, hasMoreData, isLoadMore);
   }
 
   @override
@@ -661,12 +846,14 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<SOFUser> users)? loadUserListSuccessful,
+    TResult Function()? loadMoreInProgress,
+    TResult Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
     TResult Function(String? error)? loadUserListFailed,
     required TResult orElse(),
   }) {
     if (loadUserListSuccessful != null) {
-      return loadUserListSuccessful(users);
+      return loadUserListSuccessful(users, hasMoreData, isLoadMore);
     }
     return orElse();
   }
@@ -676,6 +863,7 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadMoreInProgress value) loadMoreInProgress,
     required TResult Function(_loadUserListSuccessful value)
         loadUserListSuccessful,
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
@@ -688,6 +876,7 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
   }) {
@@ -699,6 +888,7 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
     required TResult orElse(),
@@ -711,10 +901,14 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
 }
 
 abstract class _loadUserListSuccessful implements UserManagementState {
-  const factory _loadUserListSuccessful({required final List<SOFUser> users}) =
-      _$loadUserListSuccessfulImpl;
+  const factory _loadUserListSuccessful(
+      {required final List<SOFUser> users,
+      required final bool hasMoreData,
+      required final bool isLoadMore}) = _$loadUserListSuccessfulImpl;
 
   List<SOFUser> get users;
+  bool get hasMoreData;
+  bool get isLoadMore;
 
   /// Create a copy of UserManagementState
   /// with the given fields replaced by the non-null parameter values.
@@ -794,7 +988,10 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loadInProgress,
-    required TResult Function(List<SOFUser> users) loadUserListSuccessful,
+    required TResult Function() loadMoreInProgress,
+    required TResult Function(
+            List<SOFUser> users, bool hasMoreData, bool isLoadMore)
+        loadUserListSuccessful,
     required TResult Function(String? error) loadUserListFailed,
   }) {
     return loadUserListFailed(error);
@@ -805,7 +1002,9 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loadInProgress,
-    TResult? Function(List<SOFUser> users)? loadUserListSuccessful,
+    TResult? Function()? loadMoreInProgress,
+    TResult? Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
     TResult? Function(String? error)? loadUserListFailed,
   }) {
     return loadUserListFailed?.call(error);
@@ -816,7 +1015,9 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loadInProgress,
-    TResult Function(List<SOFUser> users)? loadUserListSuccessful,
+    TResult Function()? loadMoreInProgress,
+    TResult Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
     TResult Function(String? error)? loadUserListFailed,
     required TResult orElse(),
   }) {
@@ -831,6 +1032,7 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadMoreInProgress value) loadMoreInProgress,
     required TResult Function(_loadUserListSuccessful value)
         loadUserListSuccessful,
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
@@ -843,6 +1045,7 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
   }) {
@@ -854,6 +1057,7 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
     required TResult orElse(),

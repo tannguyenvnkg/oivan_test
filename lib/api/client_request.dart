@@ -36,8 +36,6 @@ class ClientRequest {
     Method method = Method.post,
   }) async {
     try {
-      final baseUrl0 = baseUrl ?? NetworkManager.shared.baseUrl;
-      final headers0 = headers ?? NetworkManager.shared.headers;
       final dio = getIt.get<Dio>()
         ..options.baseUrl = baseUrl ?? NetworkManager.shared.baseUrl
         ..options.headers = headers ?? NetworkManager.shared.headers;
@@ -45,9 +43,9 @@ class ClientRequest {
       /// Log request \\\
       getIt.get<Logger>().i('''
       Make Request
-      baseUrl: $baseUrl0
+      baseUrl: ${baseUrl ?? NetworkManager.shared.baseUrl}
       path: $path
-      header: ${jsonEncode(headers0)}
+      header: ${jsonEncode(headers ?? NetworkManager.shared.headers)}
       data: ${jsonEncode(data)}
       parameter: ${jsonEncode(parameters)}
       method: ${method.value}

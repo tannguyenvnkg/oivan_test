@@ -21,13 +21,18 @@ class UserManagementBloc
 
   Future<void> _getUserListHandler(
       _getUserList event, Emitter<UserManagementState> emit) async {
-    emit(const UserManagementState.loadInProgress());
+    final bool isLoadMore = (event.request.page ?? 1) > 1;
+    emit(!isLoadMore
+        ? const UserManagementState.loadInProgress()
+        : const UserManagementState.loadMoreInProgress());
     final result = await repository.getUserList(event.request);
     result.fold(
       (error) =>
           emit(UserManagementState.loadUserListFailed(error: error.message)),
-      (data) =>
-          emit(UserManagementState.loadUserListSuccessful(users: data.items)),
+      (data) => emit(UserManagementState.loadUserListSuccessful(
+          users: data.items,
+          hasMoreData: data.hasMore,
+          isLoadMore: isLoadMore)),
     );
   }
 }

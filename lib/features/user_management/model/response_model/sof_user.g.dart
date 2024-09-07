@@ -32,15 +32,15 @@ _$SOFUserListImpl _$$SOFUserListImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => SOFUser.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      hasMore: json['hasMore'] as bool? ?? false,
-      quotaMax: (json['quotaMax'] as num?)?.toInt() ?? 0,
-      quotaRemaining: (json['quotaRemaining'] as num?)?.toInt() ?? 0,
+      hasMore: json['has_more'] as bool? ?? false,
+      quotaMax: (json['quota_max'] as num?)?.toInt() ?? 0,
+      quotaRemaining: (json['quota_remaining'] as num?)?.toInt() ?? 0,
     );
 
 Map<String, dynamic> _$$SOFUserListImplToJson(_$SOFUserListImpl instance) =>
     <String, dynamic>{
       'items': instance.items,
-      'hasMore': instance.hasMore,
-      'quotaMax': instance.quotaMax,
-      'quotaRemaining': instance.quotaRemaining,
+      'has_more': instance.hasMore,
+      'quota_max': instance.quotaMax,
+      'quota_remaining': instance.quotaRemaining,
     };

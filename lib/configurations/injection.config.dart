@@ -44,10 +44,10 @@ extension GetItInjectableX on _i174.GetIt {
     gh.singleton<_i890.AppRouter>(() => _i890.AppRouter());
     gh.singleton<_i930.AppColor>(() => _i930.AppColor());
     gh.singleton<_i790.AppDimensions>(() => _i790.AppDimensions());
-    gh.lazySingleton<_i186.UserManagementBloc>(
-        () => _i186.UserManagementBloc());
     gh.lazySingleton<_i974.Logger>(() => loggerModule.logger);
     gh.lazySingleton<_i361.Dio>(() => loggerModule.dio);
+    gh.lazySingleton<_i186.UserManagementBloc>(
+        () => _i186.UserManagementBloc());
     gh.lazySingleton<_i489.IUserManagementRepositories>(
         () => _i317.UserManagementRepositories());
     gh.lazySingleton<_i858.IUserManagementSources>(

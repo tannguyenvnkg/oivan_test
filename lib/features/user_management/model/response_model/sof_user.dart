@@ -23,9 +23,9 @@ class SOFUser with _$SOFUser {
 class SOFUserList with _$SOFUserList {
   const factory SOFUserList({
     @Default([]) List<SOFUser> items,
-    @Default(false) bool hasMore,
-    @Default(0) int quotaMax,
-    @Default(0) int quotaRemaining,
+    @Default(false) @JsonKey(name: 'has_more') bool hasMore,
+    @Default(0) @JsonKey(name: 'quota_max') int quotaMax,
+    @Default(0) @JsonKey(name: 'quota_remaining') int quotaRemaining,
   }) = _SOFUserList;
   factory SOFUserList.fromJson(Map<String, dynamic> json) =>
       _$SOFUserListFromJson(json);

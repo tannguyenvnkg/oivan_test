@@ -48,10 +48,12 @@ extension GetItInjectableX on _i174.GetIt {
     gh.singleton<_i706.Cache>(() => _i706.Cache());
     gh.lazySingleton<_i974.Logger>(() => loggerModule.logger);
     gh.lazySingleton<_i361.Dio>(() => loggerModule.dio);
-    gh.lazySingleton<_i186.UserManagementBloc>(
-        () => _i186.UserManagementBloc());
     gh.lazySingleton<_i489.IUserManagementRepositories>(
         () => _i317.UserManagementRepositories());
+    gh.lazySingleton<_i186.UserManagementBloc>(() => _i186.UserManagementBloc(
+          cache: gh<_i706.Cache>(),
+          repository: gh<_i489.IUserManagementRepositories>(),
+        ));
     gh.lazySingleton<_i858.IUserManagementSources>(
         () => _i587.UserManagementSources());
     return this;

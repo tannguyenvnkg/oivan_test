@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:oivan_test/configurations/injection.dart';
-import 'package:oivan_test/features/user_management/domain/request_model/reputation_history_request.dart';
-import 'package:oivan_test/screens/ui/custom_list_view.dart';
-import 'package:oivan_test/utils/helper.dart';
+import '../../../../configurations/injection.dart';
+import '../../domain/request_model/reputation_history_request.dart';
+import '../../../../screens/ui/custom_list_view.dart';
+import '../../../../utils/helper.dart';
 
 import '../../../../constant/color.dart';
 import '../../applications/user_management_bloc.dart';

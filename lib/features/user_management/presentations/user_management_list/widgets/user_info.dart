@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+
 import '../../../../../configurations/injection.dart';
 import '../../../../../constant/color.dart';
-
 import '../../../domain/response_model/sof_user.dart';
 
 class UserInfo extends StatelessWidget {

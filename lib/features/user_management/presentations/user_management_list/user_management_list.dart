@@ -2,10 +2,10 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/logger.dart';
-import 'package:oivan_test/configurations/app_router.dart';
-import 'package:oivan_test/configurations/app_router.gr.dart';
-import 'package:oivan_test/utils/cache/cache.dart';
-import 'package:oivan_test/utils/debouncer.dart';
+import '../../../../configurations/app_router.dart';
+import '../../../../configurations/app_router.gr.dart';
+import '../../../../utils/cache/cache.dart';
+import '../../../../utils/debouncer.dart';
 
 import '../../../../configurations/injection.dart';
 import '../../../../constant/color.dart';
@@ -31,7 +31,7 @@ class UserManagementListScreen extends StatefulWidget {
 
 class _UserManagementListScreenState extends State<UserManagementListScreen> {
   final _bloc = getIt.get<UserManagementBloc>();
-  final debouncer = Debouncer(milliseconds: 750);
+  final debouncer = Debouncer(milliseconds: 100);
   int pageIndex = 1;
   int pageSize = 30;
   bool hasMoreData = true;

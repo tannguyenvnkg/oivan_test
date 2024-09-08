@@ -3,9 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:logger/logger.dart';
 
-import '../../../configurations/injection.dart';
 import '../../../utils/cache/cache.dart';
 import '../domain/request_model/reputation_history_request.dart';
 import '../domain/request_model/user_list_request.dart';
@@ -21,8 +19,12 @@ part 'user_management_state.dart';
 @LazySingleton()
 class UserManagementBloc
     extends Bloc<UserManagementEvent, UserManagementState> {
-  final repository = getIt<IUserManagementRepositories>();
-  UserManagementBloc() : super(const UserManagementState.initial()) {
+  final IUserManagementRepositories repository;
+  final Cache cache;
+  UserManagementBloc({
+    required this.cache,
+    required this.repository,
+  }) : super(const UserManagementState.initial()) {
     on<_getUserList>(_getUserListHandler);
     on<_save>(_saveUserHandler);
     on<_showListDependOnType>(_showListDependOnTypeHandler);
@@ -72,7 +74,6 @@ class UserManagementBloc
   Future<void> _saveUserHandler(
       _save event, Emitter<UserManagementState> emit) async {
     try {
-      final cache = getIt<Cache>();
       if (event.isSave) {
         cache.saveUser(event.user);
       } else {
@@ -81,7 +82,6 @@ class UserManagementBloc
       emit(UserManagementState.onSave(
           isSuccess: true, isSave: event.isSave, userId: event.user.userId));
     } catch (e) {
-      getIt<Logger>().e('_saveUserHandler: $e');
       emit(UserManagementState.onSave(
           isSuccess: false, isSave: event.isSave, userId: event.user.userId));
     }

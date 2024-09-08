@@ -7,7 +7,7 @@ part 'sof_user.g.dart';
 @freezed
 class SOFUser with _$SOFUser {
   const factory SOFUser({
-    @JsonKey(name: 'user_id') required int? userId,
+    @JsonKey(name: 'user_id') required int userId,
     @JsonKey(name: 'display_name') required String? displayName,
     @JsonKey(name: 'profile_image') required String? avatar,
     @JsonKey(name: 'reputation') required int? reputation,

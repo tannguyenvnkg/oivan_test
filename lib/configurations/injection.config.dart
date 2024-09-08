@@ -16,7 +16,6 @@ import 'package:oivan_test/api/client_request.dart' as _i853;
 import 'package:oivan_test/configurations/app_router.dart' as _i890;
 import 'package:oivan_test/configurations/module.dart' as _i30;
 import 'package:oivan_test/constant/color.dart' as _i930;
-import 'package:oivan_test/constant/dimension.dart' as _i790;
 import 'package:oivan_test/features/user_management/applications/user_management_bloc.dart'
     as _i186;
 import 'package:oivan_test/features/user_management/repositories/i_user_management_repositories.dart'
@@ -27,6 +26,7 @@ import 'package:oivan_test/features/user_management/sources/i_user_management_so
     as _i858;
 import 'package:oivan_test/features/user_management/sources/user_management_sources.dart'
     as _i587;
+import 'package:oivan_test/utils/cache/cache.dart' as _i706;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -43,7 +43,7 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i853.ClientRequest>(() => _i853.ClientRequest());
     gh.singleton<_i890.AppRouter>(() => _i890.AppRouter());
     gh.singleton<_i930.AppColor>(() => _i930.AppColor());
-    gh.singleton<_i790.AppDimensions>(() => _i790.AppDimensions());
+    gh.singleton<_i706.Cache>(() => _i706.Cache());
     gh.lazySingleton<_i974.Logger>(() => loggerModule.logger);
     gh.lazySingleton<_i361.Dio>(() => loggerModule.dio);
     gh.lazySingleton<_i186.UserManagementBloc>(

@@ -1,9 +1,9 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
-import '../configurations/app_router.dart';
-import '../configurations/injection.dart';
 
+import '../configurations/app_router.dart';
 import '../configurations/app_router.gr.dart';
+import '../configurations/injection.dart';
 import '../gen/assets.gen.dart';
 
 @RoutePage()

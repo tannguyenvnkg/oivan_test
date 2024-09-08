@@ -12,4 +12,10 @@ class UserManagementState with _$UserManagementState {
   }) = _loadUserListSuccessful;
   const factory UserManagementState.loadUserListFailed({String? error}) =
       _loadUserListFailed;
+
+  const factory UserManagementState.onSave({
+    required bool isSuccess,
+    required bool isSave,
+    required int userId,
+  }) = _onSave;
 }

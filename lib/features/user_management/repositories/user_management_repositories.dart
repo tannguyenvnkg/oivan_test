@@ -3,8 +3,8 @@ import 'package:injectable/injectable.dart';
 
 import '../../../api/api_error.dart';
 import '../../../configurations/injection.dart';
-import '../model/request_model/user_list_request.dart';
-import '../model/response_model/sof_user.dart';
+import '../domain/request_model/user_list_request.dart';
+import '../domain/response_model/sof_user.dart';
 import '../sources/i_user_management_sources.dart';
 import 'i_user_management_repositories.dart';
 

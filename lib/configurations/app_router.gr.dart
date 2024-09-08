@@ -9,7 +9,7 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i3;
-import 'package:oivan_test/features/user_management/presentations/user_management_list.dart'
+import 'package:oivan_test/features/user_management/presentations/user_management_list/user_management_list.dart'
     as _i2;
 import 'package:oivan_test/screens/splash_screen.dart' as _i1;
 

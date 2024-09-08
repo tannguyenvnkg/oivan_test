@@ -8,7 +8,7 @@ part of 'sof_user.dart';
 
 _$SOFUserImpl _$$SOFUserImplFromJson(Map<String, dynamic> json) =>
     _$SOFUserImpl(
-      userId: (json['user_id'] as num?)?.toInt(),
+      userId: (json['user_id'] as num).toInt(),
       displayName: json['display_name'] as String?,
       avatar: json['profile_image'] as String?,
       reputation: (json['reputation'] as num?)?.toInt(),

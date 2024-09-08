@@ -21,7 +21,7 @@ SOFUser _$SOFUserFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$SOFUser {
   @JsonKey(name: 'user_id')
-  int? get userId => throw _privateConstructorUsedError;
+  int get userId => throw _privateConstructorUsedError;
   @JsonKey(name: 'display_name')
   String? get displayName => throw _privateConstructorUsedError;
   @JsonKey(name: 'profile_image')
@@ -48,7 +48,7 @@ abstract class $SOFUserCopyWith<$Res> {
       _$SOFUserCopyWithImpl<$Res, SOFUser>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'user_id') int? userId,
+      {@JsonKey(name: 'user_id') int userId,
       @JsonKey(name: 'display_name') String? displayName,
       @JsonKey(name: 'profile_image') String? avatar,
       @JsonKey(name: 'reputation') int? reputation,
@@ -71,7 +71,7 @@ class _$SOFUserCopyWithImpl<$Res, $Val extends SOFUser>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = freezed,
+    Object? userId = null,
     Object? displayName = freezed,
     Object? avatar = freezed,
     Object? reputation = freezed,
@@ -79,10 +79,10 @@ class _$SOFUserCopyWithImpl<$Res, $Val extends SOFUser>
     Object? age = freezed,
   }) {
     return _then(_value.copyWith(
-      userId: freezed == userId
+      userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       displayName: freezed == displayName
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
@@ -115,7 +115,7 @@ abstract class _$$SOFUserImplCopyWith<$Res> implements $SOFUserCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'user_id') int? userId,
+      {@JsonKey(name: 'user_id') int userId,
       @JsonKey(name: 'display_name') String? displayName,
       @JsonKey(name: 'profile_image') String? avatar,
       @JsonKey(name: 'reputation') int? reputation,
@@ -136,7 +136,7 @@ class __$$SOFUserImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = freezed,
+    Object? userId = null,
     Object? displayName = freezed,
     Object? avatar = freezed,
     Object? reputation = freezed,
@@ -144,10 +144,10 @@ class __$$SOFUserImplCopyWithImpl<$Res>
     Object? age = freezed,
   }) {
     return _then(_$SOFUserImpl(
-      userId: freezed == userId
+      userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       displayName: freezed == displayName
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
@@ -188,7 +188,7 @@ class _$SOFUserImpl with DiagnosticableTreeMixin implements _SOFUser {
 
   @override
   @JsonKey(name: 'user_id')
-  final int? userId;
+  final int userId;
   @override
   @JsonKey(name: 'display_name')
   final String? displayName;
@@ -262,7 +262,7 @@ class _$SOFUserImpl with DiagnosticableTreeMixin implements _SOFUser {
 
 abstract class _SOFUser implements SOFUser {
   const factory _SOFUser(
-      {@JsonKey(name: 'user_id') required final int? userId,
+      {@JsonKey(name: 'user_id') required final int userId,
       @JsonKey(name: 'display_name') required final String? displayName,
       @JsonKey(name: 'profile_image') required final String? avatar,
       @JsonKey(name: 'reputation') required final int? reputation,
@@ -273,7 +273,7 @@ abstract class _SOFUser implements SOFUser {
 
   @override
   @JsonKey(name: 'user_id')
-  int? get userId;
+  int get userId;
   @override
   @JsonKey(name: 'display_name')
   String? get displayName;

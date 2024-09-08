@@ -1,12 +1,12 @@
 library smooth_list_view;
 
+import 'dart:io' show Platform;
+import 'dart:math' as math;
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'dart:math' as math;
-import 'dart:io' show Platform;
 
 /// Implements a smooth version of `ListView`, mainly for desktop usage.
 ///

@@ -16,44 +16,43 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$UserManagementEvent {
-  UserListRequest get request => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(UserListRequest request) getUserList,
+    required TResult Function(bool isSave, SOFUser user) save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(UserListRequest request)? getUserList,
+    TResult? Function(bool isSave, SOFUser user)? save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UserListRequest request)? getUserList,
+    TResult Function(bool isSave, SOFUser user)? save,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_getUserList value) getUserList,
+    required TResult Function(_save value) save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_getUserList value)? getUserList,
+    TResult? Function(_save value)? save,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_getUserList value)? getUserList,
+    TResult Function(_save value)? save,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  /// Create a copy of UserManagementEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $UserManagementEventCopyWith<UserManagementEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -62,10 +61,6 @@ abstract class $UserManagementEventCopyWith<$Res> {
   factory $UserManagementEventCopyWith(
           UserManagementEvent value, $Res Function(UserManagementEvent) then) =
       _$UserManagementEventCopyWithImpl<$Res, UserManagementEvent>;
-  @useResult
-  $Res call({UserListRequest request});
-
-  $UserListRequestCopyWith<$Res> get request;
 }
 
 /// @nodoc
@@ -80,41 +75,16 @@ class _$UserManagementEventCopyWithImpl<$Res, $Val extends UserManagementEvent>
 
   /// Create a copy of UserManagementEvent
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? request = null,
-  }) {
-    return _then(_value.copyWith(
-      request: null == request
-          ? _value.request
-          : request // ignore: cast_nullable_to_non_nullable
-              as UserListRequest,
-    ) as $Val);
-  }
-
-  /// Create a copy of UserManagementEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserListRequestCopyWith<$Res> get request {
-    return $UserListRequestCopyWith<$Res>(_value.request, (value) {
-      return _then(_value.copyWith(request: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
-abstract class _$$getUserListImplCopyWith<$Res>
-    implements $UserManagementEventCopyWith<$Res> {
+abstract class _$$getUserListImplCopyWith<$Res> {
   factory _$$getUserListImplCopyWith(
           _$getUserListImpl value, $Res Function(_$getUserListImpl) then) =
       __$$getUserListImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({UserListRequest request});
 
-  @override
   $UserListRequestCopyWith<$Res> get request;
 }
 
@@ -139,6 +109,16 @@ class __$$getUserListImplCopyWithImpl<$Res>
           : request // ignore: cast_nullable_to_non_nullable
               as UserListRequest,
     ));
+  }
+
+  /// Create a copy of UserManagementEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $UserListRequestCopyWith<$Res> get request {
+    return $UserListRequestCopyWith<$Res>(_value.request, (value) {
+      return _then(_value.copyWith(request: value));
+    });
   }
 }
 
@@ -178,6 +158,7 @@ class _$getUserListImpl implements _getUserList {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(UserListRequest request) getUserList,
+    required TResult Function(bool isSave, SOFUser user) save,
   }) {
     return getUserList(request);
   }
@@ -186,6 +167,7 @@ class _$getUserListImpl implements _getUserList {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(UserListRequest request)? getUserList,
+    TResult? Function(bool isSave, SOFUser user)? save,
   }) {
     return getUserList?.call(request);
   }
@@ -194,6 +176,7 @@ class _$getUserListImpl implements _getUserList {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UserListRequest request)? getUserList,
+    TResult Function(bool isSave, SOFUser user)? save,
     required TResult orElse(),
   }) {
     if (getUserList != null) {
@@ -206,6 +189,7 @@ class _$getUserListImpl implements _getUserList {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_getUserList value) getUserList,
+    required TResult Function(_save value) save,
   }) {
     return getUserList(this);
   }
@@ -214,6 +198,7 @@ class _$getUserListImpl implements _getUserList {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_getUserList value)? getUserList,
+    TResult? Function(_save value)? save,
   }) {
     return getUserList?.call(this);
   }
@@ -222,6 +207,7 @@ class _$getUserListImpl implements _getUserList {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_getUserList value)? getUserList,
+    TResult Function(_save value)? save,
     required TResult orElse(),
   }) {
     if (getUserList != null) {
@@ -235,14 +221,173 @@ abstract class _getUserList implements UserManagementEvent {
   const factory _getUserList({required final UserListRequest request}) =
       _$getUserListImpl;
 
-  @override
   UserListRequest get request;
 
   /// Create a copy of UserManagementEvent
   /// with the given fields replaced by the non-null parameter values.
-  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$getUserListImplCopyWith<_$getUserListImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$saveImplCopyWith<$Res> {
+  factory _$$saveImplCopyWith(
+          _$saveImpl value, $Res Function(_$saveImpl) then) =
+      __$$saveImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isSave, SOFUser user});
+
+  $SOFUserCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class __$$saveImplCopyWithImpl<$Res>
+    extends _$UserManagementEventCopyWithImpl<$Res, _$saveImpl>
+    implements _$$saveImplCopyWith<$Res> {
+  __$$saveImplCopyWithImpl(_$saveImpl _value, $Res Function(_$saveImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UserManagementEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isSave = null,
+    Object? user = null,
+  }) {
+    return _then(_$saveImpl(
+      isSave: null == isSave
+          ? _value.isSave
+          : isSave // ignore: cast_nullable_to_non_nullable
+              as bool,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as SOFUser,
+    ));
+  }
+
+  /// Create a copy of UserManagementEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $SOFUserCopyWith<$Res> get user {
+    return $SOFUserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$saveImpl implements _save {
+  const _$saveImpl({required this.isSave, required this.user});
+
+  @override
+  final bool isSave;
+  @override
+  final SOFUser user;
+
+  @override
+  String toString() {
+    return 'UserManagementEvent.save(isSave: $isSave, user: $user)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$saveImpl &&
+            (identical(other.isSave, isSave) || other.isSave == isSave) &&
+            (identical(other.user, user) || other.user == user));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isSave, user);
+
+  /// Create a copy of UserManagementEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$saveImplCopyWith<_$saveImpl> get copyWith =>
+      __$$saveImplCopyWithImpl<_$saveImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UserListRequest request) getUserList,
+    required TResult Function(bool isSave, SOFUser user) save,
+  }) {
+    return save(isSave, user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(UserListRequest request)? getUserList,
+    TResult? Function(bool isSave, SOFUser user)? save,
+  }) {
+    return save?.call(isSave, user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UserListRequest request)? getUserList,
+    TResult Function(bool isSave, SOFUser user)? save,
+    required TResult orElse(),
+  }) {
+    if (save != null) {
+      return save(isSave, user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_getUserList value) getUserList,
+    required TResult Function(_save value) save,
+  }) {
+    return save(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_getUserList value)? getUserList,
+    TResult? Function(_save value)? save,
+  }) {
+    return save?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_getUserList value)? getUserList,
+    TResult Function(_save value)? save,
+    required TResult orElse(),
+  }) {
+    if (save != null) {
+      return save(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _save implements UserManagementEvent {
+  const factory _save(
+      {required final bool isSave, required final SOFUser user}) = _$saveImpl;
+
+  bool get isSave;
+  SOFUser get user;
+
+  /// Create a copy of UserManagementEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$saveImplCopyWith<_$saveImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -257,6 +402,7 @@ mixin _$UserManagementState {
             List<SOFUser> users, bool hasMoreData, bool isLoadMore)
         loadUserListSuccessful,
     required TResult Function(String? error) loadUserListFailed,
+    required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -267,6 +413,7 @@ mixin _$UserManagementState {
     TResult? Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
         loadUserListSuccessful,
     TResult? Function(String? error)? loadUserListFailed,
+    TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -277,6 +424,7 @@ mixin _$UserManagementState {
     TResult Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
         loadUserListSuccessful,
     TResult Function(String? error)? loadUserListFailed,
+    TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -288,6 +436,7 @@ mixin _$UserManagementState {
     required TResult Function(_loadUserListSuccessful value)
         loadUserListSuccessful,
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
+    required TResult Function(_onSave value) onSave,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -297,6 +446,7 @@ mixin _$UserManagementState {
     TResult? Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult? Function(_onSave value)? onSave,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -306,6 +456,7 @@ mixin _$UserManagementState {
     TResult Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult Function(_onSave value)? onSave,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -380,6 +531,7 @@ class _$InitialImpl implements _Initial {
             List<SOFUser> users, bool hasMoreData, bool isLoadMore)
         loadUserListSuccessful,
     required TResult Function(String? error) loadUserListFailed,
+    required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
   }) {
     return initial();
   }
@@ -393,6 +545,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
         loadUserListSuccessful,
     TResult? Function(String? error)? loadUserListFailed,
+    TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
   }) {
     return initial?.call();
   }
@@ -406,6 +559,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
         loadUserListSuccessful,
     TResult Function(String? error)? loadUserListFailed,
+    TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -423,6 +577,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_loadUserListSuccessful value)
         loadUserListSuccessful,
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
+    required TResult Function(_onSave value) onSave,
   }) {
     return initial(this);
   }
@@ -435,6 +590,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult? Function(_onSave value)? onSave,
   }) {
     return initial?.call(this);
   }
@@ -447,6 +603,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult Function(_onSave value)? onSave,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -508,6 +665,7 @@ class _$LoadInProgressImpl implements _LoadInProgress {
             List<SOFUser> users, bool hasMoreData, bool isLoadMore)
         loadUserListSuccessful,
     required TResult Function(String? error) loadUserListFailed,
+    required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
   }) {
     return loadInProgress();
   }
@@ -521,6 +679,7 @@ class _$LoadInProgressImpl implements _LoadInProgress {
     TResult? Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
         loadUserListSuccessful,
     TResult? Function(String? error)? loadUserListFailed,
+    TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
   }) {
     return loadInProgress?.call();
   }
@@ -534,6 +693,7 @@ class _$LoadInProgressImpl implements _LoadInProgress {
     TResult Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
         loadUserListSuccessful,
     TResult Function(String? error)? loadUserListFailed,
+    TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -551,6 +711,7 @@ class _$LoadInProgressImpl implements _LoadInProgress {
     required TResult Function(_loadUserListSuccessful value)
         loadUserListSuccessful,
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
+    required TResult Function(_onSave value) onSave,
   }) {
     return loadInProgress(this);
   }
@@ -563,6 +724,7 @@ class _$LoadInProgressImpl implements _LoadInProgress {
     TResult? Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult? Function(_onSave value)? onSave,
   }) {
     return loadInProgress?.call(this);
   }
@@ -575,6 +737,7 @@ class _$LoadInProgressImpl implements _LoadInProgress {
     TResult Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult Function(_onSave value)? onSave,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -636,6 +799,7 @@ class _$LoadMoreInProgressImpl implements _LoadMoreInProgress {
             List<SOFUser> users, bool hasMoreData, bool isLoadMore)
         loadUserListSuccessful,
     required TResult Function(String? error) loadUserListFailed,
+    required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
   }) {
     return loadMoreInProgress();
   }
@@ -649,6 +813,7 @@ class _$LoadMoreInProgressImpl implements _LoadMoreInProgress {
     TResult? Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
         loadUserListSuccessful,
     TResult? Function(String? error)? loadUserListFailed,
+    TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
   }) {
     return loadMoreInProgress?.call();
   }
@@ -662,6 +827,7 @@ class _$LoadMoreInProgressImpl implements _LoadMoreInProgress {
     TResult Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
         loadUserListSuccessful,
     TResult Function(String? error)? loadUserListFailed,
+    TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
     required TResult orElse(),
   }) {
     if (loadMoreInProgress != null) {
@@ -679,6 +845,7 @@ class _$LoadMoreInProgressImpl implements _LoadMoreInProgress {
     required TResult Function(_loadUserListSuccessful value)
         loadUserListSuccessful,
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
+    required TResult Function(_onSave value) onSave,
   }) {
     return loadMoreInProgress(this);
   }
@@ -691,6 +858,7 @@ class _$LoadMoreInProgressImpl implements _LoadMoreInProgress {
     TResult? Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult? Function(_onSave value)? onSave,
   }) {
     return loadMoreInProgress?.call(this);
   }
@@ -703,6 +871,7 @@ class _$LoadMoreInProgressImpl implements _LoadMoreInProgress {
     TResult Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult Function(_onSave value)? onSave,
     required TResult orElse(),
   }) {
     if (loadMoreInProgress != null) {
@@ -824,6 +993,7 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
             List<SOFUser> users, bool hasMoreData, bool isLoadMore)
         loadUserListSuccessful,
     required TResult Function(String? error) loadUserListFailed,
+    required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
   }) {
     return loadUserListSuccessful(users, hasMoreData, isLoadMore);
   }
@@ -837,6 +1007,7 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
     TResult? Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
         loadUserListSuccessful,
     TResult? Function(String? error)? loadUserListFailed,
+    TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
   }) {
     return loadUserListSuccessful?.call(users, hasMoreData, isLoadMore);
   }
@@ -850,6 +1021,7 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
     TResult Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
         loadUserListSuccessful,
     TResult Function(String? error)? loadUserListFailed,
+    TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
     required TResult orElse(),
   }) {
     if (loadUserListSuccessful != null) {
@@ -867,6 +1039,7 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
     required TResult Function(_loadUserListSuccessful value)
         loadUserListSuccessful,
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
+    required TResult Function(_onSave value) onSave,
   }) {
     return loadUserListSuccessful(this);
   }
@@ -879,6 +1052,7 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
     TResult? Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult? Function(_onSave value)? onSave,
   }) {
     return loadUserListSuccessful?.call(this);
   }
@@ -891,6 +1065,7 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
     TResult Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult Function(_onSave value)? onSave,
     required TResult orElse(),
   }) {
     if (loadUserListSuccessful != null) {
@@ -993,6 +1168,7 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
             List<SOFUser> users, bool hasMoreData, bool isLoadMore)
         loadUserListSuccessful,
     required TResult Function(String? error) loadUserListFailed,
+    required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
   }) {
     return loadUserListFailed(error);
   }
@@ -1006,6 +1182,7 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
     TResult? Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
         loadUserListSuccessful,
     TResult? Function(String? error)? loadUserListFailed,
+    TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
   }) {
     return loadUserListFailed?.call(error);
   }
@@ -1019,6 +1196,7 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
     TResult Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
         loadUserListSuccessful,
     TResult Function(String? error)? loadUserListFailed,
+    TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
     required TResult orElse(),
   }) {
     if (loadUserListFailed != null) {
@@ -1036,6 +1214,7 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
     required TResult Function(_loadUserListSuccessful value)
         loadUserListSuccessful,
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
+    required TResult Function(_onSave value) onSave,
   }) {
     return loadUserListFailed(this);
   }
@@ -1048,6 +1227,7 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
     TResult? Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult? Function(_onSave value)? onSave,
   }) {
     return loadUserListFailed?.call(this);
   }
@@ -1060,6 +1240,7 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
     TResult Function(_LoadMoreInProgress value)? loadMoreInProgress,
     TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult Function(_onSave value)? onSave,
     required TResult orElse(),
   }) {
     if (loadUserListFailed != null) {
@@ -1079,5 +1260,197 @@ abstract class _loadUserListFailed implements UserManagementState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$loadUserListFailedImplCopyWith<_$loadUserListFailedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$onSaveImplCopyWith<$Res> {
+  factory _$$onSaveImplCopyWith(
+          _$onSaveImpl value, $Res Function(_$onSaveImpl) then) =
+      __$$onSaveImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isSuccess, bool isSave, int userId});
+}
+
+/// @nodoc
+class __$$onSaveImplCopyWithImpl<$Res>
+    extends _$UserManagementStateCopyWithImpl<$Res, _$onSaveImpl>
+    implements _$$onSaveImplCopyWith<$Res> {
+  __$$onSaveImplCopyWithImpl(
+      _$onSaveImpl _value, $Res Function(_$onSaveImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UserManagementState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isSuccess = null,
+    Object? isSave = null,
+    Object? userId = null,
+  }) {
+    return _then(_$onSaveImpl(
+      isSuccess: null == isSuccess
+          ? _value.isSuccess
+          : isSuccess // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSave: null == isSave
+          ? _value.isSave
+          : isSave // ignore: cast_nullable_to_non_nullable
+              as bool,
+      userId: null == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$onSaveImpl implements _onSave {
+  const _$onSaveImpl(
+      {required this.isSuccess, required this.isSave, required this.userId});
+
+  @override
+  final bool isSuccess;
+  @override
+  final bool isSave;
+  @override
+  final int userId;
+
+  @override
+  String toString() {
+    return 'UserManagementState.onSave(isSuccess: $isSuccess, isSave: $isSave, userId: $userId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$onSaveImpl &&
+            (identical(other.isSuccess, isSuccess) ||
+                other.isSuccess == isSuccess) &&
+            (identical(other.isSave, isSave) || other.isSave == isSave) &&
+            (identical(other.userId, userId) || other.userId == userId));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, isSuccess, isSave, userId);
+
+  /// Create a copy of UserManagementState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$onSaveImplCopyWith<_$onSaveImpl> get copyWith =>
+      __$$onSaveImplCopyWithImpl<_$onSaveImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function() loadMoreInProgress,
+    required TResult Function(
+            List<SOFUser> users, bool hasMoreData, bool isLoadMore)
+        loadUserListSuccessful,
+    required TResult Function(String? error) loadUserListFailed,
+    required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
+  }) {
+    return onSave(isSuccess, isSave, userId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function()? loadMoreInProgress,
+    TResult? Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
+    TResult? Function(String? error)? loadUserListFailed,
+    TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
+  }) {
+    return onSave?.call(isSuccess, isSave, userId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function()? loadMoreInProgress,
+    TResult Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
+    TResult Function(String? error)? loadUserListFailed,
+    TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
+    required TResult orElse(),
+  }) {
+    if (onSave != null) {
+      return onSave(isSuccess, isSave, userId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadMoreInProgress value) loadMoreInProgress,
+    required TResult Function(_loadUserListSuccessful value)
+        loadUserListSuccessful,
+    required TResult Function(_loadUserListFailed value) loadUserListFailed,
+    required TResult Function(_onSave value) onSave,
+  }) {
+    return onSave(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadMoreInProgress value)? loadMoreInProgress,
+    TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
+    TResult? Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult? Function(_onSave value)? onSave,
+  }) {
+    return onSave?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadMoreInProgress value)? loadMoreInProgress,
+    TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
+    TResult Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult Function(_onSave value)? onSave,
+    required TResult orElse(),
+  }) {
+    if (onSave != null) {
+      return onSave(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _onSave implements UserManagementState {
+  const factory _onSave(
+      {required final bool isSuccess,
+      required final bool isSave,
+      required final int userId}) = _$onSaveImpl;
+
+  bool get isSuccess;
+  bool get isSave;
+  int get userId;
+
+  /// Create a copy of UserManagementState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$onSaveImplCopyWith<_$onSaveImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

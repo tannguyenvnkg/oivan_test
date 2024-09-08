@@ -20,18 +20,24 @@ mixin _$UserManagementEvent {
   TResult when<TResult extends Object?>({
     required TResult Function(UserListRequest request) getUserList,
     required TResult Function(bool isSave, SOFUser user) save,
+    required TResult Function(UserManagementListType type, List<SOFUser> users)
+        showListDependOnType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(UserListRequest request)? getUserList,
     TResult? Function(bool isSave, SOFUser user)? save,
+    TResult? Function(UserManagementListType type, List<SOFUser> users)?
+        showListDependOnType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UserListRequest request)? getUserList,
     TResult Function(bool isSave, SOFUser user)? save,
+    TResult Function(UserManagementListType type, List<SOFUser> users)?
+        showListDependOnType,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +45,21 @@ mixin _$UserManagementEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_getUserList value) getUserList,
     required TResult Function(_save value) save,
+    required TResult Function(_showListDependOnType value) showListDependOnType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_getUserList value)? getUserList,
     TResult? Function(_save value)? save,
+    TResult? Function(_showListDependOnType value)? showListDependOnType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_getUserList value)? getUserList,
     TResult Function(_save value)? save,
+    TResult Function(_showListDependOnType value)? showListDependOnType,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -159,6 +168,8 @@ class _$getUserListImpl implements _getUserList {
   TResult when<TResult extends Object?>({
     required TResult Function(UserListRequest request) getUserList,
     required TResult Function(bool isSave, SOFUser user) save,
+    required TResult Function(UserManagementListType type, List<SOFUser> users)
+        showListDependOnType,
   }) {
     return getUserList(request);
   }
@@ -168,6 +179,8 @@ class _$getUserListImpl implements _getUserList {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(UserListRequest request)? getUserList,
     TResult? Function(bool isSave, SOFUser user)? save,
+    TResult? Function(UserManagementListType type, List<SOFUser> users)?
+        showListDependOnType,
   }) {
     return getUserList?.call(request);
   }
@@ -177,6 +190,8 @@ class _$getUserListImpl implements _getUserList {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UserListRequest request)? getUserList,
     TResult Function(bool isSave, SOFUser user)? save,
+    TResult Function(UserManagementListType type, List<SOFUser> users)?
+        showListDependOnType,
     required TResult orElse(),
   }) {
     if (getUserList != null) {
@@ -190,6 +205,7 @@ class _$getUserListImpl implements _getUserList {
   TResult map<TResult extends Object?>({
     required TResult Function(_getUserList value) getUserList,
     required TResult Function(_save value) save,
+    required TResult Function(_showListDependOnType value) showListDependOnType,
   }) {
     return getUserList(this);
   }
@@ -199,6 +215,7 @@ class _$getUserListImpl implements _getUserList {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_getUserList value)? getUserList,
     TResult? Function(_save value)? save,
+    TResult? Function(_showListDependOnType value)? showListDependOnType,
   }) {
     return getUserList?.call(this);
   }
@@ -208,6 +225,7 @@ class _$getUserListImpl implements _getUserList {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_getUserList value)? getUserList,
     TResult Function(_save value)? save,
+    TResult Function(_showListDependOnType value)? showListDependOnType,
     required TResult orElse(),
   }) {
     if (getUserList != null) {
@@ -319,6 +337,8 @@ class _$saveImpl implements _save {
   TResult when<TResult extends Object?>({
     required TResult Function(UserListRequest request) getUserList,
     required TResult Function(bool isSave, SOFUser user) save,
+    required TResult Function(UserManagementListType type, List<SOFUser> users)
+        showListDependOnType,
   }) {
     return save(isSave, user);
   }
@@ -328,6 +348,8 @@ class _$saveImpl implements _save {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(UserListRequest request)? getUserList,
     TResult? Function(bool isSave, SOFUser user)? save,
+    TResult? Function(UserManagementListType type, List<SOFUser> users)?
+        showListDependOnType,
   }) {
     return save?.call(isSave, user);
   }
@@ -337,6 +359,8 @@ class _$saveImpl implements _save {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(UserListRequest request)? getUserList,
     TResult Function(bool isSave, SOFUser user)? save,
+    TResult Function(UserManagementListType type, List<SOFUser> users)?
+        showListDependOnType,
     required TResult orElse(),
   }) {
     if (save != null) {
@@ -350,6 +374,7 @@ class _$saveImpl implements _save {
   TResult map<TResult extends Object?>({
     required TResult Function(_getUserList value) getUserList,
     required TResult Function(_save value) save,
+    required TResult Function(_showListDependOnType value) showListDependOnType,
   }) {
     return save(this);
   }
@@ -359,6 +384,7 @@ class _$saveImpl implements _save {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_getUserList value)? getUserList,
     TResult? Function(_save value)? save,
+    TResult? Function(_showListDependOnType value)? showListDependOnType,
   }) {
     return save?.call(this);
   }
@@ -368,6 +394,7 @@ class _$saveImpl implements _save {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_getUserList value)? getUserList,
     TResult Function(_save value)? save,
+    TResult Function(_showListDependOnType value)? showListDependOnType,
     required TResult orElse(),
   }) {
     if (save != null) {
@@ -392,6 +419,176 @@ abstract class _save implements UserManagementEvent {
 }
 
 /// @nodoc
+abstract class _$$showListDependOnTypeImplCopyWith<$Res> {
+  factory _$$showListDependOnTypeImplCopyWith(_$showListDependOnTypeImpl value,
+          $Res Function(_$showListDependOnTypeImpl) then) =
+      __$$showListDependOnTypeImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({UserManagementListType type, List<SOFUser> users});
+}
+
+/// @nodoc
+class __$$showListDependOnTypeImplCopyWithImpl<$Res>
+    extends _$UserManagementEventCopyWithImpl<$Res, _$showListDependOnTypeImpl>
+    implements _$$showListDependOnTypeImplCopyWith<$Res> {
+  __$$showListDependOnTypeImplCopyWithImpl(_$showListDependOnTypeImpl _value,
+      $Res Function(_$showListDependOnTypeImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UserManagementEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+    Object? users = null,
+  }) {
+    return _then(_$showListDependOnTypeImpl(
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as UserManagementListType,
+      users: null == users
+          ? _value._users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<SOFUser>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$showListDependOnTypeImpl implements _showListDependOnType {
+  const _$showListDependOnTypeImpl(
+      {required this.type, required final List<SOFUser> users})
+      : _users = users;
+
+  @override
+  final UserManagementListType type;
+  final List<SOFUser> _users;
+  @override
+  List<SOFUser> get users {
+    if (_users is EqualUnmodifiableListView) return _users;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_users);
+  }
+
+  @override
+  String toString() {
+    return 'UserManagementEvent.showListDependOnType(type: $type, users: $users)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$showListDependOnTypeImpl &&
+            (identical(other.type, type) || other.type == type) &&
+            const DeepCollectionEquality().equals(other._users, _users));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, type, const DeepCollectionEquality().hash(_users));
+
+  /// Create a copy of UserManagementEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$showListDependOnTypeImplCopyWith<_$showListDependOnTypeImpl>
+      get copyWith =>
+          __$$showListDependOnTypeImplCopyWithImpl<_$showListDependOnTypeImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UserListRequest request) getUserList,
+    required TResult Function(bool isSave, SOFUser user) save,
+    required TResult Function(UserManagementListType type, List<SOFUser> users)
+        showListDependOnType,
+  }) {
+    return showListDependOnType(type, users);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(UserListRequest request)? getUserList,
+    TResult? Function(bool isSave, SOFUser user)? save,
+    TResult? Function(UserManagementListType type, List<SOFUser> users)?
+        showListDependOnType,
+  }) {
+    return showListDependOnType?.call(type, users);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UserListRequest request)? getUserList,
+    TResult Function(bool isSave, SOFUser user)? save,
+    TResult Function(UserManagementListType type, List<SOFUser> users)?
+        showListDependOnType,
+    required TResult orElse(),
+  }) {
+    if (showListDependOnType != null) {
+      return showListDependOnType(type, users);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_getUserList value) getUserList,
+    required TResult Function(_save value) save,
+    required TResult Function(_showListDependOnType value) showListDependOnType,
+  }) {
+    return showListDependOnType(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_getUserList value)? getUserList,
+    TResult? Function(_save value)? save,
+    TResult? Function(_showListDependOnType value)? showListDependOnType,
+  }) {
+    return showListDependOnType?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_getUserList value)? getUserList,
+    TResult Function(_save value)? save,
+    TResult Function(_showListDependOnType value)? showListDependOnType,
+    required TResult orElse(),
+  }) {
+    if (showListDependOnType != null) {
+      return showListDependOnType(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _showListDependOnType implements UserManagementEvent {
+  const factory _showListDependOnType(
+      {required final UserManagementListType type,
+      required final List<SOFUser> users}) = _$showListDependOnTypeImpl;
+
+  UserManagementListType get type;
+  List<SOFUser> get users;
+
+  /// Create a copy of UserManagementEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$showListDependOnTypeImplCopyWith<_$showListDependOnTypeImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$UserManagementState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -403,6 +600,8 @@ mixin _$UserManagementState {
         loadUserListSuccessful,
     required TResult Function(String? error) loadUserListFailed,
     required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
+    required TResult Function(UserManagementListType type, List<SOFUser> users)
+        listDependOnType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -414,6 +613,8 @@ mixin _$UserManagementState {
         loadUserListSuccessful,
     TResult? Function(String? error)? loadUserListFailed,
     TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult? Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -425,6 +626,8 @@ mixin _$UserManagementState {
         loadUserListSuccessful,
     TResult Function(String? error)? loadUserListFailed,
     TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -437,6 +640,7 @@ mixin _$UserManagementState {
         loadUserListSuccessful,
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
     required TResult Function(_onSave value) onSave,
+    required TResult Function(_listDependOnType value) listDependOnType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -447,6 +651,7 @@ mixin _$UserManagementState {
     TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
     TResult? Function(_onSave value)? onSave,
+    TResult? Function(_listDependOnType value)? listDependOnType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -457,6 +662,7 @@ mixin _$UserManagementState {
     TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
     TResult Function(_onSave value)? onSave,
+    TResult Function(_listDependOnType value)? listDependOnType,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -532,6 +738,8 @@ class _$InitialImpl implements _Initial {
         loadUserListSuccessful,
     required TResult Function(String? error) loadUserListFailed,
     required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
+    required TResult Function(UserManagementListType type, List<SOFUser> users)
+        listDependOnType,
   }) {
     return initial();
   }
@@ -546,6 +754,8 @@ class _$InitialImpl implements _Initial {
         loadUserListSuccessful,
     TResult? Function(String? error)? loadUserListFailed,
     TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult? Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
   }) {
     return initial?.call();
   }
@@ -560,6 +770,8 @@ class _$InitialImpl implements _Initial {
         loadUserListSuccessful,
     TResult Function(String? error)? loadUserListFailed,
     TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -578,6 +790,7 @@ class _$InitialImpl implements _Initial {
         loadUserListSuccessful,
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
     required TResult Function(_onSave value) onSave,
+    required TResult Function(_listDependOnType value) listDependOnType,
   }) {
     return initial(this);
   }
@@ -591,6 +804,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
     TResult? Function(_onSave value)? onSave,
+    TResult? Function(_listDependOnType value)? listDependOnType,
   }) {
     return initial?.call(this);
   }
@@ -604,6 +818,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
     TResult Function(_onSave value)? onSave,
+    TResult Function(_listDependOnType value)? listDependOnType,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -666,6 +881,8 @@ class _$LoadInProgressImpl implements _LoadInProgress {
         loadUserListSuccessful,
     required TResult Function(String? error) loadUserListFailed,
     required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
+    required TResult Function(UserManagementListType type, List<SOFUser> users)
+        listDependOnType,
   }) {
     return loadInProgress();
   }
@@ -680,6 +897,8 @@ class _$LoadInProgressImpl implements _LoadInProgress {
         loadUserListSuccessful,
     TResult? Function(String? error)? loadUserListFailed,
     TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult? Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
   }) {
     return loadInProgress?.call();
   }
@@ -694,6 +913,8 @@ class _$LoadInProgressImpl implements _LoadInProgress {
         loadUserListSuccessful,
     TResult Function(String? error)? loadUserListFailed,
     TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -712,6 +933,7 @@ class _$LoadInProgressImpl implements _LoadInProgress {
         loadUserListSuccessful,
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
     required TResult Function(_onSave value) onSave,
+    required TResult Function(_listDependOnType value) listDependOnType,
   }) {
     return loadInProgress(this);
   }
@@ -725,6 +947,7 @@ class _$LoadInProgressImpl implements _LoadInProgress {
     TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
     TResult? Function(_onSave value)? onSave,
+    TResult? Function(_listDependOnType value)? listDependOnType,
   }) {
     return loadInProgress?.call(this);
   }
@@ -738,6 +961,7 @@ class _$LoadInProgressImpl implements _LoadInProgress {
     TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
     TResult Function(_onSave value)? onSave,
+    TResult Function(_listDependOnType value)? listDependOnType,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -800,6 +1024,8 @@ class _$LoadMoreInProgressImpl implements _LoadMoreInProgress {
         loadUserListSuccessful,
     required TResult Function(String? error) loadUserListFailed,
     required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
+    required TResult Function(UserManagementListType type, List<SOFUser> users)
+        listDependOnType,
   }) {
     return loadMoreInProgress();
   }
@@ -814,6 +1040,8 @@ class _$LoadMoreInProgressImpl implements _LoadMoreInProgress {
         loadUserListSuccessful,
     TResult? Function(String? error)? loadUserListFailed,
     TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult? Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
   }) {
     return loadMoreInProgress?.call();
   }
@@ -828,6 +1056,8 @@ class _$LoadMoreInProgressImpl implements _LoadMoreInProgress {
         loadUserListSuccessful,
     TResult Function(String? error)? loadUserListFailed,
     TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
     required TResult orElse(),
   }) {
     if (loadMoreInProgress != null) {
@@ -846,6 +1076,7 @@ class _$LoadMoreInProgressImpl implements _LoadMoreInProgress {
         loadUserListSuccessful,
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
     required TResult Function(_onSave value) onSave,
+    required TResult Function(_listDependOnType value) listDependOnType,
   }) {
     return loadMoreInProgress(this);
   }
@@ -859,6 +1090,7 @@ class _$LoadMoreInProgressImpl implements _LoadMoreInProgress {
     TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
     TResult? Function(_onSave value)? onSave,
+    TResult? Function(_listDependOnType value)? listDependOnType,
   }) {
     return loadMoreInProgress?.call(this);
   }
@@ -872,6 +1104,7 @@ class _$LoadMoreInProgressImpl implements _LoadMoreInProgress {
     TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
     TResult Function(_onSave value)? onSave,
+    TResult Function(_listDependOnType value)? listDependOnType,
     required TResult orElse(),
   }) {
     if (loadMoreInProgress != null) {
@@ -994,6 +1227,8 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
         loadUserListSuccessful,
     required TResult Function(String? error) loadUserListFailed,
     required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
+    required TResult Function(UserManagementListType type, List<SOFUser> users)
+        listDependOnType,
   }) {
     return loadUserListSuccessful(users, hasMoreData, isLoadMore);
   }
@@ -1008,6 +1243,8 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
         loadUserListSuccessful,
     TResult? Function(String? error)? loadUserListFailed,
     TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult? Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
   }) {
     return loadUserListSuccessful?.call(users, hasMoreData, isLoadMore);
   }
@@ -1022,6 +1259,8 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
         loadUserListSuccessful,
     TResult Function(String? error)? loadUserListFailed,
     TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
     required TResult orElse(),
   }) {
     if (loadUserListSuccessful != null) {
@@ -1040,6 +1279,7 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
         loadUserListSuccessful,
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
     required TResult Function(_onSave value) onSave,
+    required TResult Function(_listDependOnType value) listDependOnType,
   }) {
     return loadUserListSuccessful(this);
   }
@@ -1053,6 +1293,7 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
     TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
     TResult? Function(_onSave value)? onSave,
+    TResult? Function(_listDependOnType value)? listDependOnType,
   }) {
     return loadUserListSuccessful?.call(this);
   }
@@ -1066,6 +1307,7 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
     TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
     TResult Function(_onSave value)? onSave,
+    TResult Function(_listDependOnType value)? listDependOnType,
     required TResult orElse(),
   }) {
     if (loadUserListSuccessful != null) {
@@ -1169,6 +1411,8 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
         loadUserListSuccessful,
     required TResult Function(String? error) loadUserListFailed,
     required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
+    required TResult Function(UserManagementListType type, List<SOFUser> users)
+        listDependOnType,
   }) {
     return loadUserListFailed(error);
   }
@@ -1183,6 +1427,8 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
         loadUserListSuccessful,
     TResult? Function(String? error)? loadUserListFailed,
     TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult? Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
   }) {
     return loadUserListFailed?.call(error);
   }
@@ -1197,6 +1443,8 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
         loadUserListSuccessful,
     TResult Function(String? error)? loadUserListFailed,
     TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
     required TResult orElse(),
   }) {
     if (loadUserListFailed != null) {
@@ -1215,6 +1463,7 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
         loadUserListSuccessful,
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
     required TResult Function(_onSave value) onSave,
+    required TResult Function(_listDependOnType value) listDependOnType,
   }) {
     return loadUserListFailed(this);
   }
@@ -1228,6 +1477,7 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
     TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
     TResult? Function(_onSave value)? onSave,
+    TResult? Function(_listDependOnType value)? listDependOnType,
   }) {
     return loadUserListFailed?.call(this);
   }
@@ -1241,6 +1491,7 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
     TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
     TResult Function(_onSave value)? onSave,
+    TResult Function(_listDependOnType value)? listDependOnType,
     required TResult orElse(),
   }) {
     if (loadUserListFailed != null) {
@@ -1357,6 +1608,8 @@ class _$onSaveImpl implements _onSave {
         loadUserListSuccessful,
     required TResult Function(String? error) loadUserListFailed,
     required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
+    required TResult Function(UserManagementListType type, List<SOFUser> users)
+        listDependOnType,
   }) {
     return onSave(isSuccess, isSave, userId);
   }
@@ -1371,6 +1624,8 @@ class _$onSaveImpl implements _onSave {
         loadUserListSuccessful,
     TResult? Function(String? error)? loadUserListFailed,
     TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult? Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
   }) {
     return onSave?.call(isSuccess, isSave, userId);
   }
@@ -1385,6 +1640,8 @@ class _$onSaveImpl implements _onSave {
         loadUserListSuccessful,
     TResult Function(String? error)? loadUserListFailed,
     TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
     required TResult orElse(),
   }) {
     if (onSave != null) {
@@ -1403,6 +1660,7 @@ class _$onSaveImpl implements _onSave {
         loadUserListSuccessful,
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
     required TResult Function(_onSave value) onSave,
+    required TResult Function(_listDependOnType value) listDependOnType,
   }) {
     return onSave(this);
   }
@@ -1416,6 +1674,7 @@ class _$onSaveImpl implements _onSave {
     TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
     TResult? Function(_onSave value)? onSave,
+    TResult? Function(_listDependOnType value)? listDependOnType,
   }) {
     return onSave?.call(this);
   }
@@ -1429,6 +1688,7 @@ class _$onSaveImpl implements _onSave {
     TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
     TResult Function(_onSave value)? onSave,
+    TResult Function(_listDependOnType value)? listDependOnType,
     required TResult orElse(),
   }) {
     if (onSave != null) {
@@ -1452,5 +1712,203 @@ abstract class _onSave implements UserManagementState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$onSaveImplCopyWith<_$onSaveImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$listDependOnTypeImplCopyWith<$Res> {
+  factory _$$listDependOnTypeImplCopyWith(_$listDependOnTypeImpl value,
+          $Res Function(_$listDependOnTypeImpl) then) =
+      __$$listDependOnTypeImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({UserManagementListType type, List<SOFUser> users});
+}
+
+/// @nodoc
+class __$$listDependOnTypeImplCopyWithImpl<$Res>
+    extends _$UserManagementStateCopyWithImpl<$Res, _$listDependOnTypeImpl>
+    implements _$$listDependOnTypeImplCopyWith<$Res> {
+  __$$listDependOnTypeImplCopyWithImpl(_$listDependOnTypeImpl _value,
+      $Res Function(_$listDependOnTypeImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UserManagementState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? type = null,
+    Object? users = null,
+  }) {
+    return _then(_$listDependOnTypeImpl(
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as UserManagementListType,
+      users: null == users
+          ? _value._users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<SOFUser>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$listDependOnTypeImpl implements _listDependOnType {
+  const _$listDependOnTypeImpl(
+      {required this.type, required final List<SOFUser> users})
+      : _users = users;
+
+  @override
+  final UserManagementListType type;
+  final List<SOFUser> _users;
+  @override
+  List<SOFUser> get users {
+    if (_users is EqualUnmodifiableListView) return _users;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_users);
+  }
+
+  @override
+  String toString() {
+    return 'UserManagementState.listDependOnType(type: $type, users: $users)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$listDependOnTypeImpl &&
+            (identical(other.type, type) || other.type == type) &&
+            const DeepCollectionEquality().equals(other._users, _users));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, type, const DeepCollectionEquality().hash(_users));
+
+  /// Create a copy of UserManagementState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$listDependOnTypeImplCopyWith<_$listDependOnTypeImpl> get copyWith =>
+      __$$listDependOnTypeImplCopyWithImpl<_$listDependOnTypeImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function() loadMoreInProgress,
+    required TResult Function(
+            List<SOFUser> users, bool hasMoreData, bool isLoadMore)
+        loadUserListSuccessful,
+    required TResult Function(String? error) loadUserListFailed,
+    required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
+    required TResult Function(UserManagementListType type, List<SOFUser> users)
+        listDependOnType,
+  }) {
+    return listDependOnType(type, users);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function()? loadMoreInProgress,
+    TResult? Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
+    TResult? Function(String? error)? loadUserListFailed,
+    TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult? Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
+  }) {
+    return listDependOnType?.call(type, users);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function()? loadMoreInProgress,
+    TResult Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
+    TResult Function(String? error)? loadUserListFailed,
+    TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
+    required TResult orElse(),
+  }) {
+    if (listDependOnType != null) {
+      return listDependOnType(type, users);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadMoreInProgress value) loadMoreInProgress,
+    required TResult Function(_loadUserListSuccessful value)
+        loadUserListSuccessful,
+    required TResult Function(_loadUserListFailed value) loadUserListFailed,
+    required TResult Function(_onSave value) onSave,
+    required TResult Function(_listDependOnType value) listDependOnType,
+  }) {
+    return listDependOnType(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadMoreInProgress value)? loadMoreInProgress,
+    TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
+    TResult? Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult? Function(_onSave value)? onSave,
+    TResult? Function(_listDependOnType value)? listDependOnType,
+  }) {
+    return listDependOnType?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadMoreInProgress value)? loadMoreInProgress,
+    TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
+    TResult Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult Function(_onSave value)? onSave,
+    TResult Function(_listDependOnType value)? listDependOnType,
+    required TResult orElse(),
+  }) {
+    if (listDependOnType != null) {
+      return listDependOnType(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _listDependOnType implements UserManagementState {
+  const factory _listDependOnType(
+      {required final UserManagementListType type,
+      required final List<SOFUser> users}) = _$listDependOnTypeImpl;
+
+  UserManagementListType get type;
+  List<SOFUser> get users;
+
+  /// Create a copy of UserManagementState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$listDependOnTypeImplCopyWith<_$listDependOnTypeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

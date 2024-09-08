@@ -18,4 +18,9 @@ class UserManagementState with _$UserManagementState {
     required bool isSave,
     required int userId,
   }) = _onSave;
+
+  const factory UserManagementState.listDependOnType({
+    required UserManagementListType type,
+    required List<SOFUser> users,
+  }) = _listDependOnType;
 }

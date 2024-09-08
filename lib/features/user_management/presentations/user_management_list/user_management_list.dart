@@ -15,6 +15,8 @@ import 'widgets/user_info.dart';
 
 final _appColor = getIt.get<AppColor>();
 
+enum UserManagementListType { all, bookmark }
+
 @RoutePage()
 class UserManagementListScreen extends StatefulWidget {
   const UserManagementListScreen({super.key});
@@ -32,6 +34,9 @@ class _UserManagementListScreenState extends State<UserManagementListScreen> {
   final scrollController = ScrollController();
   List<SOFUser> users = [];
 
+  UserManagementListType currentType = UserManagementListType.all;
+  List<SOFUser> usersOnAllType = [];
+
   @override
   void initState() {
     super.initState();
@@ -43,7 +48,8 @@ class _UserManagementListScreenState extends State<UserManagementListScreen> {
       () {
         if (scrollController.position.pixels ==
                 scrollController.position.maxScrollExtent &&
-            hasMoreData) {
+            hasMoreData &&
+            currentType == UserManagementListType.all) {
           _getUserList();
         }
       },
@@ -53,7 +59,7 @@ class _UserManagementListScreenState extends State<UserManagementListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: _getAppBar(),
+      appBar: getAppBar(),
       body: BlocListener<UserManagementBloc, UserManagementState>(
         listener: (context, state) {
           state.maybeMap(
@@ -62,6 +68,7 @@ class _UserManagementListScreenState extends State<UserManagementListScreen> {
                   ? setState(() {
                       pageIndex++;
                       users.addAll(state.users);
+                      usersOnAllType = users.toList();
                     })
                   : hasMoreData = false;
             },
@@ -70,6 +77,15 @@ class _UserManagementListScreenState extends State<UserManagementListScreen> {
                   ? 'Add user to bookmark ${value.isSuccess ? 'success' : 'failed'}'
                   : 'Remove user from bookmark ${value.isSuccess ? 'success' : 'failed'}');
               setState(() {});
+            },
+            listDependOnType: (value) {
+              setState(() {
+                users = value.users;
+                currentType = value.type;
+                if (value.type == UserManagementListType.bookmark) {
+                  scrollController.jumpTo(0);
+                }
+              });
             },
             orElse: () {},
           );
@@ -110,12 +126,32 @@ extension _Event on _UserManagementListScreenState {
       ),
     );
   }
+
+  /// show list based on selected type
+  void showListDependOnType(UserManagementListType type) {
+    switch (type) {
+      case UserManagementListType.all:
+        _bloc.add(UserManagementEvent.showListDependOnType(
+          type: type,
+          users: usersOnAllType,
+        ));
+        break;
+      case UserManagementListType.bookmark:
+        _bloc.add(UserManagementEvent.showListDependOnType(
+          type: type,
+          users: getIt<Cache>().listUserOnSaved,
+        ));
+        break;
+    }
+  }
 }
 
 extension _WidgetBuilding on _UserManagementListScreenState {
   Widget _buildItem(SOFUser? user, {required bool isLastItem}) {
     return isLastItem
-        ? hasMoreData && users.isNotEmpty
+        ? hasMoreData &&
+                users.isNotEmpty &&
+                currentType == UserManagementListType.all
             ? const Center(child: CircularProgressIndicator.adaptive())
             : const SizedBox()
         : () {
@@ -158,7 +194,7 @@ extension _WidgetBuilding on _UserManagementListScreenState {
           }();
   }
 
-  AppBar _getAppBar() {
+  AppBar getAppBar() {
     return AppBar(
       backgroundColor: _appColor.primaryColor,
       automaticallyImplyLeading: false,
@@ -172,6 +208,27 @@ extension _WidgetBuilding on _UserManagementListScreenState {
         ),
         textAlign: TextAlign.center,
       ),
+      actions: [
+        PopupMenuButton<UserManagementListType>(
+          onSelected: showListDependOnType,
+          icon: Icon(
+            Icons.filter_list,
+            color: _appColor.textColor,
+          ),
+          itemBuilder: (context) {
+            return [
+              const PopupMenuItem(
+                value: UserManagementListType.all,
+                child: Text('All'),
+              ),
+              const PopupMenuItem(
+                value: UserManagementListType.bookmark,
+                child: Text('Bookmark'),
+              ),
+            ];
+          },
+        ),
+      ],
     );
   }
 }

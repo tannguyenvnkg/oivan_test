@@ -9,6 +9,7 @@ import '../../../configurations/injection.dart';
 import '../../../utils/cache/cache.dart';
 import '../domain/request_model/user_list_request.dart';
 import '../domain/response_model/sof_user.dart';
+import '../presentations/user_management_list/user_management_list.dart';
 import '../repositories/i_user_management_repositories.dart';
 
 part 'user_management_bloc.freezed.dart';
@@ -22,6 +23,7 @@ class UserManagementBloc
   UserManagementBloc() : super(const UserManagementState.initial()) {
     on<_getUserList>(_getUserListHandler);
     on<_save>(_saveUserHandler);
+    on<_showListDependOnType>(_showListDependOnTypeHandler);
   }
 
   Future<void> _getUserListHandler(
@@ -60,5 +62,13 @@ class UserManagementBloc
       emit(UserManagementState.onSave(
           isSuccess: false, isSave: event.isSave, userId: event.user.userId));
     }
+  }
+
+  Future<void> _showListDependOnTypeHandler(
+      _showListDependOnType event, Emitter<UserManagementState> emit) async {
+    emit(UserManagementState.listDependOnType(
+      type: event.type,
+      users: event.users,
+    ));
   }
 }

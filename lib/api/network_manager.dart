@@ -9,5 +9,5 @@ class NetworkManager {
 
   //* Path
   final listUserPath = '/2.2/users/';
-  final userReputationPath = '/2.2/users/';
+  final userReputationPath = '/2.2/users/{userId}/reputation-history';
 }

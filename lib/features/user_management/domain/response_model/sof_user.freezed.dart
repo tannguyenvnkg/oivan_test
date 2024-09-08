@@ -21,7 +21,7 @@ SOFUser _$SOFUserFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$SOFUser {
   @JsonKey(name: 'user_id')
-  int? get userId => throw _privateConstructorUsedError;
+  int get userId => throw _privateConstructorUsedError;
   @JsonKey(name: 'display_name')
   String? get displayName => throw _privateConstructorUsedError;
   @JsonKey(name: 'profile_image')
@@ -48,7 +48,7 @@ abstract class $SOFUserCopyWith<$Res> {
       _$SOFUserCopyWithImpl<$Res, SOFUser>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'user_id') int? userId,
+      {@JsonKey(name: 'user_id') int userId,
       @JsonKey(name: 'display_name') String? displayName,
       @JsonKey(name: 'profile_image') String? avatar,
       @JsonKey(name: 'reputation') int? reputation,
@@ -71,7 +71,7 @@ class _$SOFUserCopyWithImpl<$Res, $Val extends SOFUser>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = freezed,
+    Object? userId = null,
     Object? displayName = freezed,
     Object? avatar = freezed,
     Object? reputation = freezed,
@@ -79,10 +79,10 @@ class _$SOFUserCopyWithImpl<$Res, $Val extends SOFUser>
     Object? age = freezed,
   }) {
     return _then(_value.copyWith(
-      userId: freezed == userId
+      userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       displayName: freezed == displayName
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
@@ -115,7 +115,7 @@ abstract class _$$SOFUserImplCopyWith<$Res> implements $SOFUserCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'user_id') int? userId,
+      {@JsonKey(name: 'user_id') int userId,
       @JsonKey(name: 'display_name') String? displayName,
       @JsonKey(name: 'profile_image') String? avatar,
       @JsonKey(name: 'reputation') int? reputation,
@@ -136,7 +136,7 @@ class __$$SOFUserImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userId = freezed,
+    Object? userId = null,
     Object? displayName = freezed,
     Object? avatar = freezed,
     Object? reputation = freezed,
@@ -144,10 +144,10 @@ class __$$SOFUserImplCopyWithImpl<$Res>
     Object? age = freezed,
   }) {
     return _then(_$SOFUserImpl(
-      userId: freezed == userId
+      userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       displayName: freezed == displayName
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
@@ -188,7 +188,7 @@ class _$SOFUserImpl with DiagnosticableTreeMixin implements _SOFUser {
 
   @override
   @JsonKey(name: 'user_id')
-  final int? userId;
+  final int userId;
   @override
   @JsonKey(name: 'display_name')
   final String? displayName;
@@ -262,7 +262,7 @@ class _$SOFUserImpl with DiagnosticableTreeMixin implements _SOFUser {
 
 abstract class _SOFUser implements SOFUser {
   const factory _SOFUser(
-      {@JsonKey(name: 'user_id') required final int? userId,
+      {@JsonKey(name: 'user_id') required final int userId,
       @JsonKey(name: 'display_name') required final String? displayName,
       @JsonKey(name: 'profile_image') required final String? avatar,
       @JsonKey(name: 'reputation') required final int? reputation,
@@ -273,7 +273,7 @@ abstract class _SOFUser implements SOFUser {
 
   @override
   @JsonKey(name: 'user_id')
-  int? get userId;
+  int get userId;
   @override
   @JsonKey(name: 'display_name')
   String? get displayName;
@@ -305,8 +305,11 @@ SOFUserList _$SOFUserListFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$SOFUserList {
   List<SOFUser> get items => throw _privateConstructorUsedError;
+  @JsonKey(name: 'has_more')
   bool get hasMore => throw _privateConstructorUsedError;
+  @JsonKey(name: 'quota_max')
   int get quotaMax => throw _privateConstructorUsedError;
+  @JsonKey(name: 'quota_remaining')
   int get quotaRemaining => throw _privateConstructorUsedError;
 
   /// Serializes this SOFUserList to a JSON map.
@@ -326,7 +329,10 @@ abstract class $SOFUserListCopyWith<$Res> {
       _$SOFUserListCopyWithImpl<$Res, SOFUserList>;
   @useResult
   $Res call(
-      {List<SOFUser> items, bool hasMore, int quotaMax, int quotaRemaining});
+      {List<SOFUser> items,
+      @JsonKey(name: 'has_more') bool hasMore,
+      @JsonKey(name: 'quota_max') int quotaMax,
+      @JsonKey(name: 'quota_remaining') int quotaRemaining});
 }
 
 /// @nodoc
@@ -379,7 +385,10 @@ abstract class _$$SOFUserListImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<SOFUser> items, bool hasMore, int quotaMax, int quotaRemaining});
+      {List<SOFUser> items,
+      @JsonKey(name: 'has_more') bool hasMore,
+      @JsonKey(name: 'quota_max') int quotaMax,
+      @JsonKey(name: 'quota_remaining') int quotaRemaining});
 }
 
 /// @nodoc
@@ -426,9 +435,9 @@ class __$$SOFUserListImplCopyWithImpl<$Res>
 class _$SOFUserListImpl with DiagnosticableTreeMixin implements _SOFUserList {
   const _$SOFUserListImpl(
       {final List<SOFUser> items = const [],
-      this.hasMore = false,
-      this.quotaMax = 0,
-      this.quotaRemaining = 0})
+      @JsonKey(name: 'has_more') this.hasMore = false,
+      @JsonKey(name: 'quota_max') this.quotaMax = 0,
+      @JsonKey(name: 'quota_remaining') this.quotaRemaining = 0})
       : _items = items;
 
   factory _$SOFUserListImpl.fromJson(Map<String, dynamic> json) =>
@@ -444,13 +453,13 @@ class _$SOFUserListImpl with DiagnosticableTreeMixin implements _SOFUserList {
   }
 
   @override
-  @JsonKey()
+  @JsonKey(name: 'has_more')
   final bool hasMore;
   @override
-  @JsonKey()
+  @JsonKey(name: 'quota_max')
   final int quotaMax;
   @override
-  @JsonKey()
+  @JsonKey(name: 'quota_remaining')
   final int quotaRemaining;
 
   @override
@@ -509,10 +518,11 @@ class _$SOFUserListImpl with DiagnosticableTreeMixin implements _SOFUserList {
 
 abstract class _SOFUserList implements SOFUserList {
   const factory _SOFUserList(
-      {final List<SOFUser> items,
-      final bool hasMore,
-      final int quotaMax,
-      final int quotaRemaining}) = _$SOFUserListImpl;
+          {final List<SOFUser> items,
+          @JsonKey(name: 'has_more') final bool hasMore,
+          @JsonKey(name: 'quota_max') final int quotaMax,
+          @JsonKey(name: 'quota_remaining') final int quotaRemaining}) =
+      _$SOFUserListImpl;
 
   factory _SOFUserList.fromJson(Map<String, dynamic> json) =
       _$SOFUserListImpl.fromJson;
@@ -520,10 +530,13 @@ abstract class _SOFUserList implements SOFUserList {
   @override
   List<SOFUser> get items;
   @override
+  @JsonKey(name: 'has_more')
   bool get hasMore;
   @override
+  @JsonKey(name: 'quota_max')
   int get quotaMax;
   @override
+  @JsonKey(name: 'quota_remaining')
   int get quotaRemaining;
 
   /// Create a copy of SOFUserList

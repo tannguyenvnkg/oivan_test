@@ -6,8 +6,10 @@ import '../../../api/api_error.dart';
 import '../../../api/client_request.dart';
 import '../../../api/network_manager.dart';
 import '../../../configurations/injection.dart';
-import '../model/request_model/user_list_request.dart';
-import '../model/response_model/sof_user.dart';
+import '../domain/request_model/reputation_history_request.dart';
+import '../domain/request_model/user_list_request.dart';
+import '../domain/response_model/reputation_history.dart';
+import '../domain/response_model/sof_user.dart';
 import 'i_user_management_sources.dart';
 
 @LazySingleton(as: IUserManagementSources)
@@ -25,6 +27,27 @@ class UserManagementSources implements IUserManagementSources {
       return response.fold(
         (l) => left(ApiError(message: 'Cannot get SOF user list', code: 999)),
         (r) => right(SOFUserList.fromJson(r)),
+      );
+    } catch (e) {
+      getIt.get<Logger>().e('Error: $e');
+      return left(ApiError(message: e.toString(), code: 999));
+    }
+  }
+
+  @override
+  Future<Either<ApiError, ReputationHistoryList>> getReputationHistoryList(
+      ReputationHistoryRequest request) async {
+    try {
+      final response = await getIt<ClientRequest>().request(
+        method: Method.get,
+        parameters: request.toJson(),
+        path: NetworkManager.shared.userReputationPath
+            .replaceFirst('{userId}', '${request.userId}'),
+      );
+      return response.fold(
+        (l) => left(
+            ApiError(message: 'Cannot get reputation history list', code: 999)),
+        (r) => right(ReputationHistoryList.fromJson(r)),
       );
     } catch (e) {
       getIt.get<Logger>().e('Error: $e');

@@ -1,9 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:logger/logger.dart';
 import 'package:oivan_test/configurations/app_router.dart';
 import 'package:oivan_test/configurations/app_router.gr.dart';
 import 'package:oivan_test/utils/cache/cache.dart';
+import 'package:oivan_test/utils/debouncer.dart';
 
 import '../../../../configurations/injection.dart';
 import '../../../../constant/color.dart';
@@ -29,6 +31,7 @@ class UserManagementListScreen extends StatefulWidget {
 
 class _UserManagementListScreenState extends State<UserManagementListScreen> {
   final _bloc = getIt.get<UserManagementBloc>();
+  final debouncer = Debouncer(milliseconds: 750);
   int pageIndex = 1;
   int pageSize = 30;
   bool hasMoreData = true;
@@ -65,13 +68,17 @@ class _UserManagementListScreenState extends State<UserManagementListScreen> {
         listener: (context, state) {
           state.maybeMap(
             loadUserListSuccessful: (state) {
-              state.hasMoreData
-                  ? setState(() {
-                      pageIndex++;
-                      users.addAll(state.users);
-                      usersOnAllType = users.toList();
-                    })
-                  : hasMoreData = false;
+              try {
+                state.hasMoreData
+                    ? setState(() {
+                        pageIndex++;
+                        users = [...users, ...state.users];
+                        usersOnAllType = users.toList();
+                      })
+                    : hasMoreData = false;
+              } catch (e) {
+                getIt<Logger>().e('loadUserListSuccessful : $e');
+              }
             },
             loadUserListFailed: (state) {
               showMessage('Load user list failed: ${state.error}');
@@ -183,12 +190,14 @@ extension _WidgetBuilding on _UserManagementListScreenState {
                             BookMarkButton(
                               isSave: isSave,
                               onPressed: () {
-                                _bloc.add(
-                                  UserManagementEvent.save(
-                                    isSave: !isSave,
-                                    user: user,
-                                  ),
-                                );
+                                debouncer.run(() {
+                                  _bloc.add(
+                                    UserManagementEvent.save(
+                                      isSave: !isSave,
+                                      user: user,
+                                    ),
+                                  );
+                                });
                               },
                             )
                           ],

@@ -1,6 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:oivan_test/configurations/app_router.dart';
+import 'package:oivan_test/configurations/app_router.gr.dart';
 import 'package:oivan_test/utils/cache/cache.dart';
 
 import '../../../../configurations/injection.dart';
@@ -157,39 +159,43 @@ extension _WidgetBuilding on _UserManagementListScreenState {
         : () {
             final isSave =
                 getIt<Cache>().listUserIdOnSaved.contains(user!.userId);
-            return Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 8.0,
-                    vertical: 4.0,
-                  ),
-                  child: Card(
-                    elevation: 2,
-                    child: IntrinsicHeight(
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          UserAvatar(user: user),
-                          const SizedBox(width: 16.0),
-                          Expanded(child: UserInfo(user: user)),
-                          BookMarkButton(
-                            isSave: isSave,
-                            onPressed: () {
-                              _bloc.add(
-                                UserManagementEvent.save(
-                                  isSave: !isSave,
-                                  user: user,
-                                ),
-                              );
-                            },
-                          )
-                        ],
+            return GestureDetector(
+              onTap: () => getIt<AppRouter>()
+                  .push(ReputationHistoryRoute(userId: user.userId)),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8.0,
+                      vertical: 4.0,
+                    ),
+                    child: Card(
+                      elevation: 2,
+                      child: IntrinsicHeight(
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            UserAvatar(user: user),
+                            const SizedBox(width: 16.0),
+                            Expanded(child: UserInfo(user: user)),
+                            BookMarkButton(
+                              isSave: isSave,
+                              onPressed: () {
+                                _bloc.add(
+                                  UserManagementEvent.save(
+                                    isSave: !isSave,
+                                    user: user,
+                                  ),
+                                );
+                              },
+                            )
+                          ],
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             );
           }();
   }

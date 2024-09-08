@@ -283,3 +283,261 @@ abstract class _ReputationHistory implements ReputationHistory {
   _$$ReputationHistoryImplCopyWith<_$ReputationHistoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+ReputationHistoryList _$ReputationHistoryListFromJson(
+    Map<String, dynamic> json) {
+  return _ReputationHistoryList.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ReputationHistoryList {
+  @JsonKey(name: 'items')
+  List<ReputationHistory> get items => throw _privateConstructorUsedError;
+  @JsonKey(name: 'has_more')
+  bool get hasMore => throw _privateConstructorUsedError;
+  @JsonKey(name: 'quota_max')
+  int get quotaMax => throw _privateConstructorUsedError;
+  @JsonKey(name: 'quota_remaining')
+  int get quotaRemaining => throw _privateConstructorUsedError;
+
+  /// Serializes this ReputationHistoryList to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of ReputationHistoryList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ReputationHistoryListCopyWith<ReputationHistoryList> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ReputationHistoryListCopyWith<$Res> {
+  factory $ReputationHistoryListCopyWith(ReputationHistoryList value,
+          $Res Function(ReputationHistoryList) then) =
+      _$ReputationHistoryListCopyWithImpl<$Res, ReputationHistoryList>;
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'items') List<ReputationHistory> items,
+      @JsonKey(name: 'has_more') bool hasMore,
+      @JsonKey(name: 'quota_max') int quotaMax,
+      @JsonKey(name: 'quota_remaining') int quotaRemaining});
+}
+
+/// @nodoc
+class _$ReputationHistoryListCopyWithImpl<$Res,
+        $Val extends ReputationHistoryList>
+    implements $ReputationHistoryListCopyWith<$Res> {
+  _$ReputationHistoryListCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of ReputationHistoryList
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? items = null,
+    Object? hasMore = null,
+    Object? quotaMax = null,
+    Object? quotaRemaining = null,
+  }) {
+    return _then(_value.copyWith(
+      items: null == items
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<ReputationHistory>,
+      hasMore: null == hasMore
+          ? _value.hasMore
+          : hasMore // ignore: cast_nullable_to_non_nullable
+              as bool,
+      quotaMax: null == quotaMax
+          ? _value.quotaMax
+          : quotaMax // ignore: cast_nullable_to_non_nullable
+              as int,
+      quotaRemaining: null == quotaRemaining
+          ? _value.quotaRemaining
+          : quotaRemaining // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ReputationHistoryListImplCopyWith<$Res>
+    implements $ReputationHistoryListCopyWith<$Res> {
+  factory _$$ReputationHistoryListImplCopyWith(
+          _$ReputationHistoryListImpl value,
+          $Res Function(_$ReputationHistoryListImpl) then) =
+      __$$ReputationHistoryListImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(name: 'items') List<ReputationHistory> items,
+      @JsonKey(name: 'has_more') bool hasMore,
+      @JsonKey(name: 'quota_max') int quotaMax,
+      @JsonKey(name: 'quota_remaining') int quotaRemaining});
+}
+
+/// @nodoc
+class __$$ReputationHistoryListImplCopyWithImpl<$Res>
+    extends _$ReputationHistoryListCopyWithImpl<$Res,
+        _$ReputationHistoryListImpl>
+    implements _$$ReputationHistoryListImplCopyWith<$Res> {
+  __$$ReputationHistoryListImplCopyWithImpl(_$ReputationHistoryListImpl _value,
+      $Res Function(_$ReputationHistoryListImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ReputationHistoryList
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? items = null,
+    Object? hasMore = null,
+    Object? quotaMax = null,
+    Object? quotaRemaining = null,
+  }) {
+    return _then(_$ReputationHistoryListImpl(
+      items: null == items
+          ? _value._items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<ReputationHistory>,
+      hasMore: null == hasMore
+          ? _value.hasMore
+          : hasMore // ignore: cast_nullable_to_non_nullable
+              as bool,
+      quotaMax: null == quotaMax
+          ? _value.quotaMax
+          : quotaMax // ignore: cast_nullable_to_non_nullable
+              as int,
+      quotaRemaining: null == quotaRemaining
+          ? _value.quotaRemaining
+          : quotaRemaining // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ReputationHistoryListImpl
+    with DiagnosticableTreeMixin
+    implements _ReputationHistoryList {
+  const _$ReputationHistoryListImpl(
+      {@JsonKey(name: 'items') final List<ReputationHistory> items = const [],
+      @JsonKey(name: 'has_more') this.hasMore = false,
+      @JsonKey(name: 'quota_max') this.quotaMax = 0,
+      @JsonKey(name: 'quota_remaining') this.quotaRemaining = 0})
+      : _items = items;
+
+  factory _$ReputationHistoryListImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ReputationHistoryListImplFromJson(json);
+
+  final List<ReputationHistory> _items;
+  @override
+  @JsonKey(name: 'items')
+  List<ReputationHistory> get items {
+    if (_items is EqualUnmodifiableListView) return _items;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_items);
+  }
+
+  @override
+  @JsonKey(name: 'has_more')
+  final bool hasMore;
+  @override
+  @JsonKey(name: 'quota_max')
+  final int quotaMax;
+  @override
+  @JsonKey(name: 'quota_remaining')
+  final int quotaRemaining;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ReputationHistoryList(items: $items, hasMore: $hasMore, quotaMax: $quotaMax, quotaRemaining: $quotaRemaining)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ReputationHistoryList'))
+      ..add(DiagnosticsProperty('items', items))
+      ..add(DiagnosticsProperty('hasMore', hasMore))
+      ..add(DiagnosticsProperty('quotaMax', quotaMax))
+      ..add(DiagnosticsProperty('quotaRemaining', quotaRemaining));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ReputationHistoryListImpl &&
+            const DeepCollectionEquality().equals(other._items, _items) &&
+            (identical(other.hasMore, hasMore) || other.hasMore == hasMore) &&
+            (identical(other.quotaMax, quotaMax) ||
+                other.quotaMax == quotaMax) &&
+            (identical(other.quotaRemaining, quotaRemaining) ||
+                other.quotaRemaining == quotaRemaining));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_items),
+      hasMore,
+      quotaMax,
+      quotaRemaining);
+
+  /// Create a copy of ReputationHistoryList
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ReputationHistoryListImplCopyWith<_$ReputationHistoryListImpl>
+      get copyWith => __$$ReputationHistoryListImplCopyWithImpl<
+          _$ReputationHistoryListImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ReputationHistoryListImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ReputationHistoryList implements ReputationHistoryList {
+  const factory _ReputationHistoryList(
+          {@JsonKey(name: 'items') final List<ReputationHistory> items,
+          @JsonKey(name: 'has_more') final bool hasMore,
+          @JsonKey(name: 'quota_max') final int quotaMax,
+          @JsonKey(name: 'quota_remaining') final int quotaRemaining}) =
+      _$ReputationHistoryListImpl;
+
+  factory _ReputationHistoryList.fromJson(Map<String, dynamic> json) =
+      _$ReputationHistoryListImpl.fromJson;
+
+  @override
+  @JsonKey(name: 'items')
+  List<ReputationHistory> get items;
+  @override
+  @JsonKey(name: 'has_more')
+  bool get hasMore;
+  @override
+  @JsonKey(name: 'quota_max')
+  int get quotaMax;
+  @override
+  @JsonKey(name: 'quota_remaining')
+  int get quotaRemaining;
+
+  /// Create a copy of ReputationHistoryList
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ReputationHistoryListImplCopyWith<_$ReputationHistoryListImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

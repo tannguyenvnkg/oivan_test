@@ -25,3 +25,25 @@ Map<String, dynamic> _$$ReputationHistoryImplToJson(
       'creation_date': instance.creationDate,
       'user_id': instance.userId,
     };
+
+_$ReputationHistoryListImpl _$$ReputationHistoryListImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ReputationHistoryListImpl(
+      items: (json['items'] as List<dynamic>?)
+              ?.map(
+                  (e) => ReputationHistory.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      hasMore: json['has_more'] as bool? ?? false,
+      quotaMax: (json['quota_max'] as num?)?.toInt() ?? 0,
+      quotaRemaining: (json['quota_remaining'] as num?)?.toInt() ?? 0,
+    );
+
+Map<String, dynamic> _$$ReputationHistoryListImplToJson(
+        _$ReputationHistoryListImpl instance) =>
+    <String, dynamic>{
+      'items': instance.items,
+      'has_more': instance.hasMore,
+      'quota_max': instance.quotaMax,
+      'quota_remaining': instance.quotaRemaining,
+    };

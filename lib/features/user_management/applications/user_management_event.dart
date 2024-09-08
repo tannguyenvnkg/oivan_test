@@ -11,4 +11,7 @@ class UserManagementEvent with _$UserManagementEvent {
     required UserManagementListType type,
     required List<SOFUser> users,
   }) = _showListDependOnType;
+
+  const factory UserManagementEvent.getReputationHistoryList(
+      {required ReputationHistoryRequest request}) = _getReputationHistoryList;
 }

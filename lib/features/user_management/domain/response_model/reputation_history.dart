@@ -17,3 +17,15 @@ class ReputationHistory with _$ReputationHistory {
   factory ReputationHistory.fromJson(Map<String, dynamic> json) =>
       _$ReputationHistoryFromJson(json);
 }
+
+@freezed
+class ReputationHistoryList with _$ReputationHistoryList {
+  const factory ReputationHistoryList({
+    @Default([]) @JsonKey(name: 'items') List<ReputationHistory> items,
+    @Default(false) @JsonKey(name: 'has_more') bool hasMore,
+    @Default(0) @JsonKey(name: 'quota_max') int quotaMax,
+    @Default(0) @JsonKey(name: 'quota_remaining') int quotaRemaining,
+  }) = _ReputationHistoryList;
+  factory ReputationHistoryList.fromJson(Map<String, dynamic> json) =>
+      _$ReputationHistoryListFromJson(json);
+}

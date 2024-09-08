@@ -18,9 +18,21 @@ class UserManagementState with _$UserManagementState {
     required bool isSave,
     required int userId,
   }) = _onSave;
-
   const factory UserManagementState.listDependOnType({
     required UserManagementListType type,
     required List<SOFUser> users,
   }) = _listDependOnType;
+
+  const factory UserManagementState.loadReputationHistoryListInProgress() =
+      _LoadReputationHistoryListInProgress;
+  const factory UserManagementState.loadReputationHistoryListSuccessful({
+    required List<ReputationHistory> reputationHistories,
+    required bool hasMoreData,
+    required bool isLoadMore,
+  }) = _LoadReputationHistoryListSuccessful;
+  const factory UserManagementState.loadReputationHistoryListFailed(
+      {String? error}) = _LoadReputationHistoryListFailed;
+  //loadmore
+  const factory UserManagementState.loadMoreReputationHistoryInProgress() =
+      _LoadMoreReputationHistoryInProgress;
 }

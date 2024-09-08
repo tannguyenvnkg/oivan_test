@@ -22,6 +22,8 @@ mixin _$UserManagementEvent {
     required TResult Function(bool isSave, SOFUser user) save,
     required TResult Function(UserManagementListType type, List<SOFUser> users)
         showListDependOnType,
+    required TResult Function(ReputationHistoryRequest request)
+        getReputationHistoryList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +32,8 @@ mixin _$UserManagementEvent {
     TResult? Function(bool isSave, SOFUser user)? save,
     TResult? Function(UserManagementListType type, List<SOFUser> users)?
         showListDependOnType,
+    TResult? Function(ReputationHistoryRequest request)?
+        getReputationHistoryList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +42,8 @@ mixin _$UserManagementEvent {
     TResult Function(bool isSave, SOFUser user)? save,
     TResult Function(UserManagementListType type, List<SOFUser> users)?
         showListDependOnType,
+    TResult Function(ReputationHistoryRequest request)?
+        getReputationHistoryList,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -46,6 +52,8 @@ mixin _$UserManagementEvent {
     required TResult Function(_getUserList value) getUserList,
     required TResult Function(_save value) save,
     required TResult Function(_showListDependOnType value) showListDependOnType,
+    required TResult Function(_getReputationHistoryList value)
+        getReputationHistoryList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -53,6 +61,8 @@ mixin _$UserManagementEvent {
     TResult? Function(_getUserList value)? getUserList,
     TResult? Function(_save value)? save,
     TResult? Function(_showListDependOnType value)? showListDependOnType,
+    TResult? Function(_getReputationHistoryList value)?
+        getReputationHistoryList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +70,7 @@ mixin _$UserManagementEvent {
     TResult Function(_getUserList value)? getUserList,
     TResult Function(_save value)? save,
     TResult Function(_showListDependOnType value)? showListDependOnType,
+    TResult Function(_getReputationHistoryList value)? getReputationHistoryList,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -170,6 +181,8 @@ class _$getUserListImpl implements _getUserList {
     required TResult Function(bool isSave, SOFUser user) save,
     required TResult Function(UserManagementListType type, List<SOFUser> users)
         showListDependOnType,
+    required TResult Function(ReputationHistoryRequest request)
+        getReputationHistoryList,
   }) {
     return getUserList(request);
   }
@@ -181,6 +194,8 @@ class _$getUserListImpl implements _getUserList {
     TResult? Function(bool isSave, SOFUser user)? save,
     TResult? Function(UserManagementListType type, List<SOFUser> users)?
         showListDependOnType,
+    TResult? Function(ReputationHistoryRequest request)?
+        getReputationHistoryList,
   }) {
     return getUserList?.call(request);
   }
@@ -192,6 +207,8 @@ class _$getUserListImpl implements _getUserList {
     TResult Function(bool isSave, SOFUser user)? save,
     TResult Function(UserManagementListType type, List<SOFUser> users)?
         showListDependOnType,
+    TResult Function(ReputationHistoryRequest request)?
+        getReputationHistoryList,
     required TResult orElse(),
   }) {
     if (getUserList != null) {
@@ -206,6 +223,8 @@ class _$getUserListImpl implements _getUserList {
     required TResult Function(_getUserList value) getUserList,
     required TResult Function(_save value) save,
     required TResult Function(_showListDependOnType value) showListDependOnType,
+    required TResult Function(_getReputationHistoryList value)
+        getReputationHistoryList,
   }) {
     return getUserList(this);
   }
@@ -216,6 +235,8 @@ class _$getUserListImpl implements _getUserList {
     TResult? Function(_getUserList value)? getUserList,
     TResult? Function(_save value)? save,
     TResult? Function(_showListDependOnType value)? showListDependOnType,
+    TResult? Function(_getReputationHistoryList value)?
+        getReputationHistoryList,
   }) {
     return getUserList?.call(this);
   }
@@ -226,6 +247,7 @@ class _$getUserListImpl implements _getUserList {
     TResult Function(_getUserList value)? getUserList,
     TResult Function(_save value)? save,
     TResult Function(_showListDependOnType value)? showListDependOnType,
+    TResult Function(_getReputationHistoryList value)? getReputationHistoryList,
     required TResult orElse(),
   }) {
     if (getUserList != null) {
@@ -339,6 +361,8 @@ class _$saveImpl implements _save {
     required TResult Function(bool isSave, SOFUser user) save,
     required TResult Function(UserManagementListType type, List<SOFUser> users)
         showListDependOnType,
+    required TResult Function(ReputationHistoryRequest request)
+        getReputationHistoryList,
   }) {
     return save(isSave, user);
   }
@@ -350,6 +374,8 @@ class _$saveImpl implements _save {
     TResult? Function(bool isSave, SOFUser user)? save,
     TResult? Function(UserManagementListType type, List<SOFUser> users)?
         showListDependOnType,
+    TResult? Function(ReputationHistoryRequest request)?
+        getReputationHistoryList,
   }) {
     return save?.call(isSave, user);
   }
@@ -361,6 +387,8 @@ class _$saveImpl implements _save {
     TResult Function(bool isSave, SOFUser user)? save,
     TResult Function(UserManagementListType type, List<SOFUser> users)?
         showListDependOnType,
+    TResult Function(ReputationHistoryRequest request)?
+        getReputationHistoryList,
     required TResult orElse(),
   }) {
     if (save != null) {
@@ -375,6 +403,8 @@ class _$saveImpl implements _save {
     required TResult Function(_getUserList value) getUserList,
     required TResult Function(_save value) save,
     required TResult Function(_showListDependOnType value) showListDependOnType,
+    required TResult Function(_getReputationHistoryList value)
+        getReputationHistoryList,
   }) {
     return save(this);
   }
@@ -385,6 +415,8 @@ class _$saveImpl implements _save {
     TResult? Function(_getUserList value)? getUserList,
     TResult? Function(_save value)? save,
     TResult? Function(_showListDependOnType value)? showListDependOnType,
+    TResult? Function(_getReputationHistoryList value)?
+        getReputationHistoryList,
   }) {
     return save?.call(this);
   }
@@ -395,6 +427,7 @@ class _$saveImpl implements _save {
     TResult Function(_getUserList value)? getUserList,
     TResult Function(_save value)? save,
     TResult Function(_showListDependOnType value)? showListDependOnType,
+    TResult Function(_getReputationHistoryList value)? getReputationHistoryList,
     required TResult orElse(),
   }) {
     if (save != null) {
@@ -508,6 +541,8 @@ class _$showListDependOnTypeImpl implements _showListDependOnType {
     required TResult Function(bool isSave, SOFUser user) save,
     required TResult Function(UserManagementListType type, List<SOFUser> users)
         showListDependOnType,
+    required TResult Function(ReputationHistoryRequest request)
+        getReputationHistoryList,
   }) {
     return showListDependOnType(type, users);
   }
@@ -519,6 +554,8 @@ class _$showListDependOnTypeImpl implements _showListDependOnType {
     TResult? Function(bool isSave, SOFUser user)? save,
     TResult? Function(UserManagementListType type, List<SOFUser> users)?
         showListDependOnType,
+    TResult? Function(ReputationHistoryRequest request)?
+        getReputationHistoryList,
   }) {
     return showListDependOnType?.call(type, users);
   }
@@ -530,6 +567,8 @@ class _$showListDependOnTypeImpl implements _showListDependOnType {
     TResult Function(bool isSave, SOFUser user)? save,
     TResult Function(UserManagementListType type, List<SOFUser> users)?
         showListDependOnType,
+    TResult Function(ReputationHistoryRequest request)?
+        getReputationHistoryList,
     required TResult orElse(),
   }) {
     if (showListDependOnType != null) {
@@ -544,6 +583,8 @@ class _$showListDependOnTypeImpl implements _showListDependOnType {
     required TResult Function(_getUserList value) getUserList,
     required TResult Function(_save value) save,
     required TResult Function(_showListDependOnType value) showListDependOnType,
+    required TResult Function(_getReputationHistoryList value)
+        getReputationHistoryList,
   }) {
     return showListDependOnType(this);
   }
@@ -554,6 +595,8 @@ class _$showListDependOnTypeImpl implements _showListDependOnType {
     TResult? Function(_getUserList value)? getUserList,
     TResult? Function(_save value)? save,
     TResult? Function(_showListDependOnType value)? showListDependOnType,
+    TResult? Function(_getReputationHistoryList value)?
+        getReputationHistoryList,
   }) {
     return showListDependOnType?.call(this);
   }
@@ -564,6 +607,7 @@ class _$showListDependOnTypeImpl implements _showListDependOnType {
     TResult Function(_getUserList value)? getUserList,
     TResult Function(_save value)? save,
     TResult Function(_showListDependOnType value)? showListDependOnType,
+    TResult Function(_getReputationHistoryList value)? getReputationHistoryList,
     required TResult orElse(),
   }) {
     if (showListDependOnType != null) {
@@ -589,6 +633,184 @@ abstract class _showListDependOnType implements UserManagementEvent {
 }
 
 /// @nodoc
+abstract class _$$getReputationHistoryListImplCopyWith<$Res> {
+  factory _$$getReputationHistoryListImplCopyWith(
+          _$getReputationHistoryListImpl value,
+          $Res Function(_$getReputationHistoryListImpl) then) =
+      __$$getReputationHistoryListImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({ReputationHistoryRequest request});
+
+  $ReputationHistoryRequestCopyWith<$Res> get request;
+}
+
+/// @nodoc
+class __$$getReputationHistoryListImplCopyWithImpl<$Res>
+    extends _$UserManagementEventCopyWithImpl<$Res,
+        _$getReputationHistoryListImpl>
+    implements _$$getReputationHistoryListImplCopyWith<$Res> {
+  __$$getReputationHistoryListImplCopyWithImpl(
+      _$getReputationHistoryListImpl _value,
+      $Res Function(_$getReputationHistoryListImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UserManagementEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? request = null,
+  }) {
+    return _then(_$getReputationHistoryListImpl(
+      request: null == request
+          ? _value.request
+          : request // ignore: cast_nullable_to_non_nullable
+              as ReputationHistoryRequest,
+    ));
+  }
+
+  /// Create a copy of UserManagementEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ReputationHistoryRequestCopyWith<$Res> get request {
+    return $ReputationHistoryRequestCopyWith<$Res>(_value.request, (value) {
+      return _then(_value.copyWith(request: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$getReputationHistoryListImpl implements _getReputationHistoryList {
+  const _$getReputationHistoryListImpl({required this.request});
+
+  @override
+  final ReputationHistoryRequest request;
+
+  @override
+  String toString() {
+    return 'UserManagementEvent.getReputationHistoryList(request: $request)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$getReputationHistoryListImpl &&
+            (identical(other.request, request) || other.request == request));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, request);
+
+  /// Create a copy of UserManagementEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$getReputationHistoryListImplCopyWith<_$getReputationHistoryListImpl>
+      get copyWith => __$$getReputationHistoryListImplCopyWithImpl<
+          _$getReputationHistoryListImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(UserListRequest request) getUserList,
+    required TResult Function(bool isSave, SOFUser user) save,
+    required TResult Function(UserManagementListType type, List<SOFUser> users)
+        showListDependOnType,
+    required TResult Function(ReputationHistoryRequest request)
+        getReputationHistoryList,
+  }) {
+    return getReputationHistoryList(request);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(UserListRequest request)? getUserList,
+    TResult? Function(bool isSave, SOFUser user)? save,
+    TResult? Function(UserManagementListType type, List<SOFUser> users)?
+        showListDependOnType,
+    TResult? Function(ReputationHistoryRequest request)?
+        getReputationHistoryList,
+  }) {
+    return getReputationHistoryList?.call(request);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(UserListRequest request)? getUserList,
+    TResult Function(bool isSave, SOFUser user)? save,
+    TResult Function(UserManagementListType type, List<SOFUser> users)?
+        showListDependOnType,
+    TResult Function(ReputationHistoryRequest request)?
+        getReputationHistoryList,
+    required TResult orElse(),
+  }) {
+    if (getReputationHistoryList != null) {
+      return getReputationHistoryList(request);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_getUserList value) getUserList,
+    required TResult Function(_save value) save,
+    required TResult Function(_showListDependOnType value) showListDependOnType,
+    required TResult Function(_getReputationHistoryList value)
+        getReputationHistoryList,
+  }) {
+    return getReputationHistoryList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_getUserList value)? getUserList,
+    TResult? Function(_save value)? save,
+    TResult? Function(_showListDependOnType value)? showListDependOnType,
+    TResult? Function(_getReputationHistoryList value)?
+        getReputationHistoryList,
+  }) {
+    return getReputationHistoryList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_getUserList value)? getUserList,
+    TResult Function(_save value)? save,
+    TResult Function(_showListDependOnType value)? showListDependOnType,
+    TResult Function(_getReputationHistoryList value)? getReputationHistoryList,
+    required TResult orElse(),
+  }) {
+    if (getReputationHistoryList != null) {
+      return getReputationHistoryList(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _getReputationHistoryList implements UserManagementEvent {
+  const factory _getReputationHistoryList(
+          {required final ReputationHistoryRequest request}) =
+      _$getReputationHistoryListImpl;
+
+  ReputationHistoryRequest get request;
+
+  /// Create a copy of UserManagementEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$getReputationHistoryListImplCopyWith<_$getReputationHistoryListImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$UserManagementState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -602,6 +824,12 @@ mixin _$UserManagementState {
     required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
     required TResult Function(UserManagementListType type, List<SOFUser> users)
         listDependOnType,
+    required TResult Function() loadReputationHistoryListInProgress,
+    required TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(String? error) loadReputationHistoryListFailed,
+    required TResult Function() loadMoreReputationHistoryInProgress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -615,6 +843,12 @@ mixin _$UserManagementState {
     TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
     TResult? Function(UserManagementListType type, List<SOFUser> users)?
         listDependOnType,
+    TResult? Function()? loadReputationHistoryListInProgress,
+    TResult? Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(String? error)? loadReputationHistoryListFailed,
+    TResult? Function()? loadMoreReputationHistoryInProgress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -628,6 +862,12 @@ mixin _$UserManagementState {
     TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
     TResult Function(UserManagementListType type, List<SOFUser> users)?
         listDependOnType,
+    TResult Function()? loadReputationHistoryListInProgress,
+    TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(String? error)? loadReputationHistoryListFailed,
+    TResult Function()? loadMoreReputationHistoryInProgress,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -641,6 +881,14 @@ mixin _$UserManagementState {
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
     required TResult Function(_onSave value) onSave,
     required TResult Function(_listDependOnType value) listDependOnType,
+    required TResult Function(_LoadReputationHistoryListInProgress value)
+        loadReputationHistoryListInProgress,
+    required TResult Function(_LoadReputationHistoryListSuccessful value)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(_LoadReputationHistoryListFailed value)
+        loadReputationHistoryListFailed,
+    required TResult Function(_LoadMoreReputationHistoryInProgress value)
+        loadMoreReputationHistoryInProgress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -652,6 +900,14 @@ mixin _$UserManagementState {
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
     TResult? Function(_onSave value)? onSave,
     TResult? Function(_listDependOnType value)? listDependOnType,
+    TResult? Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult? Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult? Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -663,6 +919,14 @@ mixin _$UserManagementState {
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
     TResult Function(_onSave value)? onSave,
     TResult Function(_listDependOnType value)? listDependOnType,
+    TResult Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -740,6 +1004,12 @@ class _$InitialImpl implements _Initial {
     required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
     required TResult Function(UserManagementListType type, List<SOFUser> users)
         listDependOnType,
+    required TResult Function() loadReputationHistoryListInProgress,
+    required TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(String? error) loadReputationHistoryListFailed,
+    required TResult Function() loadMoreReputationHistoryInProgress,
   }) {
     return initial();
   }
@@ -756,6 +1026,12 @@ class _$InitialImpl implements _Initial {
     TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
     TResult? Function(UserManagementListType type, List<SOFUser> users)?
         listDependOnType,
+    TResult? Function()? loadReputationHistoryListInProgress,
+    TResult? Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(String? error)? loadReputationHistoryListFailed,
+    TResult? Function()? loadMoreReputationHistoryInProgress,
   }) {
     return initial?.call();
   }
@@ -772,6 +1048,12 @@ class _$InitialImpl implements _Initial {
     TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
     TResult Function(UserManagementListType type, List<SOFUser> users)?
         listDependOnType,
+    TResult Function()? loadReputationHistoryListInProgress,
+    TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(String? error)? loadReputationHistoryListFailed,
+    TResult Function()? loadMoreReputationHistoryInProgress,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -791,6 +1073,14 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
     required TResult Function(_onSave value) onSave,
     required TResult Function(_listDependOnType value) listDependOnType,
+    required TResult Function(_LoadReputationHistoryListInProgress value)
+        loadReputationHistoryListInProgress,
+    required TResult Function(_LoadReputationHistoryListSuccessful value)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(_LoadReputationHistoryListFailed value)
+        loadReputationHistoryListFailed,
+    required TResult Function(_LoadMoreReputationHistoryInProgress value)
+        loadMoreReputationHistoryInProgress,
   }) {
     return initial(this);
   }
@@ -805,6 +1095,14 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
     TResult? Function(_onSave value)? onSave,
     TResult? Function(_listDependOnType value)? listDependOnType,
+    TResult? Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult? Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult? Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
   }) {
     return initial?.call(this);
   }
@@ -819,6 +1117,14 @@ class _$InitialImpl implements _Initial {
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
     TResult Function(_onSave value)? onSave,
     TResult Function(_listDependOnType value)? listDependOnType,
+    TResult Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -883,6 +1189,12 @@ class _$LoadInProgressImpl implements _LoadInProgress {
     required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
     required TResult Function(UserManagementListType type, List<SOFUser> users)
         listDependOnType,
+    required TResult Function() loadReputationHistoryListInProgress,
+    required TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(String? error) loadReputationHistoryListFailed,
+    required TResult Function() loadMoreReputationHistoryInProgress,
   }) {
     return loadInProgress();
   }
@@ -899,6 +1211,12 @@ class _$LoadInProgressImpl implements _LoadInProgress {
     TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
     TResult? Function(UserManagementListType type, List<SOFUser> users)?
         listDependOnType,
+    TResult? Function()? loadReputationHistoryListInProgress,
+    TResult? Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(String? error)? loadReputationHistoryListFailed,
+    TResult? Function()? loadMoreReputationHistoryInProgress,
   }) {
     return loadInProgress?.call();
   }
@@ -915,6 +1233,12 @@ class _$LoadInProgressImpl implements _LoadInProgress {
     TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
     TResult Function(UserManagementListType type, List<SOFUser> users)?
         listDependOnType,
+    TResult Function()? loadReputationHistoryListInProgress,
+    TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(String? error)? loadReputationHistoryListFailed,
+    TResult Function()? loadMoreReputationHistoryInProgress,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -934,6 +1258,14 @@ class _$LoadInProgressImpl implements _LoadInProgress {
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
     required TResult Function(_onSave value) onSave,
     required TResult Function(_listDependOnType value) listDependOnType,
+    required TResult Function(_LoadReputationHistoryListInProgress value)
+        loadReputationHistoryListInProgress,
+    required TResult Function(_LoadReputationHistoryListSuccessful value)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(_LoadReputationHistoryListFailed value)
+        loadReputationHistoryListFailed,
+    required TResult Function(_LoadMoreReputationHistoryInProgress value)
+        loadMoreReputationHistoryInProgress,
   }) {
     return loadInProgress(this);
   }
@@ -948,6 +1280,14 @@ class _$LoadInProgressImpl implements _LoadInProgress {
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
     TResult? Function(_onSave value)? onSave,
     TResult? Function(_listDependOnType value)? listDependOnType,
+    TResult? Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult? Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult? Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
   }) {
     return loadInProgress?.call(this);
   }
@@ -962,6 +1302,14 @@ class _$LoadInProgressImpl implements _LoadInProgress {
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
     TResult Function(_onSave value)? onSave,
     TResult Function(_listDependOnType value)? listDependOnType,
+    TResult Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
     required TResult orElse(),
   }) {
     if (loadInProgress != null) {
@@ -1026,6 +1374,12 @@ class _$LoadMoreInProgressImpl implements _LoadMoreInProgress {
     required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
     required TResult Function(UserManagementListType type, List<SOFUser> users)
         listDependOnType,
+    required TResult Function() loadReputationHistoryListInProgress,
+    required TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(String? error) loadReputationHistoryListFailed,
+    required TResult Function() loadMoreReputationHistoryInProgress,
   }) {
     return loadMoreInProgress();
   }
@@ -1042,6 +1396,12 @@ class _$LoadMoreInProgressImpl implements _LoadMoreInProgress {
     TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
     TResult? Function(UserManagementListType type, List<SOFUser> users)?
         listDependOnType,
+    TResult? Function()? loadReputationHistoryListInProgress,
+    TResult? Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(String? error)? loadReputationHistoryListFailed,
+    TResult? Function()? loadMoreReputationHistoryInProgress,
   }) {
     return loadMoreInProgress?.call();
   }
@@ -1058,6 +1418,12 @@ class _$LoadMoreInProgressImpl implements _LoadMoreInProgress {
     TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
     TResult Function(UserManagementListType type, List<SOFUser> users)?
         listDependOnType,
+    TResult Function()? loadReputationHistoryListInProgress,
+    TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(String? error)? loadReputationHistoryListFailed,
+    TResult Function()? loadMoreReputationHistoryInProgress,
     required TResult orElse(),
   }) {
     if (loadMoreInProgress != null) {
@@ -1077,6 +1443,14 @@ class _$LoadMoreInProgressImpl implements _LoadMoreInProgress {
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
     required TResult Function(_onSave value) onSave,
     required TResult Function(_listDependOnType value) listDependOnType,
+    required TResult Function(_LoadReputationHistoryListInProgress value)
+        loadReputationHistoryListInProgress,
+    required TResult Function(_LoadReputationHistoryListSuccessful value)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(_LoadReputationHistoryListFailed value)
+        loadReputationHistoryListFailed,
+    required TResult Function(_LoadMoreReputationHistoryInProgress value)
+        loadMoreReputationHistoryInProgress,
   }) {
     return loadMoreInProgress(this);
   }
@@ -1091,6 +1465,14 @@ class _$LoadMoreInProgressImpl implements _LoadMoreInProgress {
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
     TResult? Function(_onSave value)? onSave,
     TResult? Function(_listDependOnType value)? listDependOnType,
+    TResult? Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult? Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult? Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
   }) {
     return loadMoreInProgress?.call(this);
   }
@@ -1105,6 +1487,14 @@ class _$LoadMoreInProgressImpl implements _LoadMoreInProgress {
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
     TResult Function(_onSave value)? onSave,
     TResult Function(_listDependOnType value)? listDependOnType,
+    TResult Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
     required TResult orElse(),
   }) {
     if (loadMoreInProgress != null) {
@@ -1229,6 +1619,12 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
     required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
     required TResult Function(UserManagementListType type, List<SOFUser> users)
         listDependOnType,
+    required TResult Function() loadReputationHistoryListInProgress,
+    required TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(String? error) loadReputationHistoryListFailed,
+    required TResult Function() loadMoreReputationHistoryInProgress,
   }) {
     return loadUserListSuccessful(users, hasMoreData, isLoadMore);
   }
@@ -1245,6 +1641,12 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
     TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
     TResult? Function(UserManagementListType type, List<SOFUser> users)?
         listDependOnType,
+    TResult? Function()? loadReputationHistoryListInProgress,
+    TResult? Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(String? error)? loadReputationHistoryListFailed,
+    TResult? Function()? loadMoreReputationHistoryInProgress,
   }) {
     return loadUserListSuccessful?.call(users, hasMoreData, isLoadMore);
   }
@@ -1261,6 +1663,12 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
     TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
     TResult Function(UserManagementListType type, List<SOFUser> users)?
         listDependOnType,
+    TResult Function()? loadReputationHistoryListInProgress,
+    TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(String? error)? loadReputationHistoryListFailed,
+    TResult Function()? loadMoreReputationHistoryInProgress,
     required TResult orElse(),
   }) {
     if (loadUserListSuccessful != null) {
@@ -1280,6 +1688,14 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
     required TResult Function(_onSave value) onSave,
     required TResult Function(_listDependOnType value) listDependOnType,
+    required TResult Function(_LoadReputationHistoryListInProgress value)
+        loadReputationHistoryListInProgress,
+    required TResult Function(_LoadReputationHistoryListSuccessful value)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(_LoadReputationHistoryListFailed value)
+        loadReputationHistoryListFailed,
+    required TResult Function(_LoadMoreReputationHistoryInProgress value)
+        loadMoreReputationHistoryInProgress,
   }) {
     return loadUserListSuccessful(this);
   }
@@ -1294,6 +1710,14 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
     TResult? Function(_onSave value)? onSave,
     TResult? Function(_listDependOnType value)? listDependOnType,
+    TResult? Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult? Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult? Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
   }) {
     return loadUserListSuccessful?.call(this);
   }
@@ -1308,6 +1732,14 @@ class _$loadUserListSuccessfulImpl implements _loadUserListSuccessful {
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
     TResult Function(_onSave value)? onSave,
     TResult Function(_listDependOnType value)? listDependOnType,
+    TResult Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
     required TResult orElse(),
   }) {
     if (loadUserListSuccessful != null) {
@@ -1413,6 +1845,12 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
     required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
     required TResult Function(UserManagementListType type, List<SOFUser> users)
         listDependOnType,
+    required TResult Function() loadReputationHistoryListInProgress,
+    required TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(String? error) loadReputationHistoryListFailed,
+    required TResult Function() loadMoreReputationHistoryInProgress,
   }) {
     return loadUserListFailed(error);
   }
@@ -1429,6 +1867,12 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
     TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
     TResult? Function(UserManagementListType type, List<SOFUser> users)?
         listDependOnType,
+    TResult? Function()? loadReputationHistoryListInProgress,
+    TResult? Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(String? error)? loadReputationHistoryListFailed,
+    TResult? Function()? loadMoreReputationHistoryInProgress,
   }) {
     return loadUserListFailed?.call(error);
   }
@@ -1445,6 +1889,12 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
     TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
     TResult Function(UserManagementListType type, List<SOFUser> users)?
         listDependOnType,
+    TResult Function()? loadReputationHistoryListInProgress,
+    TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(String? error)? loadReputationHistoryListFailed,
+    TResult Function()? loadMoreReputationHistoryInProgress,
     required TResult orElse(),
   }) {
     if (loadUserListFailed != null) {
@@ -1464,6 +1914,14 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
     required TResult Function(_onSave value) onSave,
     required TResult Function(_listDependOnType value) listDependOnType,
+    required TResult Function(_LoadReputationHistoryListInProgress value)
+        loadReputationHistoryListInProgress,
+    required TResult Function(_LoadReputationHistoryListSuccessful value)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(_LoadReputationHistoryListFailed value)
+        loadReputationHistoryListFailed,
+    required TResult Function(_LoadMoreReputationHistoryInProgress value)
+        loadMoreReputationHistoryInProgress,
   }) {
     return loadUserListFailed(this);
   }
@@ -1478,6 +1936,14 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
     TResult? Function(_onSave value)? onSave,
     TResult? Function(_listDependOnType value)? listDependOnType,
+    TResult? Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult? Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult? Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
   }) {
     return loadUserListFailed?.call(this);
   }
@@ -1492,6 +1958,14 @@ class _$loadUserListFailedImpl implements _loadUserListFailed {
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
     TResult Function(_onSave value)? onSave,
     TResult Function(_listDependOnType value)? listDependOnType,
+    TResult Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
     required TResult orElse(),
   }) {
     if (loadUserListFailed != null) {
@@ -1610,6 +2084,12 @@ class _$onSaveImpl implements _onSave {
     required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
     required TResult Function(UserManagementListType type, List<SOFUser> users)
         listDependOnType,
+    required TResult Function() loadReputationHistoryListInProgress,
+    required TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(String? error) loadReputationHistoryListFailed,
+    required TResult Function() loadMoreReputationHistoryInProgress,
   }) {
     return onSave(isSuccess, isSave, userId);
   }
@@ -1626,6 +2106,12 @@ class _$onSaveImpl implements _onSave {
     TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
     TResult? Function(UserManagementListType type, List<SOFUser> users)?
         listDependOnType,
+    TResult? Function()? loadReputationHistoryListInProgress,
+    TResult? Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(String? error)? loadReputationHistoryListFailed,
+    TResult? Function()? loadMoreReputationHistoryInProgress,
   }) {
     return onSave?.call(isSuccess, isSave, userId);
   }
@@ -1642,6 +2128,12 @@ class _$onSaveImpl implements _onSave {
     TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
     TResult Function(UserManagementListType type, List<SOFUser> users)?
         listDependOnType,
+    TResult Function()? loadReputationHistoryListInProgress,
+    TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(String? error)? loadReputationHistoryListFailed,
+    TResult Function()? loadMoreReputationHistoryInProgress,
     required TResult orElse(),
   }) {
     if (onSave != null) {
@@ -1661,6 +2153,14 @@ class _$onSaveImpl implements _onSave {
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
     required TResult Function(_onSave value) onSave,
     required TResult Function(_listDependOnType value) listDependOnType,
+    required TResult Function(_LoadReputationHistoryListInProgress value)
+        loadReputationHistoryListInProgress,
+    required TResult Function(_LoadReputationHistoryListSuccessful value)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(_LoadReputationHistoryListFailed value)
+        loadReputationHistoryListFailed,
+    required TResult Function(_LoadMoreReputationHistoryInProgress value)
+        loadMoreReputationHistoryInProgress,
   }) {
     return onSave(this);
   }
@@ -1675,6 +2175,14 @@ class _$onSaveImpl implements _onSave {
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
     TResult? Function(_onSave value)? onSave,
     TResult? Function(_listDependOnType value)? listDependOnType,
+    TResult? Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult? Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult? Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
   }) {
     return onSave?.call(this);
   }
@@ -1689,6 +2197,14 @@ class _$onSaveImpl implements _onSave {
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
     TResult Function(_onSave value)? onSave,
     TResult Function(_listDependOnType value)? listDependOnType,
+    TResult Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
     required TResult orElse(),
   }) {
     if (onSave != null) {
@@ -1810,6 +2326,12 @@ class _$listDependOnTypeImpl implements _listDependOnType {
     required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
     required TResult Function(UserManagementListType type, List<SOFUser> users)
         listDependOnType,
+    required TResult Function() loadReputationHistoryListInProgress,
+    required TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(String? error) loadReputationHistoryListFailed,
+    required TResult Function() loadMoreReputationHistoryInProgress,
   }) {
     return listDependOnType(type, users);
   }
@@ -1826,6 +2348,12 @@ class _$listDependOnTypeImpl implements _listDependOnType {
     TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
     TResult? Function(UserManagementListType type, List<SOFUser> users)?
         listDependOnType,
+    TResult? Function()? loadReputationHistoryListInProgress,
+    TResult? Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(String? error)? loadReputationHistoryListFailed,
+    TResult? Function()? loadMoreReputationHistoryInProgress,
   }) {
     return listDependOnType?.call(type, users);
   }
@@ -1842,6 +2370,12 @@ class _$listDependOnTypeImpl implements _listDependOnType {
     TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
     TResult Function(UserManagementListType type, List<SOFUser> users)?
         listDependOnType,
+    TResult Function()? loadReputationHistoryListInProgress,
+    TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(String? error)? loadReputationHistoryListFailed,
+    TResult Function()? loadMoreReputationHistoryInProgress,
     required TResult orElse(),
   }) {
     if (listDependOnType != null) {
@@ -1861,6 +2395,14 @@ class _$listDependOnTypeImpl implements _listDependOnType {
     required TResult Function(_loadUserListFailed value) loadUserListFailed,
     required TResult Function(_onSave value) onSave,
     required TResult Function(_listDependOnType value) listDependOnType,
+    required TResult Function(_LoadReputationHistoryListInProgress value)
+        loadReputationHistoryListInProgress,
+    required TResult Function(_LoadReputationHistoryListSuccessful value)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(_LoadReputationHistoryListFailed value)
+        loadReputationHistoryListFailed,
+    required TResult Function(_LoadMoreReputationHistoryInProgress value)
+        loadMoreReputationHistoryInProgress,
   }) {
     return listDependOnType(this);
   }
@@ -1875,6 +2417,14 @@ class _$listDependOnTypeImpl implements _listDependOnType {
     TResult? Function(_loadUserListFailed value)? loadUserListFailed,
     TResult? Function(_onSave value)? onSave,
     TResult? Function(_listDependOnType value)? listDependOnType,
+    TResult? Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult? Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult? Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
   }) {
     return listDependOnType?.call(this);
   }
@@ -1889,6 +2439,14 @@ class _$listDependOnTypeImpl implements _listDependOnType {
     TResult Function(_loadUserListFailed value)? loadUserListFailed,
     TResult Function(_onSave value)? onSave,
     TResult Function(_listDependOnType value)? listDependOnType,
+    TResult Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
     required TResult orElse(),
   }) {
     if (listDependOnType != null) {
@@ -1911,4 +2469,890 @@ abstract class _listDependOnType implements UserManagementState {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$listDependOnTypeImplCopyWith<_$listDependOnTypeImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadReputationHistoryListInProgressImplCopyWith<$Res> {
+  factory _$$LoadReputationHistoryListInProgressImplCopyWith(
+          _$LoadReputationHistoryListInProgressImpl value,
+          $Res Function(_$LoadReputationHistoryListInProgressImpl) then) =
+      __$$LoadReputationHistoryListInProgressImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadReputationHistoryListInProgressImplCopyWithImpl<$Res>
+    extends _$UserManagementStateCopyWithImpl<$Res,
+        _$LoadReputationHistoryListInProgressImpl>
+    implements _$$LoadReputationHistoryListInProgressImplCopyWith<$Res> {
+  __$$LoadReputationHistoryListInProgressImplCopyWithImpl(
+      _$LoadReputationHistoryListInProgressImpl _value,
+      $Res Function(_$LoadReputationHistoryListInProgressImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UserManagementState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoadReputationHistoryListInProgressImpl
+    implements _LoadReputationHistoryListInProgress {
+  const _$LoadReputationHistoryListInProgressImpl();
+
+  @override
+  String toString() {
+    return 'UserManagementState.loadReputationHistoryListInProgress()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadReputationHistoryListInProgressImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function() loadMoreInProgress,
+    required TResult Function(
+            List<SOFUser> users, bool hasMoreData, bool isLoadMore)
+        loadUserListSuccessful,
+    required TResult Function(String? error) loadUserListFailed,
+    required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
+    required TResult Function(UserManagementListType type, List<SOFUser> users)
+        listDependOnType,
+    required TResult Function() loadReputationHistoryListInProgress,
+    required TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(String? error) loadReputationHistoryListFailed,
+    required TResult Function() loadMoreReputationHistoryInProgress,
+  }) {
+    return loadReputationHistoryListInProgress();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function()? loadMoreInProgress,
+    TResult? Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
+    TResult? Function(String? error)? loadUserListFailed,
+    TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult? Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
+    TResult? Function()? loadReputationHistoryListInProgress,
+    TResult? Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(String? error)? loadReputationHistoryListFailed,
+    TResult? Function()? loadMoreReputationHistoryInProgress,
+  }) {
+    return loadReputationHistoryListInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function()? loadMoreInProgress,
+    TResult Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
+    TResult Function(String? error)? loadUserListFailed,
+    TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
+    TResult Function()? loadReputationHistoryListInProgress,
+    TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(String? error)? loadReputationHistoryListFailed,
+    TResult Function()? loadMoreReputationHistoryInProgress,
+    required TResult orElse(),
+  }) {
+    if (loadReputationHistoryListInProgress != null) {
+      return loadReputationHistoryListInProgress();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadMoreInProgress value) loadMoreInProgress,
+    required TResult Function(_loadUserListSuccessful value)
+        loadUserListSuccessful,
+    required TResult Function(_loadUserListFailed value) loadUserListFailed,
+    required TResult Function(_onSave value) onSave,
+    required TResult Function(_listDependOnType value) listDependOnType,
+    required TResult Function(_LoadReputationHistoryListInProgress value)
+        loadReputationHistoryListInProgress,
+    required TResult Function(_LoadReputationHistoryListSuccessful value)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(_LoadReputationHistoryListFailed value)
+        loadReputationHistoryListFailed,
+    required TResult Function(_LoadMoreReputationHistoryInProgress value)
+        loadMoreReputationHistoryInProgress,
+  }) {
+    return loadReputationHistoryListInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadMoreInProgress value)? loadMoreInProgress,
+    TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
+    TResult? Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult? Function(_onSave value)? onSave,
+    TResult? Function(_listDependOnType value)? listDependOnType,
+    TResult? Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult? Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult? Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
+  }) {
+    return loadReputationHistoryListInProgress?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadMoreInProgress value)? loadMoreInProgress,
+    TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
+    TResult Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult Function(_onSave value)? onSave,
+    TResult Function(_listDependOnType value)? listDependOnType,
+    TResult Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
+    required TResult orElse(),
+  }) {
+    if (loadReputationHistoryListInProgress != null) {
+      return loadReputationHistoryListInProgress(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadReputationHistoryListInProgress
+    implements UserManagementState {
+  const factory _LoadReputationHistoryListInProgress() =
+      _$LoadReputationHistoryListInProgressImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadReputationHistoryListSuccessfulImplCopyWith<$Res> {
+  factory _$$LoadReputationHistoryListSuccessfulImplCopyWith(
+          _$LoadReputationHistoryListSuccessfulImpl value,
+          $Res Function(_$LoadReputationHistoryListSuccessfulImpl) then) =
+      __$$LoadReputationHistoryListSuccessfulImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call(
+      {List<ReputationHistory> reputationHistories,
+      bool hasMoreData,
+      bool isLoadMore});
+}
+
+/// @nodoc
+class __$$LoadReputationHistoryListSuccessfulImplCopyWithImpl<$Res>
+    extends _$UserManagementStateCopyWithImpl<$Res,
+        _$LoadReputationHistoryListSuccessfulImpl>
+    implements _$$LoadReputationHistoryListSuccessfulImplCopyWith<$Res> {
+  __$$LoadReputationHistoryListSuccessfulImplCopyWithImpl(
+      _$LoadReputationHistoryListSuccessfulImpl _value,
+      $Res Function(_$LoadReputationHistoryListSuccessfulImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UserManagementState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? reputationHistories = null,
+    Object? hasMoreData = null,
+    Object? isLoadMore = null,
+  }) {
+    return _then(_$LoadReputationHistoryListSuccessfulImpl(
+      reputationHistories: null == reputationHistories
+          ? _value._reputationHistories
+          : reputationHistories // ignore: cast_nullable_to_non_nullable
+              as List<ReputationHistory>,
+      hasMoreData: null == hasMoreData
+          ? _value.hasMoreData
+          : hasMoreData // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoadMore: null == isLoadMore
+          ? _value.isLoadMore
+          : isLoadMore // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoadReputationHistoryListSuccessfulImpl
+    implements _LoadReputationHistoryListSuccessful {
+  const _$LoadReputationHistoryListSuccessfulImpl(
+      {required final List<ReputationHistory> reputationHistories,
+      required this.hasMoreData,
+      required this.isLoadMore})
+      : _reputationHistories = reputationHistories;
+
+  final List<ReputationHistory> _reputationHistories;
+  @override
+  List<ReputationHistory> get reputationHistories {
+    if (_reputationHistories is EqualUnmodifiableListView)
+      return _reputationHistories;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_reputationHistories);
+  }
+
+  @override
+  final bool hasMoreData;
+  @override
+  final bool isLoadMore;
+
+  @override
+  String toString() {
+    return 'UserManagementState.loadReputationHistoryListSuccessful(reputationHistories: $reputationHistories, hasMoreData: $hasMoreData, isLoadMore: $isLoadMore)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadReputationHistoryListSuccessfulImpl &&
+            const DeepCollectionEquality()
+                .equals(other._reputationHistories, _reputationHistories) &&
+            (identical(other.hasMoreData, hasMoreData) ||
+                other.hasMoreData == hasMoreData) &&
+            (identical(other.isLoadMore, isLoadMore) ||
+                other.isLoadMore == isLoadMore));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_reputationHistories),
+      hasMoreData,
+      isLoadMore);
+
+  /// Create a copy of UserManagementState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadReputationHistoryListSuccessfulImplCopyWith<
+          _$LoadReputationHistoryListSuccessfulImpl>
+      get copyWith => __$$LoadReputationHistoryListSuccessfulImplCopyWithImpl<
+          _$LoadReputationHistoryListSuccessfulImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function() loadMoreInProgress,
+    required TResult Function(
+            List<SOFUser> users, bool hasMoreData, bool isLoadMore)
+        loadUserListSuccessful,
+    required TResult Function(String? error) loadUserListFailed,
+    required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
+    required TResult Function(UserManagementListType type, List<SOFUser> users)
+        listDependOnType,
+    required TResult Function() loadReputationHistoryListInProgress,
+    required TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(String? error) loadReputationHistoryListFailed,
+    required TResult Function() loadMoreReputationHistoryInProgress,
+  }) {
+    return loadReputationHistoryListSuccessful(
+        reputationHistories, hasMoreData, isLoadMore);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function()? loadMoreInProgress,
+    TResult? Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
+    TResult? Function(String? error)? loadUserListFailed,
+    TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult? Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
+    TResult? Function()? loadReputationHistoryListInProgress,
+    TResult? Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(String? error)? loadReputationHistoryListFailed,
+    TResult? Function()? loadMoreReputationHistoryInProgress,
+  }) {
+    return loadReputationHistoryListSuccessful?.call(
+        reputationHistories, hasMoreData, isLoadMore);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function()? loadMoreInProgress,
+    TResult Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
+    TResult Function(String? error)? loadUserListFailed,
+    TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
+    TResult Function()? loadReputationHistoryListInProgress,
+    TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(String? error)? loadReputationHistoryListFailed,
+    TResult Function()? loadMoreReputationHistoryInProgress,
+    required TResult orElse(),
+  }) {
+    if (loadReputationHistoryListSuccessful != null) {
+      return loadReputationHistoryListSuccessful(
+          reputationHistories, hasMoreData, isLoadMore);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadMoreInProgress value) loadMoreInProgress,
+    required TResult Function(_loadUserListSuccessful value)
+        loadUserListSuccessful,
+    required TResult Function(_loadUserListFailed value) loadUserListFailed,
+    required TResult Function(_onSave value) onSave,
+    required TResult Function(_listDependOnType value) listDependOnType,
+    required TResult Function(_LoadReputationHistoryListInProgress value)
+        loadReputationHistoryListInProgress,
+    required TResult Function(_LoadReputationHistoryListSuccessful value)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(_LoadReputationHistoryListFailed value)
+        loadReputationHistoryListFailed,
+    required TResult Function(_LoadMoreReputationHistoryInProgress value)
+        loadMoreReputationHistoryInProgress,
+  }) {
+    return loadReputationHistoryListSuccessful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadMoreInProgress value)? loadMoreInProgress,
+    TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
+    TResult? Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult? Function(_onSave value)? onSave,
+    TResult? Function(_listDependOnType value)? listDependOnType,
+    TResult? Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult? Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult? Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
+  }) {
+    return loadReputationHistoryListSuccessful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadMoreInProgress value)? loadMoreInProgress,
+    TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
+    TResult Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult Function(_onSave value)? onSave,
+    TResult Function(_listDependOnType value)? listDependOnType,
+    TResult Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
+    required TResult orElse(),
+  }) {
+    if (loadReputationHistoryListSuccessful != null) {
+      return loadReputationHistoryListSuccessful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadReputationHistoryListSuccessful
+    implements UserManagementState {
+  const factory _LoadReputationHistoryListSuccessful(
+          {required final List<ReputationHistory> reputationHistories,
+          required final bool hasMoreData,
+          required final bool isLoadMore}) =
+      _$LoadReputationHistoryListSuccessfulImpl;
+
+  List<ReputationHistory> get reputationHistories;
+  bool get hasMoreData;
+  bool get isLoadMore;
+
+  /// Create a copy of UserManagementState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoadReputationHistoryListSuccessfulImplCopyWith<
+          _$LoadReputationHistoryListSuccessfulImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadReputationHistoryListFailedImplCopyWith<$Res> {
+  factory _$$LoadReputationHistoryListFailedImplCopyWith(
+          _$LoadReputationHistoryListFailedImpl value,
+          $Res Function(_$LoadReputationHistoryListFailedImpl) then) =
+      __$$LoadReputationHistoryListFailedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String? error});
+}
+
+/// @nodoc
+class __$$LoadReputationHistoryListFailedImplCopyWithImpl<$Res>
+    extends _$UserManagementStateCopyWithImpl<$Res,
+        _$LoadReputationHistoryListFailedImpl>
+    implements _$$LoadReputationHistoryListFailedImplCopyWith<$Res> {
+  __$$LoadReputationHistoryListFailedImplCopyWithImpl(
+      _$LoadReputationHistoryListFailedImpl _value,
+      $Res Function(_$LoadReputationHistoryListFailedImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UserManagementState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = freezed,
+  }) {
+    return _then(_$LoadReputationHistoryListFailedImpl(
+      error: freezed == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoadReputationHistoryListFailedImpl
+    implements _LoadReputationHistoryListFailed {
+  const _$LoadReputationHistoryListFailedImpl({this.error});
+
+  @override
+  final String? error;
+
+  @override
+  String toString() {
+    return 'UserManagementState.loadReputationHistoryListFailed(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadReputationHistoryListFailedImpl &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of UserManagementState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadReputationHistoryListFailedImplCopyWith<
+          _$LoadReputationHistoryListFailedImpl>
+      get copyWith => __$$LoadReputationHistoryListFailedImplCopyWithImpl<
+          _$LoadReputationHistoryListFailedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function() loadMoreInProgress,
+    required TResult Function(
+            List<SOFUser> users, bool hasMoreData, bool isLoadMore)
+        loadUserListSuccessful,
+    required TResult Function(String? error) loadUserListFailed,
+    required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
+    required TResult Function(UserManagementListType type, List<SOFUser> users)
+        listDependOnType,
+    required TResult Function() loadReputationHistoryListInProgress,
+    required TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(String? error) loadReputationHistoryListFailed,
+    required TResult Function() loadMoreReputationHistoryInProgress,
+  }) {
+    return loadReputationHistoryListFailed(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function()? loadMoreInProgress,
+    TResult? Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
+    TResult? Function(String? error)? loadUserListFailed,
+    TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult? Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
+    TResult? Function()? loadReputationHistoryListInProgress,
+    TResult? Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(String? error)? loadReputationHistoryListFailed,
+    TResult? Function()? loadMoreReputationHistoryInProgress,
+  }) {
+    return loadReputationHistoryListFailed?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function()? loadMoreInProgress,
+    TResult Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
+    TResult Function(String? error)? loadUserListFailed,
+    TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
+    TResult Function()? loadReputationHistoryListInProgress,
+    TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(String? error)? loadReputationHistoryListFailed,
+    TResult Function()? loadMoreReputationHistoryInProgress,
+    required TResult orElse(),
+  }) {
+    if (loadReputationHistoryListFailed != null) {
+      return loadReputationHistoryListFailed(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadMoreInProgress value) loadMoreInProgress,
+    required TResult Function(_loadUserListSuccessful value)
+        loadUserListSuccessful,
+    required TResult Function(_loadUserListFailed value) loadUserListFailed,
+    required TResult Function(_onSave value) onSave,
+    required TResult Function(_listDependOnType value) listDependOnType,
+    required TResult Function(_LoadReputationHistoryListInProgress value)
+        loadReputationHistoryListInProgress,
+    required TResult Function(_LoadReputationHistoryListSuccessful value)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(_LoadReputationHistoryListFailed value)
+        loadReputationHistoryListFailed,
+    required TResult Function(_LoadMoreReputationHistoryInProgress value)
+        loadMoreReputationHistoryInProgress,
+  }) {
+    return loadReputationHistoryListFailed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadMoreInProgress value)? loadMoreInProgress,
+    TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
+    TResult? Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult? Function(_onSave value)? onSave,
+    TResult? Function(_listDependOnType value)? listDependOnType,
+    TResult? Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult? Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult? Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
+  }) {
+    return loadReputationHistoryListFailed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadMoreInProgress value)? loadMoreInProgress,
+    TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
+    TResult Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult Function(_onSave value)? onSave,
+    TResult Function(_listDependOnType value)? listDependOnType,
+    TResult Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
+    required TResult orElse(),
+  }) {
+    if (loadReputationHistoryListFailed != null) {
+      return loadReputationHistoryListFailed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadReputationHistoryListFailed implements UserManagementState {
+  const factory _LoadReputationHistoryListFailed({final String? error}) =
+      _$LoadReputationHistoryListFailedImpl;
+
+  String? get error;
+
+  /// Create a copy of UserManagementState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LoadReputationHistoryListFailedImplCopyWith<
+          _$LoadReputationHistoryListFailedImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$LoadMoreReputationHistoryInProgressImplCopyWith<$Res> {
+  factory _$$LoadMoreReputationHistoryInProgressImplCopyWith(
+          _$LoadMoreReputationHistoryInProgressImpl value,
+          $Res Function(_$LoadMoreReputationHistoryInProgressImpl) then) =
+      __$$LoadMoreReputationHistoryInProgressImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadMoreReputationHistoryInProgressImplCopyWithImpl<$Res>
+    extends _$UserManagementStateCopyWithImpl<$Res,
+        _$LoadMoreReputationHistoryInProgressImpl>
+    implements _$$LoadMoreReputationHistoryInProgressImplCopyWith<$Res> {
+  __$$LoadMoreReputationHistoryInProgressImplCopyWithImpl(
+      _$LoadMoreReputationHistoryInProgressImpl _value,
+      $Res Function(_$LoadMoreReputationHistoryInProgressImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of UserManagementState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoadMoreReputationHistoryInProgressImpl
+    implements _LoadMoreReputationHistoryInProgress {
+  const _$LoadMoreReputationHistoryInProgressImpl();
+
+  @override
+  String toString() {
+    return 'UserManagementState.loadMoreReputationHistoryInProgress()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadMoreReputationHistoryInProgressImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loadInProgress,
+    required TResult Function() loadMoreInProgress,
+    required TResult Function(
+            List<SOFUser> users, bool hasMoreData, bool isLoadMore)
+        loadUserListSuccessful,
+    required TResult Function(String? error) loadUserListFailed,
+    required TResult Function(bool isSuccess, bool isSave, int userId) onSave,
+    required TResult Function(UserManagementListType type, List<SOFUser> users)
+        listDependOnType,
+    required TResult Function() loadReputationHistoryListInProgress,
+    required TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(String? error) loadReputationHistoryListFailed,
+    required TResult Function() loadMoreReputationHistoryInProgress,
+  }) {
+    return loadMoreReputationHistoryInProgress();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loadInProgress,
+    TResult? Function()? loadMoreInProgress,
+    TResult? Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
+    TResult? Function(String? error)? loadUserListFailed,
+    TResult? Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult? Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
+    TResult? Function()? loadReputationHistoryListInProgress,
+    TResult? Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(String? error)? loadReputationHistoryListFailed,
+    TResult? Function()? loadMoreReputationHistoryInProgress,
+  }) {
+    return loadMoreReputationHistoryInProgress?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loadInProgress,
+    TResult Function()? loadMoreInProgress,
+    TResult Function(List<SOFUser> users, bool hasMoreData, bool isLoadMore)?
+        loadUserListSuccessful,
+    TResult Function(String? error)? loadUserListFailed,
+    TResult Function(bool isSuccess, bool isSave, int userId)? onSave,
+    TResult Function(UserManagementListType type, List<SOFUser> users)?
+        listDependOnType,
+    TResult Function()? loadReputationHistoryListInProgress,
+    TResult Function(List<ReputationHistory> reputationHistories,
+            bool hasMoreData, bool isLoadMore)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(String? error)? loadReputationHistoryListFailed,
+    TResult Function()? loadMoreReputationHistoryInProgress,
+    required TResult orElse(),
+  }) {
+    if (loadMoreReputationHistoryInProgress != null) {
+      return loadMoreReputationHistoryInProgress();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_LoadInProgress value) loadInProgress,
+    required TResult Function(_LoadMoreInProgress value) loadMoreInProgress,
+    required TResult Function(_loadUserListSuccessful value)
+        loadUserListSuccessful,
+    required TResult Function(_loadUserListFailed value) loadUserListFailed,
+    required TResult Function(_onSave value) onSave,
+    required TResult Function(_listDependOnType value) listDependOnType,
+    required TResult Function(_LoadReputationHistoryListInProgress value)
+        loadReputationHistoryListInProgress,
+    required TResult Function(_LoadReputationHistoryListSuccessful value)
+        loadReputationHistoryListSuccessful,
+    required TResult Function(_LoadReputationHistoryListFailed value)
+        loadReputationHistoryListFailed,
+    required TResult Function(_LoadMoreReputationHistoryInProgress value)
+        loadMoreReputationHistoryInProgress,
+  }) {
+    return loadMoreReputationHistoryInProgress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_LoadInProgress value)? loadInProgress,
+    TResult? Function(_LoadMoreInProgress value)? loadMoreInProgress,
+    TResult? Function(_loadUserListSuccessful value)? loadUserListSuccessful,
+    TResult? Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult? Function(_onSave value)? onSave,
+    TResult? Function(_listDependOnType value)? listDependOnType,
+    TResult? Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult? Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult? Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult? Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
+  }) {
+    return loadMoreReputationHistoryInProgress?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LoadInProgress value)? loadInProgress,
+    TResult Function(_LoadMoreInProgress value)? loadMoreInProgress,
+    TResult Function(_loadUserListSuccessful value)? loadUserListSuccessful,
+    TResult Function(_loadUserListFailed value)? loadUserListFailed,
+    TResult Function(_onSave value)? onSave,
+    TResult Function(_listDependOnType value)? listDependOnType,
+    TResult Function(_LoadReputationHistoryListInProgress value)?
+        loadReputationHistoryListInProgress,
+    TResult Function(_LoadReputationHistoryListSuccessful value)?
+        loadReputationHistoryListSuccessful,
+    TResult Function(_LoadReputationHistoryListFailed value)?
+        loadReputationHistoryListFailed,
+    TResult Function(_LoadMoreReputationHistoryInProgress value)?
+        loadMoreReputationHistoryInProgress,
+    required TResult orElse(),
+  }) {
+    if (loadMoreReputationHistoryInProgress != null) {
+      return loadMoreReputationHistoryInProgress(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadMoreReputationHistoryInProgress
+    implements UserManagementState {
+  const factory _LoadMoreReputationHistoryInProgress() =
+      _$LoadMoreReputationHistoryInProgressImpl;
 }

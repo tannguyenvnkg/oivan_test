@@ -27,6 +27,7 @@ import 'package:oivan_test/features/user_management/sources/i_user_management_so
 import 'package:oivan_test/features/user_management/sources/user_management_sources.dart'
     as _i587;
 import 'package:oivan_test/utils/cache/cache.dart' as _i706;
+import 'package:oivan_test/utils/helper.dart' as _i620;
 
 extension GetItInjectableX on _i174.GetIt {
 // initializes the registration of main-scope dependencies inside of GetIt
@@ -41,6 +42,7 @@ extension GetItInjectableX on _i174.GetIt {
     );
     final loggerModule = _$LoggerModule();
     gh.factory<_i853.ClientRequest>(() => _i853.ClientRequest());
+    gh.factory<_i620.Helper>(() => _i620.Helper());
     gh.singleton<_i890.AppRouter>(() => _i890.AppRouter());
     gh.singleton<_i930.AppColor>(() => _i930.AppColor());
     gh.singleton<_i706.Cache>(() => _i706.Cache());

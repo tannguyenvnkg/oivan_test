@@ -7,7 +7,9 @@ import 'package:logger/logger.dart';
 
 import '../../../configurations/injection.dart';
 import '../../../utils/cache/cache.dart';
+import '../domain/request_model/reputation_history_request.dart';
 import '../domain/request_model/user_list_request.dart';
+import '../domain/response_model/reputation_history.dart';
 import '../domain/response_model/sof_user.dart';
 import '../presentations/user_management_list/user_management_list.dart';
 import '../repositories/i_user_management_repositories.dart';
@@ -24,6 +26,7 @@ class UserManagementBloc
     on<_getUserList>(_getUserListHandler);
     on<_save>(_saveUserHandler);
     on<_showListDependOnType>(_showListDependOnTypeHandler);
+    on<_getReputationHistoryList>(_getReputationHistoryListHandler);
   }
 
   Future<void> _getUserListHandler(
@@ -39,6 +42,26 @@ class UserManagementBloc
       (data) => emit(
         UserManagementState.loadUserListSuccessful(
           users: data.items,
+          hasMoreData: data.hasMore,
+          isLoadMore: isLoadMore,
+        ),
+      ),
+    );
+  }
+
+  Future<void> _getReputationHistoryListHandler(_getReputationHistoryList event,
+      Emitter<UserManagementState> emit) async {
+    final bool isLoadMore = (event.request.page ?? 1) > 1;
+    emit(!isLoadMore
+        ? const UserManagementState.loadReputationHistoryListInProgress()
+        : const UserManagementState.loadMoreReputationHistoryInProgress());
+    final result = await repository.getReputationHistoryList(event.request);
+    result.fold(
+      (error) => emit(UserManagementState.loadReputationHistoryListFailed(
+          error: error.message)),
+      (data) => emit(
+        UserManagementState.loadReputationHistoryListSuccessful(
+          reputationHistories: data.items,
           hasMoreData: data.hasMore,
           isLoadMore: isLoadMore,
         ),

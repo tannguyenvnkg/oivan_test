@@ -11,7 +11,7 @@ import '../domain/request_model/reputation_history_request.dart';
 import '../domain/request_model/user_list_request.dart';
 import '../domain/response_model/reputation_history.dart';
 import '../domain/response_model/sof_user.dart';
-import '../presentations/user_management_list/user_management_list.dart';
+import '../presentations/user_management_list/enum/user_management_list_type.dart';
 import '../repositories/i_user_management_repositories.dart';
 
 part 'user_management_bloc.freezed.dart';

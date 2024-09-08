@@ -11,13 +11,12 @@ import '../../../../screens/ui/custom_list_view.dart';
 import '../../applications/user_management_bloc.dart';
 import '../../domain/request_model/user_list_request.dart';
 import '../../domain/response_model/sof_user.dart';
+import 'enum/user_management_list_type.dart';
 import 'widgets/bookmark_button.dart';
 import 'widgets/user_avatar.dart';
 import 'widgets/user_info.dart';
 
 final _appColor = getIt.get<AppColor>();
-
-enum UserManagementListType { all, bookmark }
 
 @RoutePage()
 class UserManagementListScreen extends StatefulWidget {
@@ -74,6 +73,9 @@ class _UserManagementListScreenState extends State<UserManagementListScreen> {
                     })
                   : hasMoreData = false;
             },
+            loadUserListFailed: (state) {
+              showMessage('Load user list failed: ${state.error}');
+            },
             onSave: (value) {
               showMessage(value.isSave
                   ? 'Add user to bookmark ${value.isSuccess ? 'success' : 'failed'}'
@@ -124,7 +126,7 @@ extension _Event on _UserManagementListScreenState {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(message),
-        duration: const Duration(seconds: 1),
+        duration: const Duration(seconds: 2),
       ),
     );
   }
@@ -223,18 +225,30 @@ extension _WidgetBuilding on _UserManagementListScreenState {
           ),
           itemBuilder: (context) {
             return [
-              const PopupMenuItem(
-                value: UserManagementListType.all,
-                child: Text('All'),
-              ),
-              const PopupMenuItem(
-                value: UserManagementListType.bookmark,
-                child: Text('Bookmark'),
-              ),
+              _buildOption(UserManagementListType.all),
+              _buildOption(UserManagementListType.bookmark),
             ];
           },
         ),
       ],
+    );
+  }
+
+  PopupMenuItem<UserManagementListType> _buildOption(
+      UserManagementListType option) {
+    return PopupMenuItem(
+      value: option,
+      child: Row(
+        children: [
+          Icon(
+            option == currentType
+                ? Icons.check_circle
+                : Icons.radio_button_unchecked,
+          ),
+          const SizedBox(width: 8.0),
+          Text(option.value),
+        ],
+      ),
     );
   }
 }

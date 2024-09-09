@@ -86,10 +86,7 @@ class _ReputationHistoryScreenState extends State<ReputationHistoryScreen> {
                 orElse: () {});
           },
           child: onInit
-              ? ListView.builder(
-                  itemBuilder: (_, __) => const ReputationHistoryLoading(),
-                  itemCount: 6,
-                )
+              ? _buildListLoading()
               : LayoutBuilder(builder: (context, constraint) {
                   return CustomListView.builder(
                     controller: scrollController,
@@ -105,6 +102,14 @@ class _ReputationHistoryScreenState extends State<ReputationHistoryScreen> {
                   );
                 }),
         ));
+  }
+
+  ListView _buildListLoading() {
+    return ListView.builder(
+      physics: const NeverScrollableScrollPhysics(),
+      itemBuilder: (_, __) => const ReputationHistoryLoading(),
+      itemCount: 10,
+    );
   }
 }
 

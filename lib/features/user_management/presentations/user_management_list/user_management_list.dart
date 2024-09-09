@@ -32,7 +32,7 @@ class UserManagementListScreen extends StatefulWidget {
 
 class _UserManagementListScreenState extends State<UserManagementListScreen> {
   final _bloc = getIt.get<UserManagementBloc>();
-  final debouncer = Debouncer(milliseconds: 500);
+  final debouncer = Debouncer(milliseconds: 250);
   int pageIndex = 1;
   int pageSize = 30;
   bool hasMoreData = true;
@@ -61,6 +61,12 @@ class _UserManagementListScreenState extends State<UserManagementListScreen> {
         }
       },
     );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    debouncer.dispose();
   }
 
   @override
@@ -132,6 +138,7 @@ class _UserManagementListScreenState extends State<UserManagementListScreen> {
 
   ListView _buildListLoading() {
     return ListView.builder(
+      physics: const NeverScrollableScrollPhysics(),
       itemCount: 6,
       itemBuilder: (_, __) => const UserManagementListLoading(),
     );

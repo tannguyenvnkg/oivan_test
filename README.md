@@ -44,7 +44,7 @@ This application uses the BLoC (Business Logic Component) pattern for state mana
 
 ## Dependencies
 
-Flutter version: 3.24.2
+**Flutter version: 3.24.2**
 Below are the main dependencies used in the project:
 
 - `get_it: ^7.7.0`

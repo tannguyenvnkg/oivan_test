@@ -31,7 +31,7 @@ class UserManagementListScreen extends StatefulWidget {
 
 class _UserManagementListScreenState extends State<UserManagementListScreen> {
   final _bloc = getIt.get<UserManagementBloc>();
-  final debouncer = Debouncer(milliseconds: 100);
+  final debouncer = Debouncer(milliseconds: 500);
   int pageIndex = 1;
   int pageSize = 30;
   bool hasMoreData = true;

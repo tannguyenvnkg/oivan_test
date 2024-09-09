@@ -1,14 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shimmer/shimmer.dart';
+
 import '../../../../configurations/injection.dart';
-import '../../domain/request_model/reputation_history_request.dart';
+import '../../../../constant/color.dart';
 import '../../../../screens/ui/custom_list_view.dart';
 import '../../../../utils/helper.dart';
-
-import '../../../../constant/color.dart';
 import '../../applications/user_management_bloc.dart';
+import '../../domain/request_model/reputation_history_request.dart';
 import '../../domain/response_model/reputation_history.dart';
 import 'widgets/item_loading.dart';
 
@@ -87,10 +86,7 @@ class _ReputationHistoryScreenState extends State<ReputationHistoryScreen> {
                 orElse: () {});
           },
           child: onInit
-              ? ListView.builder(
-                  itemBuilder: (_, __) => const ReputationHistoryLoading(),
-                  itemCount: 6,
-                )
+              ? _buildListLoading()
               : LayoutBuilder(builder: (context, constraint) {
                   return CustomListView.builder(
                     controller: scrollController,
@@ -106,6 +102,14 @@ class _ReputationHistoryScreenState extends State<ReputationHistoryScreen> {
                   );
                 }),
         ));
+  }
+
+  ListView _buildListLoading() {
+    return ListView.builder(
+      physics: const NeverScrollableScrollPhysics(),
+      itemBuilder: (_, __) => const ReputationHistoryLoading(),
+      itemCount: 10,
+    );
   }
 }
 

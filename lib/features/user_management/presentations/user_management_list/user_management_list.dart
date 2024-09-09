@@ -2,19 +2,20 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/logger.dart';
+
 import '../../../../configurations/app_router.dart';
 import '../../../../configurations/app_router.gr.dart';
-import '../../../../utils/cache/cache.dart';
-import '../../../../utils/debouncer.dart';
-
 import '../../../../configurations/injection.dart';
 import '../../../../constant/color.dart';
 import '../../../../screens/ui/custom_list_view.dart';
+import '../../../../utils/cache/cache.dart';
+import '../../../../utils/debouncer.dart';
 import '../../applications/user_management_bloc.dart';
 import '../../domain/request_model/user_list_request.dart';
 import '../../domain/response_model/sof_user.dart';
 import 'enum/user_management_list_type.dart';
 import 'widgets/bookmark_button.dart';
+import 'widgets/item_loading.dart';
 import 'widgets/user_avatar.dart';
 import 'widgets/user_info.dart';
 
@@ -40,6 +41,8 @@ class _UserManagementListScreenState extends State<UserManagementListScreen> {
 
   UserManagementListType currentType = UserManagementListType.all;
   List<SOFUser> usersOnAllType = [];
+
+  bool onInit = true;
 
   @override
   void initState() {
@@ -74,6 +77,9 @@ class _UserManagementListScreenState extends State<UserManagementListScreen> {
                         pageIndex++;
                         users = [...users, ...state.users];
                         usersOnAllType = users.toList();
+                        if (onInit) {
+                          onInit = false;
+                        }
                       })
                     : hasMoreData = false;
               } catch (e) {
@@ -102,22 +108,32 @@ class _UserManagementListScreenState extends State<UserManagementListScreen> {
           );
         },
         child: () {
-          return LayoutBuilder(builder: (context, constraint) {
-            return CustomListView.builder(
-              itemCount: users.length + 1,
-              controller: scrollController,
-              itemBuilder: (context, index) {
-                final isLastItem = index == users.length;
-                return _buildItem(
-                  isLastItem ? null : users[index],
-                  isLastItem: isLastItem,
-                );
-              },
-              duration: const Duration(milliseconds: 300),
-            );
-          });
+          // return list generate
+          return onInit
+              ? _buildListLoading()
+              : LayoutBuilder(builder: (context, constraint) {
+                  return CustomListView.builder(
+                    itemCount: users.length + 1,
+                    controller: scrollController,
+                    itemBuilder: (context, index) {
+                      final isLastItem = index == users.length;
+                      return _buildItem(
+                        isLastItem ? null : users[index],
+                        isLastItem: isLastItem,
+                      );
+                    },
+                    duration: const Duration(milliseconds: 300),
+                  );
+                });
         }(),
       ),
+    );
+  }
+
+  ListView _buildListLoading() {
+    return ListView.builder(
+      itemCount: 6,
+      itemBuilder: (_, __) => const UserManagementListLoading(),
     );
   }
 }
@@ -163,7 +179,7 @@ extension _WidgetBuilding on _UserManagementListScreenState {
         ? hasMoreData &&
                 users.isNotEmpty &&
                 currentType == UserManagementListType.all
-            ? const Center(child: CircularProgressIndicator.adaptive())
+            ? const Center(child: UserManagementListLoading())
             : const SizedBox()
         : () {
             final isSave =

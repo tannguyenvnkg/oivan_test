@@ -23,8 +23,8 @@ void main() {
   _testShowListDependOnType();
 }
 
-void _testShowListDependOnType() {
-  group('Test showListDependOnType', () {
+void _testGetListUser() {
+  group('Test getListUser', () {
     late MockUserManagementRepositories mockRepository;
     late MockCache mockCache;
     late UserManagementBloc bloc;
@@ -39,79 +39,43 @@ void _testShowListDependOnType() {
       bloc.close();
     });
 
-    blocTest<UserManagementBloc, UserManagementState>(
-      'emits [listDependOnType] with type = bookmark',
-      build: () => bloc,
-      act: (bloc) => bloc.add(const UserManagementEvent.showListDependOnType(
-          type: UserManagementListType.bookmark, users: [])),
-      expect: () => <UserManagementState>[
-        const UserManagementState.listDependOnType(
-            type: UserManagementListType.bookmark, users: []),
-      ],
+    const request =
+        UserListRequest(page: 1, pageSize: 10, site: 'stackoverflow');
+    const expectedResult = SOFUserList(
+      items: [],
+      hasMore: false,
+      quotaMax: 0,
+      quotaRemaining: 0,
     );
-
+    final apiErrorResult = ApiError(message: 'Error', code: 400);
     blocTest<UserManagementBloc, UserManagementState>(
-      'emits [listDependOnType] with type = all',
-      build: () => bloc,
-      act: (bloc) => bloc.add(const UserManagementEvent.showListDependOnType(
-          type: UserManagementListType.all, users: [])),
-      expect: () => <UserManagementState>[
-        const UserManagementState.listDependOnType(
-            type: UserManagementListType.all, users: []),
-      ],
-    );
-  });
-}
-
-void _testSaveUserToBookmark() {
-  group('Test saveUserToBookmark', () {
-    late MockUserManagementRepositories mockRepository;
-    late MockCache mockCache;
-    late UserManagementBloc bloc;
-
-    setUp(() {
-      mockRepository = MockUserManagementRepositories();
-      mockCache = MockCache();
-      bloc = UserManagementBloc(repository: mockRepository, cache: mockCache);
-    });
-
-    tearDown(() {
-      bloc.close();
-    });
-
-    const user = SOFUser(
-      userId: 1,
-      reputation: 1,
-      displayName: 'displayName',
-      avatar: '',
-      location: '',
-      age: null,
-    );
-    blocTest<UserManagementBloc, UserManagementState>(
-      'emits [UserManagementState.onSave] with isSuccess = true when successful',
+      'emits [UserManagementState.loadInProgress, UserManagementState.loadUserListSuccessful] when successful',
       build: () => bloc,
       setUp: () {
-        when(mockCache.saveUser(user)).thenReturn(null);
+        when(mockRepository.getUserList(request))
+            .thenAnswer((_) async => right(expectedResult));
       },
       act: (bloc) =>
-          bloc.add(const UserManagementEvent.save(user: user, isSave: true)),
+          bloc.add(const UserManagementEvent.getUserList(request: request)),
       expect: () => <UserManagementState>[
-        UserManagementState.onSave(
-            isSuccess: true, isSave: true, userId: user.userId),
+        const UserManagementState.loadInProgress(),
+        const UserManagementState.loadUserListSuccessful(
+            users: [], hasMoreData: false, isLoadMore: false),
       ],
     );
 
     blocTest<UserManagementBloc, UserManagementState>(
-      'emits [UserManagementState.onSave] with isSuccess = false when failed',
+      'emits [UserManagementState.loadInProgress, UserManagementState.loadUserListFailed] when failed',
       build: () => bloc,
       setUp: () {
-        when(mockCache.saveUser(user)).thenThrow(Exception());
+        when(mockRepository.getUserList(request))
+            .thenAnswer((_) async => left(apiErrorResult));
       },
       act: (bloc) =>
-          bloc.add(const UserManagementEvent.save(user: user, isSave: true)),
+          bloc.add(const UserManagementEvent.getUserList(request: request)),
       expect: () => <UserManagementState>[
-        UserManagementState.onSave(
-            isSuccess: false, isSave: true, userId: user.userId),
+        const UserManagementState.loadInProgress(),
+        UserManagementState.loadUserListFailed(error: apiErrorResult.message),
       ],
     );
   });
@@ -178,8 +142,8 @@ void _testGetReputationHistoryList() {
   });
 }
 
-void _testGetListUser() {
-  group('Test getListUser', () {
+void _testSaveUserToBookmark() {
+  group('Test saveUserToBookmark', () {
     late MockUserManagementRepositories mockRepository;
     late MockCache mockCache;
     late UserManagementBloc bloc;
@@ -194,43 +158,79 @@ void _testGetListUser() {
       bloc.close();
     });
 
-    const request =
-        UserListRequest(page: 1, pageSize: 10, site: 'stackoverflow');
-    const expectedResult = SOFUserList(
-      items: [],
-      hasMore: false,
-      quotaMax: 0,
-      quotaRemaining: 0,
+    const user = SOFUser(
+      userId: 1,
+      reputation: 1,
+      displayName: 'displayName',
+      avatar: '',
+      location: '',
+      age: null,
     );
-    final apiErrorResult = ApiError(message: 'Error', code: 400);
     blocTest<UserManagementBloc, UserManagementState>(
-      'emits [UserManagementState.loadInProgress, UserManagementState.loadUserListSuccessful] when successful',
+      'emits [UserManagementState.onSave] with isSuccess = true when successful',
       build: () => bloc,
       setUp: () {
-        when(mockRepository.getUserList(request))
-            .thenAnswer((_) async => right(expectedResult));
+        when(mockCache.saveUser(user)).thenReturn(null);
       },
       act: (bloc) =>
-          bloc.add(const UserManagementEvent.getUserList(request: request)),
+          bloc.add(const UserManagementEvent.save(user: user, isSave: true)),
       expect: () => <UserManagementState>[
-        const UserManagementState.loadInProgress(),
-        const UserManagementState.loadUserListSuccessful(
-            users: [], hasMoreData: false, isLoadMore: false),
+        UserManagementState.onSave(
+            isSuccess: true, isSave: true, userId: user.userId),
       ],
     );
 
     blocTest<UserManagementBloc, UserManagementState>(
-      'emits [UserManagementState.loadInProgress, UserManagementState.loadUserListFailed] when failed',
+      'emits [UserManagementState.onSave] with isSuccess = false when failed',
       build: () => bloc,
       setUp: () {
-        when(mockRepository.getUserList(request))
-            .thenAnswer((_) async => left(apiErrorResult));
+        when(mockCache.saveUser(user)).thenThrow(Exception());
       },
       act: (bloc) =>
-          bloc.add(const UserManagementEvent.getUserList(request: request)),
+          bloc.add(const UserManagementEvent.save(user: user, isSave: true)),
       expect: () => <UserManagementState>[
-        const UserManagementState.loadInProgress(),
-        UserManagementState.loadUserListFailed(error: apiErrorResult.message),
+        UserManagementState.onSave(
+            isSuccess: false, isSave: true, userId: user.userId),
+      ],
+    );
+  });
+}
+
+void _testShowListDependOnType() {
+  group('Test showListDependOnType', () {
+    late MockUserManagementRepositories mockRepository;
+    late MockCache mockCache;
+    late UserManagementBloc bloc;
+
+    setUp(() {
+      mockRepository = MockUserManagementRepositories();
+      mockCache = MockCache();
+      bloc = UserManagementBloc(repository: mockRepository, cache: mockCache);
+    });
+
+    tearDown(() {
+      bloc.close();
+    });
+
+    blocTest<UserManagementBloc, UserManagementState>(
+      'emits [listDependOnType] with type = bookmark',
+      build: () => bloc,
+      act: (bloc) => bloc.add(const UserManagementEvent.showListDependOnType(
+          type: UserManagementListType.bookmark, users: [])),
+      expect: () => <UserManagementState>[
+        const UserManagementState.listDependOnType(
+            type: UserManagementListType.bookmark, users: []),
+      ],
+    );
+
+    blocTest<UserManagementBloc, UserManagementState>(
+      'emits [listDependOnType] with type = all',
+      build: () => bloc,
+      act: (bloc) => bloc.add(const UserManagementEvent.showListDependOnType(
+          type: UserManagementListType.all, users: [])),
+      expect: () => <UserManagementState>[
+        const UserManagementState.listDependOnType(
+            type: UserManagementListType.all, users: []),
       ],
     );
   });

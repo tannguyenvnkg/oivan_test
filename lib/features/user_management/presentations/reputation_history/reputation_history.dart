@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../../../configurations/injection.dart';
 import '../../domain/request_model/reputation_history_request.dart';
 import '../../../../screens/ui/custom_list_view.dart';
@@ -9,6 +10,7 @@ import '../../../../utils/helper.dart';
 import '../../../../constant/color.dart';
 import '../../applications/user_management_bloc.dart';
 import '../../domain/response_model/reputation_history.dart';
+import 'widgets/item_loading.dart';
 
 @RoutePage()
 class ReputationHistoryScreen extends StatefulWidget {
@@ -28,6 +30,7 @@ class _ReputationHistoryScreenState extends State<ReputationHistoryScreen> {
   bool hasMoreData = true;
   final scrollController = ScrollController();
   List<ReputationHistory> list = [];
+  bool onInit = true;
 
   @override
   void initState() {
@@ -75,25 +78,33 @@ class _ReputationHistoryScreenState extends State<ReputationHistoryScreen> {
                       ? setState(() {
                           pageIndex++;
                           list.addAll(state.reputationHistories);
+                          if (onInit) {
+                            onInit = false;
+                          }
                         })
                       : hasMoreData = false;
                 },
                 orElse: () {});
           },
-          child: LayoutBuilder(builder: (context, constraint) {
-            return CustomListView.builder(
-              controller: scrollController,
-              duration: const Duration(milliseconds: 300),
-              itemCount: list.length + 1,
-              itemBuilder: (context, index) {
-                final isLastItem = index == list.length;
-                return _buildItem(
-                  isLastItem ? null : list[index],
-                  isLastItem: isLastItem,
-                );
-              },
-            );
-          }),
+          child: onInit
+              ? ListView.builder(
+                  itemBuilder: (_, __) => const ReputationHistoryLoading(),
+                  itemCount: 6,
+                )
+              : LayoutBuilder(builder: (context, constraint) {
+                  return CustomListView.builder(
+                    controller: scrollController,
+                    duration: const Duration(milliseconds: 300),
+                    itemCount: list.length + 1,
+                    itemBuilder: (context, index) {
+                      final isLastItem = index == list.length;
+                      return _buildItem(
+                        isLastItem ? null : list[index],
+                        isLastItem: isLastItem,
+                      );
+                    },
+                  );
+                }),
         ));
   }
 }
@@ -113,7 +124,7 @@ extension _WidgetBuilding on _ReputationHistoryScreenState {
   Widget _buildItem(ReputationHistory? item, {required bool isLastItem}) {
     return isLastItem
         ? hasMoreData && list.isNotEmpty
-            ? const Center(child: CircularProgressIndicator.adaptive())
+            ? const Center(child: ReputationHistoryLoading())
             : const SizedBox()
         : Card(
             elevation: 2,
